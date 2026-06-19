@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"c:/Users/mbisht/Documents/personal/mostlysolutions/src/app/api/book\" \"c:/Users/mbisht/Documents/personal/mostlysolutions/src/components\" \"c:/Users/mbisht/Documents/personal/mostlysolutions/src/lib\" \"c:/Users/mbisht/Documents/personal/mostlysolutions/public\")",
+      "Read(//c/Program Files/**)",
+      "Read(//c/Program Files \\(x86\\)/**)",
+      "Read(//c/Users/mbisht/.nvm/**)",
+      "Bash(cmd //c \"where npm\")",
+      "Bash(powershell.exe -Command \"Get-Command npm -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source; Get-Command node -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source\")",
+      "Bash(powershell.exe -Command '& { $env:PATH = [System.Environment]::GetEnvironmentVariable\\('\\\\''PATH'\\\\'','\\\\''Machine'\\\\''\\) + '\\\\'';'\\\\'' + [System.Environment]::GetEnvironmentVariable\\('\\\\''PATH'\\\\'','\\\\''User'\\\\''\\); Get-Command npm | Select-Object -ExpandProperty Source }')",
+      "Bash(powershell.exe -Command \"[System.Environment]::GetEnvironmentVariable\\('PATH','Machine'\\) + [System.Environment]::GetEnvironmentVariable\\('PATH','User'\\)\")",
+      "Bash(mkdir -p \"c:/Users/mbisht/Documents/personal/mostlysolutions/public/frames\" && cp \"c:/Users/mbisht/Documents/personal/website_code/Frames/\"*.jpg \"c:/Users/mbisht/Documents/personal/mostlysolutions/public/frames/\" && ls \"c:/Users/mbisht/Documents/personal/mostlysolutions/public/frames/\" | wc -l && echo \"frames copied\")"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\mbisht\\Documents\\personal\\mostlysolutions\\src\\app\\api",
+      "c:\\Users\\mbisht\\Documents\\personal\\website_code\\Frames"
+    ]
+  }
+}
