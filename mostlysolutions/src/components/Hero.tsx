@@ -60,6 +60,7 @@ export default function Hero() {
   const stage2Ref = useRef<HTMLDivElement>(null)
   const pctRef = useRef<HTMLSpanElement>(null)
   const progressRef = useRef<HTMLDivElement>(null)
+  const scrollCueRef = useRef<HTMLDivElement>(null)
   const heroRef = useRef<HTMLDivElement>(null)
 
   const [compact, setCompact] = useState(false)
@@ -91,6 +92,17 @@ export default function Hero() {
     let loopStarted = false
     let raf = 0
 
+    // Text choreography once the intro video finishes:
+    //   intro  -> Stage 1 (Mobile Mechanics) then Stage 2 (Modern Diagnostics)
+    //   hold   -> keep Stage 2 on screen for HOLD_MS
+    //   return -> ease back to Stage 1
+    //   rest   -> stay on Stage 1 for REST_MS, then replay the intro and cycle
+    const HOLD_MS = 2800
+    const REST_MS = 10000
+    let phase: 'intro' | 'hold' | 'return' | 'rest' = 'intro'
+    let holdStart = 0
+    let restStart = 0
+
     const wins: [number, number][] = [
       [-0.5, 0.3],
       [0.48, 1.5],
@@ -100,8 +112,6 @@ export default function Hero() {
     const loopFn = () => {
       const dur = intro.duration
       if (dur) {
-        targetP = Math.min(intro.currentTime / Math.max(dur - 0.06, 0.1), 1)
-
         const nearEnd = intro.currentTime >= dur - 0.45
         if (loop && (nearEnd || intro.ended) && !loopStarted) {
           loopStarted = true
@@ -114,11 +124,43 @@ export default function Hero() {
           intro.muted = true
           intro.play().catch(() => {})
         }
-        if (loopStarted) {
+        if (loop && loop.ended) {
+          loop.currentTime = 0
+          loop.play().catch(() => {})
+        }
+
+        if (phase === 'intro') {
+          // Stage 1 -> Stage 2, driven by the intro video's playback
+          targetP = Math.min(intro.currentTime / Math.max(dur - 0.06, 0.1), 1)
+          if (loopStarted) {
+            phase = 'hold'
+            holdStart = performance.now()
+            targetP = 1
+          }
+        } else if (phase === 'hold') {
+          // keep Stage 2 (Modern Diagnostics) on screen
           targetP = 1
-          if (loop && loop.ended) {
-            loop.currentTime = 0
-            loop.play().catch(() => {})
+          if (performance.now() - holdStart >= HOLD_MS) phase = 'return'
+        } else if (phase === 'return') {
+          // ease back down to Stage 1 (Mobile Mechanics)
+          targetP = 0
+          if (curP < 0.02) {
+            phase = 'rest'
+            restStart = performance.now()
+          }
+        } else {
+          // rest on Stage 1, then replay the bonnet-opening intro and cycle
+          targetP = 0
+          if (performance.now() - restStart >= REST_MS) {
+            phase = 'intro'
+            loopStarted = false
+            if (loop) {
+              loop.pause()
+              loop.style.opacity = '0'
+              loop.currentTime = 0
+            }
+            intro.currentTime = 0
+            intro.play().catch(() => {})
           }
         }
       }
@@ -141,6 +183,11 @@ export default function Hero() {
       if (progressRef.current) progressRef.current.style.transform = `scaleY(${clamped})`
       if (pctRef.current) pctRef.current.textContent = `${Math.round(clamped * 100)}%`
 
+      // Hide the scroll cue once we ease back to the first text (avoids overlap)
+      if (scrollCueRef.current) {
+        scrollCueRef.current.style.opacity = phase === 'return' || phase === 'rest' ? '0' : '1'
+      }
+
       raf = requestAnimationFrame(loopFn)
     }
     raf = requestAnimationFrame(loopFn)
@@ -155,6 +202,9 @@ export default function Hero() {
           } else if (!heroSeen) {
             heroSeen = true
             loopStarted = false
+            phase = 'intro'
+            holdStart = 0
+            restStart = 0
             curP = 0
             targetP = 0
             if (loop) {
@@ -377,6 +427,7 @@ export default function Hero() {
 
       {/* Scroll cue */}
       <div
+        ref={scrollCueRef}
         style={{
           position: 'absolute',
           bottom: 26,
@@ -387,6 +438,7 @@ export default function Hero() {
           flexDirection: 'column',
           alignItems: 'center',
           gap: 8,
+          transition: 'opacity .5s ease',
         }}
       >
         <span style={{ fontSize: 10.5, fontWeight: 600, letterSpacing: '.28em', color: 'rgba(234,240,247,.45)' }}>
