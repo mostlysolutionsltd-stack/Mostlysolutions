@@ -1,3 +1,4 @@
+import Loader from '@/components/Loader'
 import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
 import Services from '@/components/Services'
@@ -13,6 +14,7 @@ import WhatsAppFab from '@/components/WhatsAppFab'
 export default function Home() {
   return (
     <>
+      <Loader />
       <Nav />
       <main>
         <Hero />

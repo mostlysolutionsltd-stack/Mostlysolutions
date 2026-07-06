@@ -90,6 +90,25 @@ h4 {
     transform: translateX(940px);
   }
 }
+@keyframes msLoadBar {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(250%);
+  }
+}
+@keyframes msLogoPulse {
+  0%,
+  100% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
 
 /* ---------- Shared gradient text ---------- */
 .ms-grad-text {
