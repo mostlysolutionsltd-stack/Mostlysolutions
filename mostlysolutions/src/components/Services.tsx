@@ -1,119 +1,97 @@
-'use client'
-
-import { useRef } from 'react'
-import Image from 'next/image'
-import { motion, useInView } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+import Reveal from './Reveal'
 
 const SERVICES = [
   {
+    tag: 'Quote After Inspection',
+    eyebrow: 'Diagnostics',
     title: 'Expert Automotive Diagnostics',
-    description:
-      'OBD-II scanning, ECU analysis, live sensor data, and fault code resolution using Bosch-grade equipment.',
-    image: 'https://images.unsplash.com/photo-1615906655593-ad0386982a0f?w=800&q=80',
-    badge: 'Diagnostics',
-    badgeColor: '#1D7FF2',
+    desc: 'OBD-II scanning, ECU analysis, live sensor data, and fault code resolution using Bosch-grade equipment.',
+    img: '/services/diagnostics.webp',
   },
   {
+    tag: 'Quote After Inspection',
+    eyebrow: 'Mechanical',
     title: 'Mechanical Work',
-    description:
-      'Brakes, suspension, exhausts, servicing, and MOT prep. Full mechanical repairs at your location.',
-    image: 'https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=800&q=80',
-    badge: 'Mechanical',
-    badgeColor: '#A8FF3D',
+    desc: 'Brakes, suspension, exhausts, servicing, and MOT prep. Full mechanical repairs at your location.',
+    img: '/services/mechanical.webp',
   },
   {
+    tag: 'Condition-Based Quote',
+    eyebrow: 'Electrical',
     title: 'Electrical & Batteries',
-    description:
-      'Alternator testing, battery health checks, starter motor replacement, and full electrical diagnostics.',
-    image: 'https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?w=800&q=80',
-    badge: 'Electrical',
-    badgeColor: '#4DA4FF',
+    desc: 'Alternator testing, battery health checks, starter motor replacement, and full electrical diagnostics.',
+    img: '/services/electrical.webp',
   },
   {
+    tag: 'Condition-Based Quote',
+    eyebrow: 'Detailing',
     title: 'Detailing & Protection',
-    description:
-      'Professional ceramic coating, paint correction, deep interior cleaning, and protective treatments.',
-    image: 'https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=800&q=80',
-    badge: 'Detailing',
-    badgeColor: '#8BE02E',
+    desc: 'Professional ceramic coating, paint correction, deep interior cleaning, and protective treatments.',
+    img: '/services/detailing.webp',
   },
 ]
 
 export default function Services() {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-60px' })
-
   return (
-    <section id="services" className="section-padding bg-gray-50" ref={ref}>
-      <div className="container-site">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-14"
-        >
-          <span className="section-label mb-3 block">What We Offer</span>
-          <h2 className="heading-lg text-navy">Our Services</h2>
-          <p className="font-inter text-gray-500 text-lg mt-4 max-w-xl mx-auto">
-            Everything your vehicle needs, delivered to your door by certified technicians.
-          </p>
-        </motion.div>
-
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-          {SERVICES.map((service, i) => (
-            <motion.article
-              key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.1, ease: [0.4, 0, 0.2, 1] }}
-              className="group bg-white rounded-card overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-2"
-            >
-              {/* Image */}
-              <div className="relative h-52 overflow-hidden">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-                {/* Badge */}
-                <div
-                  className="absolute top-4 left-4 px-3 py-1 rounded-full font-poppins font-bold text-xs uppercase tracking-wider"
-                  style={{
-                    background: service.badgeColor,
-                    color: service.badgeColor === '#A8FF3D' || service.badgeColor === '#8BE02E' ? '#081A36' : '#fff',
-                  }}
-                >
-                  {service.badge}
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="font-poppins font-bold text-lg text-navy mb-3 uppercase tracking-wide leading-tight">
-                  {service.title}
-                </h3>
-                <p className="font-inter text-sm text-gray-500 leading-relaxed mb-5">
-                  {service.description}
-                </p>
-                <a
-                  href="#booking"
-                  className="inline-flex items-center gap-2 font-poppins font-bold text-xs uppercase tracking-wider text-blue hover:text-blue-dark transition-colors group/link"
-                >
-                  Book This Service
-                  <ArrowRight
-                    size={14}
-                    className="transition-transform duration-200 group-hover/link:translate-x-1"
-                  />
-                </a>
-              </div>
-            </motion.article>
-          ))}
+    <section id="services" style={{ padding: 'clamp(72px,10vw,128px) clamp(16px,5vw,64px)', maxWidth: 1280, margin: '0 auto' }}>
+      <Reveal style={{ textAlign: 'center', maxWidth: 720, margin: '0 auto' }}>
+        <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: '.3em', color: 'var(--blue)', textTransform: 'uppercase' }}>
+          Our Specialties
         </div>
+        <h2 style={{ margin: '18px 0 0', fontSize: 'clamp(32px,5vw,54px)', fontWeight: 800, letterSpacing: '-.025em', lineHeight: 1.05 }}>
+          Everything Your Car Needs, <span className="ms-grad-text">At Your Door</span>
+        </h2>
+        <p style={{ margin: '18px auto 0', maxWidth: 560, fontSize: 16.5, lineHeight: 1.65, color: 'rgba(234,240,247,.65)' }}>
+          Four core disciplines, one mobile team. Fully-equipped vans, dealer-grade tools, and technicians who come to you.
+        </p>
+      </Reveal>
+
+      <div
+        style={{
+          marginTop: 'clamp(40px,6vw,64px)',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit,minmax(min(280px,100%),1fr))',
+          gap: 24,
+        }}
+      >
+        {SERVICES.map((svc) => (
+          <Reveal key={svc.title} className="ms-svc-card">
+            <div style={{ position: 'relative', aspectRatio: '16 / 10', overflow: 'hidden' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={svc.img} alt={svc.title} className="ms-svc-img" loading="lazy" />
+              <span
+                style={{
+                  position: 'absolute',
+                  top: 14,
+                  left: 14,
+                  fontSize: 11.5,
+                  fontWeight: 700,
+                  letterSpacing: '.06em',
+                  padding: '6px 12px',
+                  borderRadius: 99,
+                  background: 'rgba(4,10,22,.72)',
+                  border: '1px solid rgba(255,255,255,.14)',
+                  backdropFilter: 'blur(6px)',
+                  color: 'var(--green-line)',
+                }}
+              >
+                {svc.tag}
+              </span>
+            </div>
+            <div style={{ padding: '26px 24px 28px', display: 'flex', flexDirection: 'column', flex: 1 }}>
+              <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '.2em', color: 'var(--blue)', textTransform: 'uppercase' }}>
+                {svc.eyebrow}
+              </div>
+              <h3 style={{ margin: '10px 0 0', fontSize: 21, fontWeight: 700, letterSpacing: '-.01em' }}>{svc.title}</h3>
+              <p style={{ margin: '12px 0 0', fontSize: 14.5, lineHeight: 1.6, color: 'rgba(234,240,247,.62)', flex: 1 }}>
+                {svc.desc}
+              </p>
+              <a href="#booking" className="ms-svc-booklink" style={{ marginTop: 20, fontSize: 14.5, display: 'inline-flex', alignItems: 'center', gap: 7 }}>
+                Book this service <span aria-hidden>→</span>
+              </a>
+            </div>
+          </Reveal>
+        ))}
       </div>
     </section>
   )

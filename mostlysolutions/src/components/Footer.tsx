@@ -1,8 +1,4 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Linkedin } from 'lucide-react'
-
-const SERVICES = [
+const FOOTER_SERVICES = [
   'Automotive Diagnostics',
   'Mechanical Work',
   'Electrical & Batteries',
@@ -11,144 +7,88 @@ const SERVICES = [
   'Emergency Callout',
 ]
 
-const COMPANY = [
+const FOOTER_COMPANY = [
   { label: 'About Us', href: '#about' },
   { label: 'Services', href: '#services' },
-  { label: 'Gallery', href: '#gallery' },
+  { label: 'Reviews', href: '#reviews' },
   { label: 'FAQ', href: '#faq' },
   { label: 'Book Service', href: '#booking' },
 ]
 
-const SOCIALS = [
-  { icon: Facebook, href: '#', label: 'Facebook' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Twitter, href: '#', label: 'Twitter / X' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-]
+const LEGAL = ['Privacy Policy', 'Terms of Service', 'Cookie Policy']
 
 export default function Footer() {
   return (
-    <footer id="contact" style={{ background: '#081A36' }}>
-      <div className="container-site py-16 lg:py-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
-          {/* Brand */}
+    <footer style={{ borderTop: '1px solid rgba(255,255,255,.07)', background: 'var(--bg-footer)' }}>
+      <div style={{ maxWidth: 1240, margin: '0 auto', padding: 'clamp(50px,6vw,72px) clamp(16px,5vw,48px) 30px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(220px,100%),1fr))', gap: 36 }}>
           <div>
-            <div className="mb-5">
-              <Image
-                src="/logo.png"
-                alt="Mostly Solutions Limited"
-                width={204}
-                height={129}
-                className="h-14 w-auto"
-              />
+            <div style={{ display: 'flex', alignItems: 'center', gap: 11 }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/icon.webp" alt="Mostly Solutions" style={{ height: 42, width: 'auto' }} />
+              <span style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
+                <span style={{ fontWeight: 800, fontSize: 13, letterSpacing: '.13em', color: '#FFFFFF' }}>MOSTLY SOLUTIONS</span>
+                <span style={{ fontWeight: 600, fontSize: 9, letterSpacing: '.46em', color: '#57C46A', marginTop: 4 }}>LIMITED</span>
+              </span>
             </div>
-            <p className="font-inter text-sm text-white/50 leading-relaxed mb-6 max-w-xs">
-              Premium mobile automotive diagnostics and repair. Delivered to your door. Trusted across
-              Reading and London.
+            <p style={{ margin: '18px 0 0', fontSize: 13.5, lineHeight: 1.65, color: 'rgba(234,240,247,.5)', maxWidth: 280 }}>
+              Premium mobile automotive diagnostics and repair. Delivered to your door. Trusted across Reading and London.
             </p>
-            <div className="flex gap-3">
-              {SOCIALS.map(({ icon: Icon, href, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  className="w-9 h-9 rounded-lg border border-white/15 flex items-center justify-center text-white/50 hover:text-white hover:border-white/30 transition-all duration-200"
-                >
-                  <Icon size={15} />
+          </div>
+
+          <div>
+            <h4 style={{ margin: '0 0 16px', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', color: 'rgba(234,240,247,.9)' }}>SERVICES</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              {FOOTER_SERVICES.map((s) => (
+                <a key={s} href="#services" className="ms-footer-link" style={{ fontSize: 13.5 }}>
+                  {s}
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Services */}
           <div>
-            <h4 className="font-poppins font-bold text-sm text-white uppercase tracking-widest mb-5">
-              Services
-            </h4>
-            <ul className="space-y-3">
-              {SERVICES.map((service) => (
-                <li key={service}>
-                  <a
-                    href="#services"
-                    className="font-inter text-sm text-white/50 hover:text-white transition-colors duration-200"
-                  >
-                    {service}
-                  </a>
-                </li>
+            <h4 style={{ margin: '0 0 16px', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', color: 'rgba(234,240,247,.9)' }}>COMPANY</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              {FOOTER_COMPANY.map((c) => (
+                <a key={c.label} href={c.href} className="ms-footer-link" style={{ fontSize: 13.5 }}>
+                  {c.label}
+                </a>
               ))}
-            </ul>
+            </div>
           </div>
 
-          {/* Company */}
           <div>
-            <h4 className="font-poppins font-bold text-sm text-white uppercase tracking-widest mb-5">
-              Company
-            </h4>
-            <ul className="space-y-3">
-              {COMPANY.map(({ label, href }) => (
-                <li key={label}>
-                  <Link
-                    href={href}
-                    className="font-inter text-sm text-white/50 hover:text-white transition-colors duration-200"
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="font-poppins font-bold text-sm text-white uppercase tracking-widest mb-5">
-              Contact
-            </h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin size={15} className="text-blue-light mt-0.5 flex-shrink-0" />
-                <span className="font-inter text-sm text-white/50">
-                  Reading: 12 Caversham Road, RG1 7BZ
-                  <br />
-                  London: 34 Vauxhall Bridge Road, SW1V 1AX
-                </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone size={15} className="text-lime flex-shrink-0" />
-                <a
-                  href="tel:+441189000000"
-                  className="font-inter text-sm text-white/70 hover:text-white transition-colors font-semibold"
-                >
-                  +44 118 900 0000
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail size={15} className="text-blue-light flex-shrink-0" />
-                <a
-                  href="mailto:hello@mostlysolutions.co.uk"
-                  className="font-inter text-sm text-white/50 hover:text-white transition-colors"
-                >
-                  hello@mostlysolutions.co.uk
-                </a>
-              </li>
-            </ul>
+            <h4 style={{ margin: '0 0 16px', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', color: 'rgba(234,240,247,.9)' }}>CONTACT</h4>
+            <p style={{ margin: 0, fontSize: 13.5, lineHeight: 1.7, color: 'rgba(234,240,247,.55)' }}>
+              Reading: 12 Caversham Road, RG1 7BZ
+              <br />
+              London: 34 Vauxhall Bridge Road, SW1V 1AX
+            </p>
+            <a href="tel:+441189000000" style={{ display: 'inline-block', marginTop: 12, color: '#2FA8D8', textDecoration: 'none', fontSize: 14, fontWeight: 700 }}>
+              +44 118 900 0000
+            </a>
+            <p style={{ margin: '8px 0 0', fontSize: 13.5, color: 'rgba(234,240,247,.55)' }}>hello@mostlysolutions.co.uk</p>
           </div>
         </div>
-      </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-white/10">
-        <div className="container-site py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="font-inter text-xs text-white/30">
-            © {new Date().getFullYear()} MostlySolutions Ltd. All rights reserved.
-          </p>
-          <div className="flex gap-6">
-            {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="font-inter text-xs text-white/30 hover:text-white/60 transition-colors"
-              >
-                {item}
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            gap: 14,
+            flexWrap: 'wrap',
+            marginTop: 52,
+            paddingTop: 24,
+            borderTop: '1px solid rgba(255,255,255,.07)',
+          }}
+        >
+          <span style={{ fontSize: 12.5, color: 'rgba(234,240,247,.4)' }}>© 2026 MostlySolutions Ltd. All rights reserved.</span>
+          <div style={{ display: 'flex', gap: 20 }}>
+            {LEGAL.map((l) => (
+              <a key={l} href="#" className="ms-legal-link" style={{ fontSize: 12.5 }}>
+                {l}
               </a>
             ))}
           </div>

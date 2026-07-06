@@ -1,31 +1,31 @@
-import Header from '@/components/Header'
+import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
-import Stats from '@/components/Stats'
 import Services from '@/components/Services'
+import WhyUs from '@/components/WhyUs'
+import BrandsMarquee from '@/components/BrandsMarquee'
+import Reviews from '@/components/Reviews'
 import Locations from '@/components/Locations'
 import FAQ from '@/components/FAQ'
 import Booking from '@/components/Booking'
-import WhyChooseUs from '@/components/WhyChooseUs'
-import SupportedBrands from '@/components/SupportedBrands'
-import Testimonials from '@/components/Testimonials'
 import Footer from '@/components/Footer'
+import WhatsAppFab from '@/components/WhatsAppFab'
 
 export default function Home() {
   return (
     <>
-      <Header />
+      <Nav />
       <main>
         <Hero />
-        <Stats />
         <Services />
+        <WhyUs />
+        <BrandsMarquee />
+        <Reviews />
         <Locations />
         <FAQ />
         <Booking />
-        <WhyChooseUs />
-        <SupportedBrands />
-        <Testimonials />
       </main>
       <Footer />
+      <WhatsAppFab />
     </>
   )
 }

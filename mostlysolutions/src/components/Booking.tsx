@@ -1,26 +1,15 @@
 'use client'
 
-import { useRef, useState } from 'react'
-import { motion, useInView } from 'framer-motion'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { z } from 'zod'
-import emailjs from '@emailjs/browser'
-import { CheckCircle2, Loader2, Phone, MessageCircle, ChevronDown } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { useState, type FormEvent } from 'react'
+import Reveal from './Reveal'
 
-const schema = z.object({
-  fullName: z.string().min(2, 'Enter your full name'),
-  email: z.string().email('Enter a valid email'),
-  phone: z.string().min(7, 'Enter a valid phone number'),
-  vehicleReg: z.string().min(2, 'Enter vehicle registration'),
-  serviceType: z.string().min(1, 'Select a service'),
-  preferredDate: z.string().min(1, 'Select a date'),
-  notes: z.string().optional(),
-})
-type FormData = z.infer<typeof schema>
+const STEPS = [
+  { num: '01', title: 'Select Service', sub: 'Choose the service you need' },
+  { num: '02', title: 'Choose Location', sub: 'Reading or London' },
+  { num: '03', title: 'Confirm Booking', sub: "We'll confirm within 2 hours" },
+]
 
-const SERVICES = [
+const SERVICE_OPTIONS = [
   'Expert Automotive Diagnostics',
   'Mechanical Work',
   'Electrical & Batteries',
@@ -30,296 +19,217 @@ const SERVICES = [
   'Other',
 ]
 
-const STEPS = [
-  { number: '01', label: 'Select Service', desc: 'Choose the service you need' },
-  { number: '02', label: 'Choose Location', desc: 'Reading or London' },
-  { number: '03', label: 'Confirm Booking', desc: "We'll confirm within 2 hours" },
-]
-
-function InputField({
-  label,
-  error,
-  children,
-  required,
-}: {
-  label: string
-  error?: string
-  children: React.ReactNode
-  required?: boolean
-}) {
-  return (
-    <div>
-      <label className="block font-inter font-semibold text-xs text-white/60 uppercase tracking-wider mb-1.5">
-        {label} {required && <span className="text-lime">*</span>}
-      </label>
-      {children}
-      {error && <p className="mt-1 font-inter text-xs text-red-400">{error}</p>}
-    </div>
-  )
-}
-
-const inputClass =
-  'w-full h-12 px-4 rounded-input bg-white/10 border border-white/20 text-white placeholder-white/30 font-inter text-sm focus:outline-none focus:border-blue focus:bg-white/15 transition-all duration-200'
-
-const selectClass = cn(inputClass, 'appearance-none cursor-pointer')
+const inputStyle = {
+  gridColumn: '1 / -1',
+} as const
 
 export default function Booking() {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-60px' })
   const [submitted, setSubmitted] = useState(false)
-  const [apiError, setApiError] = useState('')
+  const [sending, setSending] = useState(false)
+  const [sendError, setSendError] = useState(false)
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm<FormData>({ resolver: zodResolver(schema) })
+  const submitLabel = sending ? 'Sending…' : sendError ? 'Try Again — Confirm Booking' : 'Confirm Booking'
 
-  const onSubmit = async (data: FormData) => {
-    setApiError('')
-
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
-    const ownerTemplate = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_OWNER
-    const customerTemplate = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_CUSTOMER
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-
-    if (!serviceId || !ownerTemplate || !publicKey) {
-      setApiError('Email service not configured. Please call us directly.')
+  const submitForm = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const form = e.currentTarget
+    if (!form.checkValidity()) {
+      form.reportValidity()
       return
     }
-
-    const templateParams = {
-      from_name: data.fullName,
-      from_email: data.email,
-      phone: data.phone,
-      vehicle_reg: data.vehicleReg.toUpperCase(),
-      service_type: data.serviceType,
-      preferred_date: data.preferredDate,
-      notes: data.notes || 'None provided',
+    if (sending) return
+    const fd = new FormData(form)
+    const data: Record<string, string> = {
+      _subject: 'New Booking Request — MostlySolutions Website',
+      _template: 'table',
+      'Full Name': String(fd.get('name') || ''),
+      Email: String(fd.get('email') || ''),
+      Phone: String(fd.get('phone') || ''),
+      'Vehicle Registration': String(fd.get('reg') || ''),
+      Service: String(fd.get('service') || ''),
+      'Preferred Date': String(fd.get('date') || ''),
+      Notes: String(fd.get('notes') || '') || '—',
     }
-
+    setSending(true)
+    setSendError(false)
     try {
-      // Notify the business owner
-      await emailjs.send(serviceId, ownerTemplate, templateParams, publicKey)
-
-      // Send customer confirmation if template is configured
-      if (customerTemplate) {
-        await emailjs.send(serviceId, customerTemplate, templateParams, publicKey)
-      }
-
+      const res = await fetch('https://formsubmit.co/ajax/Mostlysolutionsltd@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(data),
+      })
+      if (!res.ok) throw new Error('send failed')
       setSubmitted(true)
+      setSending(false)
     } catch {
-      setApiError('Failed to send booking. Please try again or call us directly.')
+      const body = Object.entries(data)
+        .filter(([k]) => !k.startsWith('_'))
+        .map(([k, v]) => `${k}: ${v}`)
+        .join('\n')
+      window.location.href =
+        'mailto:Mostlysolutionsltd@gmail.com?subject=' +
+        encodeURIComponent('New Booking Request') +
+        '&body=' +
+        encodeURIComponent(body)
+      setSending(false)
+      setSendError(true)
     }
   }
 
   return (
-    <section id="booking" className="section-padding bg-navy" ref={ref}>
-      <div className="container-site">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-14"
-        >
-          <span className="section-label text-lime mb-3 block">Ready to Book?</span>
-          <h2 className="heading-lg text-white">Book Your Service</h2>
-          <p className="font-inter text-white/50 text-base mt-4 max-w-lg mx-auto">
-            Fill in the form and we'll confirm your appointment within 2 hours.
+    <section
+      id="booking"
+      style={{
+        background: 'linear-gradient(180deg,transparent,rgba(47,168,216,.06))',
+        borderTop: '1px solid rgba(255,255,255,.06)',
+      }}
+    >
+      <div
+        style={{
+          padding: 'clamp(70px,9vw,120px) clamp(16px,5vw,48px)',
+          maxWidth: 1180,
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit,minmax(min(310px,100%),1fr))',
+          gap: 'clamp(28px,4vw,60px)',
+          alignItems: 'start',
+        }}
+      >
+        <Reveal>
+          <div style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '.24em', color: '#4CC163' }}>READY TO BOOK?</div>
+          <h2 style={{ margin: '12px 0 0', fontSize: 'clamp(32px,4.4vw,50px)', fontWeight: 800, letterSpacing: '-.02em', color: '#FFFFFF' }}>
+            Book Your Service
+          </h2>
+          <p style={{ margin: '16px 0 0', fontSize: 16, lineHeight: 1.65, color: 'rgba(234,240,247,.65)' }}>
+            Our certified technicians come to you. No garage visits, no waiting rooms. We&apos;ll confirm your appointment within 2 hours.
           </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
-          {/* Left — CTA card */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="lg:col-span-2 rounded-card overflow-hidden"
-            style={{ background: 'linear-gradient(135deg, #051224 0%, #0B1F3A 100%)' }}
-          >
-            <div className="p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-8 rounded-lg bg-lime/20 flex items-center justify-center">
-                  <CheckCircle2 size={18} className="text-lime" />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginTop: 34 }}>
+            {STEPS.map((stp) => (
+              <div key={stp.num} style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+                <div
+                  style={{
+                    flex: 'none',
+                    width: 42,
+                    height: 42,
+                    borderRadius: 12,
+                    border: '1px solid rgba(76,193,99,.4)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: 13,
+                    fontWeight: 800,
+                    color: '#4CC163',
+                  }}
+                >
+                  {stp.num}
                 </div>
-                <span className="font-poppins font-black text-lg text-white uppercase tracking-wide">
-                  Book Your Service
-                </span>
+                <div>
+                  <div style={{ fontSize: 15, fontWeight: 700, color: '#FFFFFF' }}>{stp.title}</div>
+                  <div style={{ fontSize: 13, color: 'rgba(234,240,247,.55)' }}>{stp.sub}</div>
+                </div>
               </div>
-
-              <p className="font-inter text-sm text-white/50 mb-8 leading-relaxed">
-                Our certified technicians come to you. No garage visits, no waiting rooms.
-              </p>
-
-              {/* Steps */}
-              <div className="space-y-5 mb-10">
-                {STEPS.map((step) => (
-                  <div key={step.number} className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-blue/20 flex items-center justify-center flex-shrink-0">
-                      <span className="font-poppins font-black text-xs text-blue">{step.number}</span>
-                    </div>
-                    <div>
-                      <div className="font-poppins font-bold text-sm text-white uppercase tracking-wide">
-                        {step.label}
-                      </div>
-                      <div className="font-inter text-xs text-white/40 mt-0.5">{step.desc}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Contact */}
-              <div className="border-t border-white/10 pt-6 space-y-3">
-                <p className="font-inter text-xs text-white/40 uppercase tracking-wider mb-3">
-                  Prefer to call?
-                </p>
-                <a
-                  href="tel:+441189000000"
-                  className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
-                >
-                  <Phone size={16} className="text-lime flex-shrink-0" />
-                  <span className="font-poppins font-bold text-lg">+44 118 900 0000</span>
-                </a>
-                <a
-                  href="https://wa.me/441189000000"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 h-11 px-5 rounded-button bg-[#25D366]/20 border border-[#25D366]/30 text-[#25D366] font-poppins font-semibold text-sm hover:bg-[#25D366]/30 transition-colors"
-                >
-                  <MessageCircle size={16} />
-                  WhatsApp Us
-                </a>
-              </div>
+            ))}
+          </div>
+          <div
+            style={{
+              marginTop: 36,
+              padding: '20px 24px',
+              background: 'rgba(255,255,255,.035)',
+              border: '1px solid rgba(255,255,255,.08)',
+              borderRadius: 14,
+            }}
+          >
+            <div style={{ fontSize: 13, fontWeight: 600, color: 'rgba(234,240,247,.55)' }}>Prefer to call?</div>
+            <div style={{ display: 'flex', gap: 18, flexWrap: 'wrap', marginTop: 8 }}>
+              <a href="tel:+441189000000" style={{ color: '#2FA8D8', textDecoration: 'none', fontSize: 16, fontWeight: 700 }}>
+                +44 118 900 0000
+              </a>
+              <a href="https://wa.me/441189000000" target="_blank" rel="noopener noreferrer" style={{ color: '#4CC163', textDecoration: 'none', fontSize: 16, fontWeight: 700 }}>
+                WhatsApp Us
+              </a>
             </div>
-          </motion.div>
+          </div>
+        </Reveal>
 
-          {/* Right — Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-3 rounded-card p-8"
-            style={{ background: '#0B1F3A' }}
-          >
-            {submitted ? (
-              <div className="flex flex-col items-center justify-center py-16 text-center">
-                <div className="w-16 h-16 rounded-full bg-lime/20 flex items-center justify-center mb-4">
-                  <CheckCircle2 size={32} className="text-lime" />
-                </div>
-                <h3 className="font-poppins font-black text-xl text-white uppercase tracking-wide mb-2">
-                  Booking Received!
-                </h3>
-                <p className="font-inter text-sm text-white/50 max-w-sm">
-                  We've sent confirmation to your email. Our team will contact you within 2 hours to
-                  finalise your appointment.
-                </p>
+        <Reveal
+          style={{
+            background: 'rgba(8,20,42,.75)',
+            border: '1px solid rgba(255,255,255,.1)',
+            borderRadius: 20,
+            padding: 'clamp(24px,3vw,36px)',
+            backdropFilter: 'blur(8px)',
+          }}
+        >
+          {submitted ? (
+            <div style={{ textAlign: 'center', padding: '40px 10px' }}>
+              <div
+                style={{
+                  width: 64,
+                  height: 64,
+                  borderRadius: '50%',
+                  background: 'linear-gradient(100deg,#4CC163,#2FA8D8)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto',
+                  fontSize: 28,
+                  color: '#04101F',
+                }}
+              >
+                ✓
               </div>
-            ) : (
-              <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <InputField label="Full Name" error={errors.fullName?.message} required>
-                    <input
-                      {...register('fullName')}
-                      placeholder="John Smith"
-                      className={inputClass}
-                    />
-                  </InputField>
-                  <InputField label="Email Address" error={errors.email?.message} required>
-                    <input
-                      {...register('email')}
-                      type="email"
-                      placeholder="john@example.com"
-                      className={inputClass}
-                    />
-                  </InputField>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <InputField label="Phone Number" error={errors.phone?.message} required>
-                    <input
-                      {...register('phone')}
-                      type="tel"
-                      placeholder="+44 7700 000000"
-                      className={inputClass}
-                    />
-                  </InputField>
-                  <InputField label="Vehicle Registration" error={errors.vehicleReg?.message} required>
-                    <input
-                      {...register('vehicleReg')}
-                      placeholder="AB12 CDE"
-                      className={cn(inputClass, 'uppercase')}
-                    />
-                  </InputField>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <InputField label="Service Type" error={errors.serviceType?.message} required>
-                    <div className="relative">
-                      <select {...register('serviceType')} className={selectClass} defaultValue="">
-                        <option value="" disabled className="bg-navy text-white/40">
-                          Select a service…
-                        </option>
-                        {SERVICES.map((s) => (
-                          <option key={s} value={s} className="bg-navy text-white">
-                            {s}
-                          </option>
-                        ))}
-                      </select>
-                      <ChevronDown
-                        size={14}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 text-white/40 pointer-events-none"
-                      />
-                    </div>
-                  </InputField>
-                  <InputField label="Preferred Date" error={errors.preferredDate?.message} required>
-                    <input
-                      {...register('preferredDate')}
-                      type="date"
-                      min={new Date().toISOString().split('T')[0]}
-                      className={cn(inputClass, 'text-white/70 [color-scheme:dark]')}
-                    />
-                  </InputField>
-                </div>
-
-                <InputField label="Additional Notes" error={errors.notes?.message}>
-                  <textarea
-                    {...register('notes')}
-                    rows={3}
-                    placeholder="Any specific issues or additional information…"
-                    className={cn(inputClass, 'h-auto py-3 resize-none')}
-                  />
-                </InputField>
-
-                {apiError && (
-                  <p className="font-inter text-sm text-red-400 bg-red-500/10 rounded-input px-4 py-3 border border-red-500/20">
-                    {apiError}
-                  </p>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full h-14 rounded-button bg-accent-gradient font-poppins font-black text-navy text-sm tracking-widest uppercase disabled:opacity-60 disabled:cursor-not-allowed hover:shadow-medium transition-all duration-300 hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 size={18} className="animate-spin" />
-                      Sending…
-                    </>
-                  ) : (
-                    'Confirm Booking'
-                  )}
-                </button>
-
-                <p className="font-inter text-xs text-white/30 text-center">
-                  By submitting you agree to be contacted by MostlySolutions regarding your booking.
-                </p>
-              </form>
-            )}
-          </motion.div>
-        </div>
+              <h3 style={{ margin: '22px 0 0', fontSize: 24, fontWeight: 800, color: '#FFFFFF' }}>Booking Received!</h3>
+              <p style={{ margin: '12px auto 0', maxWidth: 340, fontSize: 14.5, lineHeight: 1.6, color: 'rgba(234,240,247,.65)' }}>
+                Thanks — we&apos;ll confirm your appointment within 2 hours. Keep your phone handy.
+              </p>
+              <button
+                onClick={() => setSubmitted(false)}
+                style={{
+                  marginTop: 24,
+                  background: 'none',
+                  border: '1px solid rgba(255,255,255,.2)',
+                  borderRadius: 99,
+                  color: '#EAF0F7',
+                  fontSize: 13.5,
+                  fontWeight: 600,
+                  padding: '11px 22px',
+                  cursor: 'pointer',
+                }}
+              >
+                Make Another Booking
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={submitForm} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(220px,100%),1fr))', gap: 14 }}>
+              <input required name="name" placeholder="Full Name *" className="ms-input" />
+              <input required type="email" name="email" placeholder="Email Address *" className="ms-input" />
+              <input required type="tel" name="phone" placeholder="Phone Number *" className="ms-input" />
+              <input required name="reg" placeholder="Vehicle Registration *" className="ms-input" />
+              <select required name="service" defaultValue="" className="ms-input" style={inputStyle}>
+                <option value="" disabled>
+                  Select a service… *
+                </option>
+                {SERVICE_OPTIONS.map((opt) => (
+                  <option key={opt} value={opt} style={{ color: '#04101F' }}>
+                    {opt}
+                  </option>
+                ))}
+              </select>
+              <input required type="date" name="date" className="ms-input" style={{ ...inputStyle, colorScheme: 'dark' }} />
+              <textarea name="notes" placeholder="Additional Notes" rows={3} className="ms-input" style={{ ...inputStyle, resize: 'vertical' }} />
+              <button
+                type="submit"
+                className="ms-btn-grad"
+                style={{ gridColumn: '1 / -1', fontSize: 15.5, padding: 16, boxShadow: '0 6px 24px rgba(47,168,216,.35)' }}
+              >
+                {submitLabel}
+              </button>
+              <p style={{ gridColumn: '1 / -1', margin: 0, fontSize: 11.5, lineHeight: 1.5, color: 'rgba(234,240,247,.4)', textAlign: 'center' }}>
+                By submitting you agree to be contacted by MostlySolutions regarding your booking.
+              </p>
+            </form>
+          )}
+        </Reveal>
       </div>
     </section>
   )
