@@ -71,6 +71,9 @@ export default function Hero() {
     return () => window.removeEventListener('resize', onResize)
   }, [])
 
+  // On mobile, bias the crop left so the bonnet/headlights are framed
+  const videoObjPos = compact ? '28% center' : 'center'
+
   useEffect(() => {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const intro = introRef.current
@@ -197,7 +200,7 @@ export default function Hero() {
           preload="auto"
           poster="/hero-poster.webp"
           src="/hero-video.mp4"
-          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: videoObjPos }}
         />
         <video
           ref={loopRef}
@@ -212,6 +215,7 @@ export default function Hero() {
             width: '100%',
             height: '100%',
             objectFit: 'cover',
+            objectPosition: videoObjPos,
             opacity: 0,
             transition: 'opacity .5s ease',
           }}
@@ -282,16 +286,16 @@ export default function Hero() {
           }}
         >
           <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#4CC163', animation: 'msPulse 2s ease-in-out infinite' }} />
-          <span style={{ fontSize: 12.5, fontWeight: 600, letterSpacing: '.18em', color: 'rgba(234,240,247,.85)' }}>
+          <span style={{ fontSize: compact ? 10.5 : 12.5, fontWeight: 600, letterSpacing: compact ? '.12em' : '.18em', color: 'rgba(234,240,247,.85)' }}>
             MOBILE MECHANICS · ALWAYS AVAILABLE
           </span>
         </div>
         <h1
           style={{
-            margin: '26px 0 0',
+            margin: compact ? '18px 0 0' : '26px 0 0',
             maxWidth: 1060,
-            fontSize: 'clamp(44px,7.4vw,94px)',
-            lineHeight: 1.02,
+            fontSize: 'clamp(30px,8vw,94px)',
+            lineHeight: 1.05,
             fontWeight: 800,
             letterSpacing: '-.025em',
             color: '#FFFFFF',
@@ -347,8 +351,8 @@ export default function Hero() {
           style={{
             margin: '20px 0 0',
             maxWidth: 1060,
-            fontSize: 'clamp(40px,6.4vw,82px)',
-            lineHeight: 1.04,
+            fontSize: 'clamp(28px,7vw,82px)',
+            lineHeight: 1.06,
             fontWeight: 800,
             letterSpacing: '-.025em',
             color: '#FFFFFF',
