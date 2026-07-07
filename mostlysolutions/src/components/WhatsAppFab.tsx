@@ -1,4 +1,4 @@
-const WHATSAPP_URL = 'https://wa.me/441189000000?text=Hi%20MostlySolutions%2C%20I%27d%20like%20to%20book%20a%20mobile%20mechanic.'
+const WHATSAPP_URL = 'https://wa.me/447722019897?text=Hi%20MostlySolutions%2C%20I%27d%20like%20to%20book%20a%20mobile%20mechanic.'
 
 export default function WhatsAppFab() {
   return (

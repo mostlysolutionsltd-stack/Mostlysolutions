@@ -144,7 +144,7 @@ export default function Booking() {
               <a href="tel:+441189000000" style={{ color: '#2FA8D8', textDecoration: 'none', fontSize: 16, fontWeight: 700 }}>
                 +44 118 900 0000
               </a>
-              <a href="https://wa.me/441189000000" target="_blank" rel="noopener noreferrer" style={{ color: '#4CC163', textDecoration: 'none', fontSize: 16, fontWeight: 700 }}>
+              <a href="https://wa.me/447722019897" target="_blank" rel="noopener noreferrer" style={{ color: '#4CC163', textDecoration: 'none', fontSize: 16, fontWeight: 700 }}>
                 WhatsApp Us
               </a>
             </div>

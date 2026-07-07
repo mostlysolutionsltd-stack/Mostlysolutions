@@ -5,6 +5,7 @@ import Services from '@/components/Services'
 import WhyUs from '@/components/WhyUs'
 import BrandsMarquee from '@/components/BrandsMarquee'
 import Reviews from '@/components/Reviews'
+import Stories from '@/components/Stories'
 import Locations from '@/components/Locations'
 import FAQ from '@/components/FAQ'
 import Booking from '@/components/Booking'
@@ -22,6 +23,7 @@ export default function Home() {
         <WhyUs />
         <BrandsMarquee />
         <Reviews />
+        <Stories />
         <Locations />
         <FAQ />
         <Booking />

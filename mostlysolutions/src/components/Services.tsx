@@ -50,8 +50,8 @@ export default function Services() {
         style={{
           marginTop: 'clamp(40px,6vw,64px)',
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit,minmax(min(280px,100%),1fr))',
-          gap: 24,
+          gridTemplateColumns: 'repeat(auto-fit,minmax(min(235px,100%),1fr))',
+          gap: 20,
         }}
       >
         {SERVICES.map((svc) => (

@@ -313,6 +313,14 @@ h4 {
   overflow: hidden;
 }
 
+/* ---------- Stories / Instagram gallery ---------- */
+.ms-ig-viewlink {
+  transition: color 0.2s ease;
+}
+.ms-ig-viewlink:hover {
+  color: #4cc163;
+}
+
 /* ---------- Reveal ---------- */
 .ms-reveal-hidden {
   opacity: 0;

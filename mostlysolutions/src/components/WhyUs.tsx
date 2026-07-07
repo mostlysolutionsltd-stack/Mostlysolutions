@@ -54,8 +54,8 @@ export default function WhyUs() {
           style={{
             marginTop: 'clamp(40px,6vw,64px)',
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit,minmax(min(260px,100%),1fr))',
-            gap: 22,
+            gridTemplateColumns: 'repeat(auto-fit,minmax(min(196px,100%),1fr))',
+            gap: 18,
           }}
         >
           {WHY.map((item) => (
