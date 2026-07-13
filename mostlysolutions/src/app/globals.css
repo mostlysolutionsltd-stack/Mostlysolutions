@@ -109,6 +109,27 @@ h4 {
     transform: scale(1.05);
   }
 }
+@keyframes msShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-7px);
+  }
+  40% {
+    transform: translateX(7px);
+  }
+  60% {
+    transform: translateX(-5px);
+  }
+  80% {
+    transform: translateX(5px);
+  }
+}
+.ms-shake {
+  animation: msShake 0.45s ease;
+}
 
 /* ---------- Shared gradient text ---------- */
 .ms-grad-text {

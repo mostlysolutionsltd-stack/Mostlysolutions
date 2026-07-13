@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, type FormEvent } from 'react'
+import { useState, type FormEvent, type ChangeEvent, type FocusEvent } from 'react'
 import Reveal from './Reveal'
 
 const STEPS = [
@@ -49,6 +49,13 @@ function whatsappUrl(b: Booking) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`
 }
 
+type Values = { name: string; email: string; phone: string; reg: string; service: string; date: string; notes: string }
+type Errors = Partial<Record<keyof Values, string>>
+
+const EMPTY_VALUES: Values = { name: '', email: '', phone: '', reg: '', service: '', date: '', notes: '' }
+// Fields with a green ✓ affordance when valid.
+const CHECK_FIELDS: (keyof Values)[] = ['name', 'email', 'phone', 'reg']
+
 export default function Booking() {
   const [submitted, setSubmitted] = useState(false)
   const [sending, setSending] = useState(false)
@@ -56,25 +63,109 @@ export default function Booking() {
   const [errorMsg, setErrorMsg] = useState('')
   const [lastBooking, setLastBooking] = useState<Booking | null>(null)
 
+  const [values, setValues] = useState<Values>(EMPTY_VALUES)
+  const [errors, setErrors] = useState<Errors>({})
+  const [touched, setTouched] = useState<Partial<Record<keyof Values, boolean>>>({})
+  const [shake, setShake] = useState(false)
+  // Local (not UTC) YYYY-MM-DD for the date `min` attribute and past-date checks.
+  const [todayISO] = useState(() => new Date().toLocaleDateString('en-CA'))
+
   const submitLabel = sending ? 'Sending…' : sendError ? 'Try Again — Confirm Booking' : 'Confirm Booking'
+
+  // Returns '' when valid, else the message to display.
+  const validateField = (name: keyof Values, raw: string): string => {
+    const v = raw.trim()
+    switch (name) {
+      case 'name':
+        if (v.length < 2) return 'Please enter your full name'
+        if (!/^[A-Za-z][A-Za-z\s'\-.]*$/.test(v)) return 'Name can only contain letters'
+        return ''
+      case 'email':
+        if (!/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(v)) return 'Enter a valid email address (e.g. name@example.com)'
+        return ''
+      case 'phone': {
+        const cleaned = v.replace(/[\s\-()]/g, '')
+        if (!/^(\+44\d{9,10}|0\d{9,10})$/.test(cleaned)) return 'Enter a valid UK phone number (07… or +44…)'
+        return ''
+      }
+      case 'reg': {
+        const cleaned = v.replace(/\s/g, '').toUpperCase()
+        if (!/^[A-Z0-9]{2,8}$/.test(cleaned)) return 'Enter a valid UK registration (e.g. AB12 CDE)'
+        return ''
+      }
+      case 'service':
+        if (!v) return 'Please select a service'
+        return ''
+      case 'date':
+        if (!v) return 'Please choose a date'
+        if (v < todayISO) return 'Date cannot be in the past'
+        return ''
+      default:
+        return ''
+    }
+  }
+
+  const isValid = (name: keyof Values) =>
+    Boolean(touched[name]) && values[name].trim() !== '' && validateField(name, values[name]) === ''
+
+  const borderFor = (name: keyof Values) => {
+    if (errors[name]) return '#F0716B'
+    if (isValid(name)) return 'rgba(76,193,99,.55)'
+    return 'rgba(255,255,255,.12)'
+  }
+
+  // Live input masks + re-validate once a field already shows an error.
+  const handleChange =
+    (name: keyof Values) =>
+    (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+      let val = e.target.value
+      if (name === 'phone') val = val.replace(/[^\d+\s\-()]/g, '')
+      if (name === 'reg') val = val.toUpperCase()
+      setValues((prev) => ({ ...prev, [name]: val }))
+      setErrors((prev) => (prev[name] ? { ...prev, [name]: validateField(name, val) } : prev))
+    }
+
+  const handleBlur =
+    (name: keyof Values, required = true) =>
+    (e: FocusEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+      const val = e.target.value
+      setTouched((prev) => ({ ...prev, [name]: true }))
+      // Empty, non-required field on blur stays neutral — no error, no check.
+      if (!required && !val.trim()) {
+        setErrors((prev) => ({ ...prev, [name]: '' }))
+        return
+      }
+      setErrors((prev) => ({ ...prev, [name]: validateField(name, val) }))
+    }
 
   const submitForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const form = e.currentTarget
-    if (!form.checkValidity()) {
-      form.reportValidity()
+    if (sending) return
+
+    // Validate every required field at once.
+    const fields: (keyof Values)[] = ['name', 'email', 'phone', 'reg', 'service', 'date']
+    const nextErrors: Errors = {}
+    fields.forEach((f) => {
+      const err = validateField(f, values[f])
+      if (err) nextErrors[f] = err
+    })
+    setTouched((prev) => ({ ...prev, name: true, email: true, phone: true, reg: true, service: true, date: true }))
+
+    if (Object.keys(nextErrors).length > 0) {
+      setErrors(nextErrors)
+      setShake(true)
       return
     }
-    if (sending) return
-    const fd = new FormData(form)
+    setErrors({})
+
     const data = {
-      name: String(fd.get('name') || ''),
-      email: String(fd.get('email') || ''),
-      phone: String(fd.get('phone') || ''),
-      reg: String(fd.get('reg') || ''),
-      service: String(fd.get('service') || ''),
-      date: String(fd.get('date') || ''),
-      notes: String(fd.get('notes') || ''),
+      name: values.name.trim(),
+      email: values.email.trim(),
+      phone: values.phone.trim(),
+      reg: values.reg.trim(),
+      service: values.service,
+      date: values.date,
+      notes: values.notes.trim(),
     }
     setSending(true)
     setSendError(false)
@@ -263,23 +354,107 @@ export default function Booking() {
               </button>
             </div>
           ) : (
-            <form onSubmit={submitForm} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(220px,100%),1fr))', gap: 14 }}>
-              <input required name="name" placeholder="Full Name *" className="ms-input" />
-              <input required type="email" name="email" placeholder="Email Address *" className="ms-input" />
-              <input required type="tel" name="phone" placeholder="Phone Number *" className="ms-input" />
-              <input required name="reg" placeholder="Vehicle Registration *" className="ms-input" />
-              <select required name="service" defaultValue="" className="ms-input" style={inputStyle}>
-                <option value="" disabled>
-                  Select a service… *
-                </option>
-                {SERVICE_OPTIONS.map((opt) => (
-                  <option key={opt} value={opt} style={{ color: '#04101F' }}>
-                    {opt}
+            <form
+              noValidate
+              onSubmit={submitForm}
+              className={shake ? 'ms-shake' : undefined}
+              onAnimationEnd={() => setShake(false)}
+              style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(220px,100%),1fr))', gap: 14 }}
+            >
+              {([
+                { name: 'name', placeholder: 'Full Name *', type: 'text', autoComplete: 'name' },
+                { name: 'email', placeholder: 'Email Address *', type: 'email', autoComplete: 'email' },
+                { name: 'phone', placeholder: 'Phone Number *', type: 'tel', autoComplete: 'tel' },
+                { name: 'reg', placeholder: 'Vehicle Registration *', type: 'text', autoComplete: 'off' },
+              ] as const).map((f) => (
+                <div key={f.name} style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                  <div style={{ position: 'relative' }}>
+                    <input
+                      name={f.name}
+                      type={f.type}
+                      autoComplete={f.autoComplete}
+                      placeholder={f.placeholder}
+                      className="ms-input"
+                      value={values[f.name]}
+                      onChange={handleChange(f.name)}
+                      onBlur={handleBlur(f.name)}
+                      aria-invalid={Boolean(errors[f.name])}
+                      style={{
+                        borderColor: borderFor(f.name),
+                        paddingRight: CHECK_FIELDS.includes(f.name) ? 40 : undefined,
+                        transition: 'border-color .3s ease',
+                      }}
+                    />
+                    {isValid(f.name) && (
+                      <span
+                        aria-hidden
+                        style={{
+                          position: 'absolute',
+                          right: 14,
+                          top: '50%',
+                          transform: 'translateY(-50%)',
+                          fontSize: 14,
+                          color: '#4CC163',
+                          pointerEvents: 'none',
+                        }}
+                      >
+                        ✓
+                      </span>
+                    )}
+                  </div>
+                  {errors[f.name] && (
+                    <span style={{ fontSize: 12, color: '#F0716B', paddingLeft: 4 }}>{errors[f.name]}</span>
+                  )}
+                </div>
+              ))}
+              <div style={{ ...inputStyle, display: 'flex', flexDirection: 'column', gap: 6 }}>
+                <select
+                  name="service"
+                  className="ms-input"
+                  value={values.service}
+                  onChange={handleChange('service')}
+                  onBlur={handleBlur('service')}
+                  aria-invalid={Boolean(errors.service)}
+                  style={{ borderColor: borderFor('service'), transition: 'border-color .3s ease' }}
+                >
+                  <option value="" disabled>
+                    Select a service… *
                   </option>
-                ))}
-              </select>
-              <input required type="date" name="date" className="ms-input" style={{ ...inputStyle, colorScheme: 'dark' }} />
-              <textarea name="notes" placeholder="Additional Notes" rows={3} className="ms-input" style={{ ...inputStyle, resize: 'vertical' }} />
+                  {SERVICE_OPTIONS.map((opt) => (
+                    <option key={opt} value={opt} style={{ color: '#04101F' }}>
+                      {opt}
+                    </option>
+                  ))}
+                </select>
+                {errors.service && (
+                  <span style={{ fontSize: 12, color: '#F0716B', paddingLeft: 4 }}>{errors.service}</span>
+                )}
+              </div>
+              <div style={{ ...inputStyle, display: 'flex', flexDirection: 'column', gap: 6 }}>
+                <input
+                  type="date"
+                  name="date"
+                  min={todayISO}
+                  className="ms-input"
+                  value={values.date}
+                  onChange={handleChange('date')}
+                  onBlur={handleBlur('date')}
+                  aria-invalid={Boolean(errors.date)}
+                  style={{ colorScheme: 'dark', borderColor: borderFor('date'), transition: 'border-color .3s ease' }}
+                />
+                {errors.date && (
+                  <span style={{ fontSize: 12, color: '#F0716B', paddingLeft: 4 }}>{errors.date}</span>
+                )}
+              </div>
+              <textarea
+                name="notes"
+                placeholder="Additional Notes"
+                rows={3}
+                className="ms-input"
+                value={values.notes}
+                onChange={handleChange('notes')}
+                style={{ ...inputStyle, resize: 'vertical' }}
+              />
               <button
                 type="submit"
                 className="ms-btn-grad"
