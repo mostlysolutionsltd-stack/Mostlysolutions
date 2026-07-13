@@ -23,11 +23,38 @@ const inputStyle = {
   gridColumn: '1 / -1',
 } as const
 
+const WHATSAPP_NUMBER = '447722019897'
+
+type Booking = {
+  name: string
+  email: string
+  phone: string
+  reg: string
+  service: string
+  date: string
+  notes: string
+}
+
+function whatsappUrl(b: Booking) {
+  const lines = [
+    'Hi MostlySolutions, I just booked a mobile mechanic:',
+    '',
+    `Name: ${b.name}`,
+    `Phone: ${b.phone}`,
+    `Vehicle Reg: ${b.reg}`,
+    `Service: ${b.service}`,
+    `Preferred Date: ${b.date}`,
+    ...(b.notes ? [`Notes: ${b.notes}`] : []),
+  ]
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`
+}
+
 export default function Booking() {
   const [submitted, setSubmitted] = useState(false)
   const [sending, setSending] = useState(false)
   const [sendError, setSendError] = useState(false)
   const [errorMsg, setErrorMsg] = useState('')
+  const [lastBooking, setLastBooking] = useState<Booking | null>(null)
 
   const submitLabel = sending ? 'Sending…' : sendError ? 'Try Again — Confirm Booking' : 'Confirm Booking'
 
@@ -70,6 +97,7 @@ export default function Booking() {
       if (!res.ok || !result?.success) {
         throw new Error(result?.message || result?.detail || `Send failed (HTTP ${res.status}).`)
       }
+      setLastBooking(data)
       setSubmitted(true)
       setSending(false)
     } catch (err) {
@@ -190,6 +218,33 @@ export default function Booking() {
               <p style={{ margin: '12px auto 0', maxWidth: 340, fontSize: 14.5, lineHeight: 1.6, color: 'rgba(234,240,247,.65)' }}>
                 Thanks — we&apos;ll confirm your appointment within 2 hours. Keep your phone handy.
               </p>
+              {lastBooking && (
+                <a
+                  href={whatsappUrl(lastBooking)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: 9,
+                    marginTop: 26,
+                    padding: '13px 24px',
+                    borderRadius: 99,
+                    background: '#25D366',
+                    color: '#04101F',
+                    fontSize: 14.5,
+                    fontWeight: 700,
+                    textDecoration: 'none',
+                    boxShadow: '0 6px 20px rgba(37,211,102,.35)',
+                  }}
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                    <path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.5 9.5 0 01-4.83-1.32l-.35-.2-3.59.94.96-3.5-.23-.36a9.45 9.45 0 01-1.45-5.05c0-5.23 4.26-9.49 9.5-9.49 2.54 0 4.92.99 6.71 2.79a9.42 9.42 0 012.78 6.71c0 5.24-4.26 9.5-9.5 9.5zm8.08-17.57A11.4 11.4 0 0012.05.5C5.76.5.65 5.61.65 11.9c0 2.09.55 4.13 1.59 5.93L.5 23.5l5.82-1.53a11.35 11.35 0 005.72 1.46h.01c6.29 0 11.4-5.11 11.4-11.4 0-3.05-1.19-5.91-3.32-8.1z" />
+                  </svg>
+                  Also send via WhatsApp
+                </a>
+              )}
               <button
                 onClick={() => setSubmitted(false)}
                 style={{
