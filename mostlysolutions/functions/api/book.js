@@ -15,7 +15,9 @@
  *                      "MostlySolutions <bookings@yourdomain.co.uk>" to send anywhere.)
  */
 
-const DEFAULT_TO = 'Mostlysolutionsltd@gmail.com'
+// Must be lowercase to match the Resend account address exactly — Resend's
+// test-mode recipient check is case-sensitive, so "Mostly…" would be rejected.
+const DEFAULT_TO = 'mostlysolutionsltd@gmail.com'
 const DEFAULT_FROM = 'MostlySolutions Website <onboarding@resend.dev>'
 
 function esc(v) {
@@ -88,8 +90,21 @@ export async function onRequestPost(context) {
 
   const text = rows.map(([k, v]) => `${k}: ${v}`).join('\n')
 
-  const to = env.BOOKING_TO || DEFAULT_TO
+  const to = (env.BOOKING_TO || DEFAULT_TO).toLowerCase()
   const from = env.BOOKING_FROM || DEFAULT_FROM
+
+  const payload = {
+    from,
+    to: [to],
+    subject: `New Booking — ${service} (${name})`,
+    html,
+    text,
+  }
+  // Only set reply_to once a real domain is verified (BOOKING_FROM configured).
+  // In Resend's test mode, an external reply_to can trip the recipient check.
+  if (env.BOOKING_FROM) {
+    payload.reply_to = email // replies go straight to the customer
+  }
 
   try {
     const res = await fetch('https://api.resend.com/emails', {
@@ -98,14 +113,7 @@ export async function onRequestPost(context) {
         Authorization: `Bearer ${env.RESEND_API_KEY}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        from,
-        to: [to],
-        reply_to: email, // replies go straight to the customer
-        subject: `New Booking — ${service} (${name})`,
-        html,
-        text,
-      }),
+      body: JSON.stringify(payload),
     })
 
     if (!res.ok) {

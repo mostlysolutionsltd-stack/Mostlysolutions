@@ -27,6 +27,7 @@ export default function Booking() {
   const [submitted, setSubmitted] = useState(false)
   const [sending, setSending] = useState(false)
   const [sendError, setSendError] = useState(false)
+  const [errorMsg, setErrorMsg] = useState('')
 
   const submitLabel = sending ? 'Sending…' : sendError ? 'Try Again — Confirm Booking' : 'Confirm Booking'
 
@@ -50,6 +51,7 @@ export default function Booking() {
     }
     setSending(true)
     setSendError(false)
+    setErrorMsg('')
     try {
       // Cloudflare Pages Function — sends the booking via Resend (see functions/api/book.js)
       const res = await fetch('/api/book', {
@@ -57,13 +59,26 @@ export default function Booking() {
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(data),
       })
-      const result = await res.json().catch(() => null)
-      if (!res.ok || !result?.success) throw new Error(result?.message || 'send failed')
+      const raw = await res.text()
+      let result: { success?: boolean; message?: string; detail?: string } | null = null
+      try {
+        result = JSON.parse(raw)
+      } catch {
+        // Not JSON — the endpoint likely wasn't found (got HTML) or crashed.
+        throw new Error(`Unexpected response (HTTP ${res.status}). The /api/book function may not be deployed.`)
+      }
+      if (!res.ok || !result?.success) {
+        throw new Error(result?.message || result?.detail || `Send failed (HTTP ${res.status}).`)
+      }
       setSubmitted(true)
       setSending(false)
-    } catch {
+    } catch (err) {
       // Don't hijack the page with a mailto: redirect — show an inline
       // message and let the customer retry or reach us by phone/WhatsApp.
+      const msg = err instanceof Error ? err.message : 'Something went wrong.'
+      // eslint-disable-next-line no-console
+      console.error('Booking submit failed:', msg)
+      setErrorMsg(msg)
       setSending(false)
       setSendError(true)
     }
@@ -235,6 +250,9 @@ export default function Booking() {
                   <a href="tel:+441189000000" style={{ color: '#2FA8D8', fontWeight: 700, textDecoration: 'none' }}>
                     +44 118 900 0000
                   </a>{' '}
+                  {errorMsg && (
+                    <span style={{ display: 'block', marginTop: 8, fontSize: 11.5, opacity: 0.7 }}>({errorMsg})</span>
+                  )}
                   ·{' '}
                   <a href="https://wa.me/447722019897" target="_blank" rel="noopener noreferrer" style={{ color: '#4CC163', fontWeight: 700, textDecoration: 'none' }}>
                     WhatsApp
