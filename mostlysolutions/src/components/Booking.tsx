@@ -39,38 +39,31 @@ export default function Booking() {
     }
     if (sending) return
     const fd = new FormData(form)
-    const data: Record<string, string> = {
-      _subject: 'New Booking Request — MostlySolutions Website',
-      _template: 'table',
-      'Full Name': String(fd.get('name') || ''),
-      Email: String(fd.get('email') || ''),
-      Phone: String(fd.get('phone') || ''),
-      'Vehicle Registration': String(fd.get('reg') || ''),
-      Service: String(fd.get('service') || ''),
-      'Preferred Date': String(fd.get('date') || ''),
-      Notes: String(fd.get('notes') || '') || '—',
+    const data = {
+      name: String(fd.get('name') || ''),
+      email: String(fd.get('email') || ''),
+      phone: String(fd.get('phone') || ''),
+      reg: String(fd.get('reg') || ''),
+      service: String(fd.get('service') || ''),
+      date: String(fd.get('date') || ''),
+      notes: String(fd.get('notes') || ''),
     }
     setSending(true)
     setSendError(false)
     try {
-      const res = await fetch('https://formsubmit.co/ajax/Mostlysolutionsltd@gmail.com', {
+      // Cloudflare Pages Function — sends the booking via Resend (see functions/api/book.js)
+      const res = await fetch('/api/book', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(data),
       })
-      if (!res.ok) throw new Error('send failed')
+      const result = await res.json().catch(() => null)
+      if (!res.ok || !result?.success) throw new Error(result?.message || 'send failed')
       setSubmitted(true)
       setSending(false)
     } catch {
-      const body = Object.entries(data)
-        .filter(([k]) => !k.startsWith('_'))
-        .map(([k, v]) => `${k}: ${v}`)
-        .join('\n')
-      window.location.href =
-        'mailto:Mostlysolutionsltd@gmail.com?subject=' +
-        encodeURIComponent('New Booking Request') +
-        '&body=' +
-        encodeURIComponent(body)
+      // Don't hijack the page with a mailto: redirect — show an inline
+      // message and let the customer retry or reach us by phone/WhatsApp.
       setSending(false)
       setSendError(true)
     }
@@ -224,6 +217,30 @@ export default function Booking() {
               >
                 {submitLabel}
               </button>
+              {sendError && (
+                <div
+                  style={{
+                    gridColumn: '1 / -1',
+                    padding: '12px 16px',
+                    borderRadius: 12,
+                    background: 'rgba(255,99,99,.08)',
+                    border: '1px solid rgba(255,99,99,.3)',
+                    fontSize: 13,
+                    lineHeight: 1.55,
+                    color: 'rgba(234,240,247,.8)',
+                    textAlign: 'center',
+                  }}
+                >
+                  Sorry, we couldn&apos;t send that just now. Please try again, or reach us directly:{' '}
+                  <a href="tel:+441189000000" style={{ color: '#2FA8D8', fontWeight: 700, textDecoration: 'none' }}>
+                    +44 118 900 0000
+                  </a>{' '}
+                  ·{' '}
+                  <a href="https://wa.me/447722019897" target="_blank" rel="noopener noreferrer" style={{ color: '#4CC163', fontWeight: 700, textDecoration: 'none' }}>
+                    WhatsApp
+                  </a>
+                </div>
+              )}
               <p style={{ gridColumn: '1 / -1', margin: 0, fontSize: 11.5, lineHeight: 1.5, color: 'rgba(234,240,247,.4)', textAlign: 'center' }}>
                 By submitting you agree to be contacted by MostlySolutions regarding your booking.
               </p>
