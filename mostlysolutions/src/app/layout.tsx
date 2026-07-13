@@ -1,25 +1,20 @@
 import type { Metadata, Viewport } from 'next'
-import { Poppins, Inter } from 'next/font/google'
+import { Archivo } from 'next/font/google'
 import './globals.css'
 
-const poppins = Poppins({
+const archivo = Archivo({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800', '900'],
-  variable: '--font-poppins',
-  display: 'swap',
-})
-
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  variable: '--font-inter',
+  style: ['normal', 'italic'],
+  variable: '--font-archivo',
   display: 'swap',
 })
 
 export const metadata: Metadata = {
-  title: 'MostlySolutions — Premium Mobile Automotive Diagnostics',
+  metadataBase: new URL('https://mostlysolutions.co.uk'),
+  title: "MostlySolutions — UK's #1 Mobile Car Repairing",
   description:
-    'State-of-the-art diagnostic equipment and performance tuning delivered directly to your driveway. Serving Reading and London.',
+    'Premium mobile automotive diagnostics and repair delivered to your door. Expert mechanical support across Reading and London.',
   keywords: [
     'mobile mechanic',
     'automotive diagnostics',
@@ -29,20 +24,17 @@ export const metadata: Metadata = {
     'vehicle diagnostics',
   ],
   openGraph: {
-    title: 'MostlySolutions — Premium Mobile Automotive Diagnostics',
+    title: "MostlySolutions — UK's #1 Mobile Car Repairing",
     description:
-      'Expert automotive diagnostics and performance tuning delivered to your location.',
+      'Expert mechanical support at your doorstep. We bring the garage to you, anywhere in England.',
     type: 'website',
     locale: 'en_GB',
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 }
 
 export const viewport: Viewport = {
-  themeColor: '#081A36',
+  themeColor: '#060F1F',
 }
 
 export default function RootLayout({
@@ -51,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
+    <html lang="en" className={archivo.variable}>
       <body>{children}</body>
     </html>
   )

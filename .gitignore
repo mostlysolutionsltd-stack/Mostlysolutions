@@ -1,0 +1,4 @@
+# Loose source / scratch assets — not part of the deployed app
+/design/
+/logo_new.png
+*.mov
