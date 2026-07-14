@@ -80,7 +80,7 @@ export default function ServicePageView({ service }: { service: ServiceContent }
               'radial-gradient(60% 60% at 12% 0%, rgba(47,168,216,.12), transparent 70%), radial-gradient(55% 55% at 100% 100%, rgba(76,193,99,.08), transparent 70%)',
           }}
         >
-          <div style={{ maxWidth: 860, margin: '0 auto' }}>
+          <div style={{ maxWidth: 1100, margin: '0 auto' }}>
             <nav aria-label="Breadcrumb" style={{ fontSize: 12.5, fontWeight: 600, color: 'rgba(234,240,247,.5)' }}>
               <Link href="/" style={{ color: 'inherit', textDecoration: 'none' }}>
                 Home
