@@ -98,7 +98,7 @@ export default function Hero() {
     //   return -> ease back to Stage 1
     //   rest   -> stay on Stage 1 for REST_MS, then replay the intro and cycle
     const HOLD_MS = 2800
-    const REST_MS = 10000
+    const REST_MS = 7000
     let phase: 'intro' | 'hold' | 'return' | 'rest' = 'intro'
     let holdStart = 0
     let restStart = 0
