@@ -334,6 +334,58 @@ h4 {
   overflow: hidden;
 }
 
+/* ---------- Service pages ---------- */
+.ms-wa-ghost {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 99px;
+  transition: color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+}
+.ms-wa-ghost:hover {
+  color: #25d366;
+  border-color: #25d366;
+  box-shadow: 0 0 0 1px rgba(37, 211, 102, 0.35), 0 8px 30px rgba(37, 211, 102, 0.35);
+  transform: translateY(-2px);
+}
+.ms-svc-inline-link {
+  color: #2fa8d8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+.ms-svc-inline-link:hover {
+  color: #4cc163;
+}
+.ms-card-title-link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.ms-card-title-link:hover {
+  color: #4cc163;
+}
+.ms-learn-link {
+  color: #2fa8d8;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+.ms-learn-link:hover {
+  color: #4cc163;
+}
+.ms-book-link {
+  color: rgba(234, 240, 247, 0.55);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+.ms-book-link:hover {
+  color: #4cc163;
+}
+
 /* ---------- Stories / Instagram gallery ---------- */
 .ms-ig-viewlink {
   transition: color 0.2s ease;
