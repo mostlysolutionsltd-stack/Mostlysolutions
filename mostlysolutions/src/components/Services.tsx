@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Reveal from './Reveal'
 
 const SERVICES = [
@@ -7,6 +8,7 @@ const SERVICES = [
     title: 'Expert Automotive Diagnostics',
     desc: 'OBD-II scanning, ECU analysis, live sensor data, and fault code resolution using Bosch-grade equipment.',
     img: '/services/diagnostics.webp',
+    slug: 'car-diagnostics-london',
   },
   {
     tag: 'Quote After Inspection',
@@ -14,6 +16,7 @@ const SERVICES = [
     title: 'Mechanical Work',
     desc: 'Brakes, suspension, exhausts, servicing, and MOT prep. Full mechanical repairs at your location.',
     img: '/services/mechanical.webp',
+    slug: 'mechanical-work-london',
   },
   {
     tag: 'Condition-Based Quote',
@@ -21,6 +24,7 @@ const SERVICES = [
     title: 'Electrical & Batteries',
     desc: 'Alternator testing, battery health checks, starter motor replacement, and full electrical diagnostics.',
     img: '/services/electrical.webp',
+    slug: 'electrical-battery-london',
   },
   {
     tag: 'Condition-Based Quote',
@@ -28,6 +32,7 @@ const SERVICES = [
     title: 'Detailing & Protection',
     desc: 'Professional ceramic coating, paint correction, deep interior cleaning, and protective treatments.',
     img: '/services/detailing.webp',
+    slug: 'car-detailing-london',
   },
 ]
 
@@ -82,13 +87,22 @@ export default function Services() {
               <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '.2em', color: 'var(--blue)', textTransform: 'uppercase' }}>
                 {svc.eyebrow}
               </div>
-              <h3 style={{ margin: '10px 0 0', fontSize: 21, fontWeight: 700, letterSpacing: '-.01em' }}>{svc.title}</h3>
+              <h3 style={{ margin: '10px 0 0', fontSize: 21, fontWeight: 700, letterSpacing: '-.01em' }}>
+                <Link href={`/services/${svc.slug}`} className="ms-card-title-link">
+                  {svc.title}
+                </Link>
+              </h3>
               <p style={{ margin: '12px 0 0', fontSize: 14.5, lineHeight: 1.6, color: 'rgba(234,240,247,.62)', flex: 1 }}>
                 {svc.desc}
               </p>
-              <a href="#booking" className="ms-svc-booklink" style={{ marginTop: 20, fontSize: 14.5, display: 'inline-flex', alignItems: 'center', gap: 7 }}>
-                Book this service <span aria-hidden>→</span>
-              </a>
+              <div style={{ marginTop: 20, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
+                <Link href={`/services/${svc.slug}`} className="ms-learn-link" style={{ fontSize: 14.5, display: 'inline-flex', alignItems: 'center', gap: 7 }}>
+                  Learn More <span aria-hidden>→</span>
+                </Link>
+                <a href="#booking" className="ms-book-link" style={{ fontSize: 14 }}>
+                  Book Service
+                </a>
+              </div>
             </div>
           </Reveal>
         ))}
