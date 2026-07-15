@@ -8,23 +8,13 @@ const WHY = [
   },
   {
     n: '02',
-    title: 'Experienced Technicians',
-    desc: 'All our mechanics are IMI-certified with 10+ years of hands-on experience across major brands.',
+    title: 'Certified Technicians',
+    desc: 'IMI-certified mechanics with 10+ years of experience, using Bosch-grade diagnostic equipment.',
   },
   {
     n: '03',
-    title: 'Specialist Equipment',
-    desc: 'Bosch-grade diagnostic scanners, oscilloscopes, and manufacturer-specific programming tools.',
-  },
-  {
-    n: '04',
-    title: 'Cost Effective',
-    desc: 'No workshop overheads — we pass the savings to you. Transparent pricing, no hidden charges.',
-  },
-  {
-    n: '05',
-    title: 'Quality Parts',
-    desc: 'We only use OEM-grade parts backed by a 12-month warranty. No cheap alternatives, ever.',
+    title: 'Quality Parts, Fair Prices',
+    desc: 'OEM-grade parts backed by a 12-month warranty. No workshop overheads, no hidden charges.',
   },
 ]
 
@@ -46,7 +36,7 @@ export default function WhyUs() {
             The Garage That <span className="ms-grad-text">Comes To You</span>
           </h2>
           <p style={{ margin: '18px auto 0', maxWidth: 560, fontSize: 16.5, lineHeight: 1.65, color: 'rgba(234,240,247,.65)' }}>
-            Five reasons drivers across Reading and London trust us with their vehicles.
+            Three reasons drivers across Reading and London trust us with their vehicles.
           </p>
         </Reveal>
 
@@ -54,8 +44,8 @@ export default function WhyUs() {
           style={{
             marginTop: 'clamp(40px,6vw,64px)',
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit,minmax(min(196px,100%),1fr))',
-            gap: 18,
+            gridTemplateColumns: 'repeat(auto-fit,minmax(min(250px,100%),1fr))',
+            gap: 20,
           }}
         >
           {WHY.map((item) => (

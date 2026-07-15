@@ -386,6 +386,26 @@ h4 {
   color: #4cc163;
 }
 
+/* ---------- Blog: View on Instagram button ---------- */
+.ms-ig-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 99px;
+  padding: 12px 22px;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+.ms-ig-btn:hover {
+  border-color: rgba(76, 193, 99, 0.5);
+  transform: translateY(-2px);
+}
+
 /* ---------- Stories / Instagram gallery ---------- */
 .ms-ig-viewlink {
   transition: color 0.2s ease;
