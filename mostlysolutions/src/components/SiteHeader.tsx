@@ -1,37 +1,36 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 
-const NAV_LINKS = [
-  { label: 'Services', href: '/services' },
-  { label: 'Why Us', href: '#about' },
-  { label: 'Reviews', href: '#reviews' },
-  { label: 'Stories', href: '#gallery' },
-  { label: 'Locations', href: '#locations' },
-  { label: 'FAQ', href: '#faq' },
-  { label: 'Blog', href: '/blog' },
+/**
+ * Shared fixed glass header for all sub-pages (services, blog, posts).
+ * Solid variant — always `rgba(5,12,26,.85)` + blur + bottom border.
+ * `active` highlights the current top-level section.
+ */
+type Active = 'home' | 'services' | 'blog' | null
+
+const LINKS: { label: string; href: string; key: Active }[] = [
+  { label: 'Home', href: '/', key: 'home' },
+  { label: 'Services', href: '/services', key: 'services' },
+  { label: 'Blog', href: '/blog', key: 'blog' },
 ]
 
-function Wordmark({ iconH = 44, nameSize = 14, limitedSize = 9.5 }: { iconH?: number; nameSize?: number; limitedSize?: number }) {
+function Wordmark() {
   return (
     <>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/icon.webp" alt="Mostly Solutions" style={{ height: iconH, width: 'auto', display: 'block' }} />
+      <img src="/icon.webp" alt="Mostly Solutions" style={{ height: 44, width: 'auto', display: 'block' }} />
       <span style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
-        <span style={{ fontWeight: 800, fontSize: nameSize, letterSpacing: '.13em', color: '#FFFFFF' }}>
-          MOSTLY SOLUTIONS
-        </span>
-        <span style={{ fontWeight: 600, fontSize: limitedSize, letterSpacing: '.46em', color: '#57C46A', marginTop: 4 }}>
-          LIMITED
-        </span>
+        <span style={{ fontWeight: 800, fontSize: 14, letterSpacing: '.13em', color: '#FFFFFF' }}>MOSTLY SOLUTIONS</span>
+        <span style={{ fontWeight: 600, fontSize: 9.5, letterSpacing: '.46em', color: '#57C46A', marginTop: 4 }}>LIMITED</span>
       </span>
     </>
   )
 }
 
-export default function Nav() {
+export default function SiteHeader({ active = null }: { active?: Active }) {
   const [wide, setWide] = useState(true)
-  const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
@@ -46,18 +45,21 @@ export default function Nav() {
   }, [])
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
     return () => {
       document.body.style.overflow = ''
     }
   }, [menuOpen])
+
+  const linkStyle = (isActive: boolean) => ({
+    fontSize: 13.5,
+    fontWeight: 500,
+    letterSpacing: '.02em',
+    padding: '9px 13px',
+    whiteSpace: 'nowrap' as const,
+    color: isActive ? '#FFFFFF' : undefined,
+    background: isActive ? 'rgba(255,255,255,.06)' : undefined,
+  })
 
   return (
     <>
@@ -73,48 +75,33 @@ export default function Nav() {
           justifyContent: 'space-between',
           gap: 16,
           padding: '12px clamp(16px,4vw,44px)',
-          background: scrolled ? 'rgba(5,12,26,.85)' : 'transparent',
-          backdropFilter: scrolled ? 'blur(14px)' : 'none',
-          WebkitBackdropFilter: scrolled ? 'blur(14px)' : 'none',
-          borderBottom: `1px solid ${scrolled ? 'rgba(255,255,255,.08)' : 'transparent'}`,
-          transition: 'background .35s ease, border-color .35s ease, backdrop-filter .35s ease',
+          background: 'rgba(5,12,26,.85)',
+          backdropFilter: 'blur(14px)',
+          WebkitBackdropFilter: 'blur(14px)',
+          borderBottom: '1px solid rgba(255,255,255,.08)',
         }}
       >
-        <a href="#top" style={{ display: 'flex', alignItems: 'center', gap: 11, textDecoration: 'none', flex: 'none' }}>
+        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 11, textDecoration: 'none', flex: 'none' }}>
           <Wordmark />
-        </a>
+        </Link>
 
         {wide ? (
           <>
             <div style={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-              {NAV_LINKS.map((lnk) => (
-                <a
-                  key={lnk.href}
-                  href={lnk.href}
-                  className="ms-navlink"
-                  style={{
-                    fontSize: 13.5,
-                    fontWeight: 500,
-                    letterSpacing: '.02em',
-                    padding: '9px 13px',
-                    whiteSpace: 'nowrap',
-                  }}
-                >
+              {LINKS.map((lnk) => (
+                <Link key={lnk.href} href={lnk.href} className="ms-navlink" style={linkStyle(active === lnk.key)}>
                   {lnk.label}
-                </a>
+                </Link>
               ))}
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, flex: 'none' }}>
-              <a href="tel:+441189000000" className="ms-callpill" style={{ fontSize: 13, padding: '10px 16px' }}>
-                Call Now
-              </a>
-              <a
-                href="#booking"
+              <Link
+                href="/#booking"
                 className="ms-btn-grad"
                 style={{ fontSize: 13, padding: '10px 18px', boxShadow: '0 4px 18px rgba(47,168,216,.35)' }}
               >
                 Book Service
-              </a>
+              </Link>
             </div>
           </>
         ) : (
@@ -175,13 +162,13 @@ export default function Nav() {
             </button>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginTop: 40 }}>
-            {NAV_LINKS.map((lnk) => (
-              <a
+            {LINKS.map((lnk) => (
+              <Link
                 key={lnk.href}
                 href={lnk.href}
                 onClick={() => setMenuOpen(false)}
                 style={{
-                  color: '#EAF0F7',
+                  color: active === lnk.key ? '#57C46A' : '#EAF0F7',
                   textDecoration: 'none',
                   fontSize: 26,
                   fontWeight: 700,
@@ -190,7 +177,7 @@ export default function Nav() {
                 }}
               >
                 {lnk.label}
-              </a>
+              </Link>
             ))}
           </div>
           <div style={{ display: 'flex', gap: 12, marginTop: 'auto', paddingBottom: 14 }}>
@@ -202,14 +189,14 @@ export default function Nav() {
             >
               Call Now
             </a>
-            <a
-              href="#booking"
+            <Link
+              href="/#booking"
               onClick={() => setMenuOpen(false)}
               className="ms-btn-grad"
               style={{ flex: 1, textAlign: 'center', fontSize: 15, padding: 15 }}
             >
               Book Service
-            </a>
+            </Link>
           </div>
         </div>
       )}
