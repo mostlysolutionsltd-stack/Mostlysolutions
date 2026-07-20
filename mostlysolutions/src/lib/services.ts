@@ -50,9 +50,9 @@ export const SERVICE_ANCHORS: { slug: string; phrases: string[] }[] = [
 export const SERVICES: ServiceContent[] = [
   {
     slug: 'car-diagnostics-london',
-    metaTitle: 'Mobile Car Diagnostics London | Mostly Solutions',
+    metaTitle: 'Mobile Car Diagnostics Service in London | Expert Vehicle Diagnostics',
     metaDescription:
-      'Professional mobile car diagnostics in London. Bosch diagnostic equipment brought to your home, workplace or roadside. Book expert fault diagnosis today.',
+      'Get fast and accurate mobile car diagnostics service in London. We identify engine faults, warning lights and performance issues at your home or workplace, saving you time and hassle.',
     breadcrumb: 'Car Diagnostics',
     h1: 'Mobile Car Diagnostics Service in London',
     tagline: 'Fast and Reliable Mobile Car Diagnostics at Your Doorstep',
@@ -113,9 +113,9 @@ export const SERVICES: ServiceContent[] = [
   },
   {
     slug: 'mechanical-work-london',
-    metaTitle: 'Mobile Mechanical Repairs London | Mostly Solutions',
+    metaTitle: 'Mobile Mechanical Work in London | Car Repair Services',
     metaDescription:
-      'Reliable mobile mechanical work in London — brakes, suspension, cooling systems and more, repaired at your home, workplace or roadside.',
+      'Professional mobile mechanical work in London for brakes, suspension, servicing, engine repairs and more. Experienced mechanics deliver reliable repairs wherever your vehicle is located.',
     breadcrumb: 'Mechanical Work',
     h1: 'Mechanical Work in London',
     tagline: 'Professional Mobile Mechanical Repairs at Your Doorstep',
@@ -183,9 +183,9 @@ export const SERVICES: ServiceContent[] = [
   },
   {
     slug: 'electrical-battery-london',
-    metaTitle: 'Car Battery Replacement & Auto Electrical London | Mostly Solutions',
+    metaTitle: 'Car Electrical & Battery Services in London | Mobile Auto Electrician',
     metaDescription:
-      'Mobile auto electrician in London. Battery testing & replacement, alternator repairs, wiring faults — fixed at your location.',
+      'Expert car electrical and battery services in London. We diagnose electrical faults, replace batteries, repair charging systems and get your vehicle back on the road quickly.',
     breadcrumb: 'Electrical & Battery',
     h1: 'Electrical and Battery Services in London',
     tagline: 'Reliable Mobile Electrical and Battery Services at Your Location',
@@ -253,9 +253,9 @@ export const SERVICES: ServiceContent[] = [
   },
   {
     slug: 'car-detailing-london',
-    metaTitle: 'Mobile Car Detailing & Ceramic Coating London | Mostly Solutions',
+    metaTitle: 'Mobile Car Detailing in London | Professional Car Detailing Services',
     metaDescription:
-      'Professional mobile car detailing in London — deep cleaning, paint correction, ceramic coating and paint protection at your home or workplace.',
+      'Restore your vehicle with premium mobile car detailing in London. We offer interior cleaning, exterior polishing, paint protection and detailing services at your preferred location.',
     breadcrumb: 'Detailing & Protection',
     h1: 'Detailing and Protection Services in London',
     tagline: 'Professional Car Detailing and Vehicle Protection in London',

@@ -12,9 +12,9 @@ const archivo = Archivo({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://mostlysolutions.co.uk'),
-  title: "MostlySolutions — UK's #1 Mobile Car Repairing",
+  title: 'Mobile Car Diagnostics & Repair in London | Mostly Solutions',
   description:
-    'Premium mobile automotive diagnostics and repair delivered to your door. Expert mechanical support across Reading and London.',
+    'Need reliable mobile vehicle repairs? Mostly Solutions provides expert mobile car diagnostics, mechanical repairs, battery services and vehicle detailing across London. Book a trusted mobile technician today.',
   keywords: [
     'mobile mechanic',
     'automotive diagnostics',
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     'vehicle diagnostics',
   ],
   openGraph: {
-    title: "MostlySolutions — UK's #1 Mobile Car Repairing",
+    title: 'Mobile Car Diagnostics & Repair in London | Mostly Solutions',
     description:
-      'Expert mechanical support at your doorstep. We bring the garage to you, anywhere in England.',
+      'Need reliable mobile vehicle repairs? Mostly Solutions provides expert mobile car diagnostics, mechanical repairs, battery services and vehicle detailing across London. Book a trusted mobile technician today.',
     type: 'website',
     locale: 'en_GB',
   },
