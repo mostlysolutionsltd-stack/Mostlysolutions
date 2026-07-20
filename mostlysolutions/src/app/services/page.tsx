@@ -5,14 +5,14 @@ import SiteFooter from '@/components/SiteFooter'
 import { WhatsAppGlyph } from '@/components/icons'
 
 export const metadata: Metadata = {
-  title: 'Mobile Mechanic Services London | Mostly Solutions',
+  title: 'Mobile Automotive Services in London | Mostly Solutions',
   description:
-    'Explore our mobile mechanic services in London — car diagnostics, mechanical work, electrical and battery repairs, and detailing, all brought to your doorstep.',
+    'Discover professional mobile automotive services in London, including car diagnostics, mechanical repairs, electrical and battery services, plus vehicle detailing delivered to your location.',
   alternates: { canonical: '/services' },
   openGraph: {
-    title: 'Mobile Mechanic Services London | Mostly Solutions',
+    title: 'Mobile Automotive Services in London | Mostly Solutions',
     description:
-      'Explore our mobile mechanic services in London — car diagnostics, mechanical work, electrical and battery repairs, and detailing, all brought to your doorstep.',
+      'Discover professional mobile automotive services in London, including car diagnostics, mechanical repairs, electrical and battery services, plus vehicle detailing delivered to your location.',
     url: '/services',
     type: 'website',
     locale: 'en_GB',
