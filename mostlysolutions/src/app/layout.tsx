@@ -1,6 +1,10 @@
 import type { Metadata, Viewport } from 'next'
 import { Archivo } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
+
+const GTM_ID = 'GTM-TCKJZ22B'
+const GA_ID = 'G-QDCM4SDTQC'
 
 const archivo = Archivo({
   subsets: ['latin'],
@@ -31,6 +35,7 @@ export const metadata: Metadata = {
     locale: 'en_GB',
   },
   robots: { index: true, follow: true },
+  verification: { google: 'T9OlO5RfkWMRqkxmomRtSpaJ6E2pXiE4FuZFziE17Ns' },
 }
 
 export const viewport: Viewport = {
@@ -44,7 +49,36 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={archivo.variable}>
-      <body>{children}</body>
+      <head>
+        {/* Google Tag Manager */}
+        <Script id="gtm-base" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM_ID}');`}
+        </Script>
+        {/* Google tag (gtag.js) */}
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+        <Script id="gtag-base" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_ID}');`}
+        </Script>
+      </head>
+      <body>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
+        {children}
+      </body>
     </html>
   )
 }
