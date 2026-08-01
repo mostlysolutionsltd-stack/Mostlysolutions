@@ -70,20 +70,34 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: post.h1,
-    image: [`https://mostlysolutions.co.uk${post.image}`],
+    image: [`https://mostlysolutions.com${post.image}`],
     datePublished: post.datePublished,
     author: { '@type': 'Organization', name: 'Mostly Solutions Ltd' },
     publisher: {
       '@type': 'Organization',
       name: 'Mostly Solutions Ltd',
-      logo: { '@type': 'ImageObject', url: 'https://mostlysolutions.co.uk/icon.webp' },
+      logo: { '@type': 'ImageObject', url: 'https://mostlysolutions.com/icon.webp' },
     },
-    mainEntityOfPage: `https://mostlysolutions.co.uk/blog/${post.slug}`,
+    mainEntityOfPage: `https://mostlysolutions.com/blog/${post.slug}`,
   }
+
+  const faqJsonLd =
+    post.faqs && post.faqs.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: post.faqs.map((f) => ({
+            '@type': 'Question',
+            name: f.q,
+            acceptedAnswer: { '@type': 'Answer', text: f.a },
+          })),
+        }
+      : null
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
       <SiteHeader active="blog" />
 
       <main>
@@ -135,45 +149,110 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           {/* Body */}
           <p style={{ margin: '34px 0 0', fontSize: 16.5, lineHeight: 1.8, color: 'rgba(234,240,247,.8)' }}>{post.intro}</p>
 
-          <h2 style={{ margin: '40px 0 0', fontSize: 'clamp(22px,2.6vw,30px)', fontWeight: 800, letterSpacing: '-.015em', color: '#FFFFFF' }}>The Problem</h2>
-          <p style={{ margin: '14px 0 0', fontSize: 16, lineHeight: 1.75, color: 'rgba(234,240,247,.72)' }}>{post.problem}</p>
+          {post.body ? (
+            /* ---------- Long-form article layout ---------- */
+            <>
+              {post.body.map((block, i) => {
+                if (block.type === 'h2') {
+                  return (
+                    <h2 key={i} style={{ margin: '40px 0 0', fontSize: 'clamp(22px,2.6vw,30px)', fontWeight: 800, letterSpacing: '-.015em', color: '#FFFFFF' }}>
+                      {block.text}
+                    </h2>
+                  )
+                }
+                if (block.type === 'ul') {
+                  return (
+                    <ul key={i} style={{ listStyle: 'none', margin: '18px 0 0', padding: 0, display: 'flex', flexDirection: 'column', gap: 13 }}>
+                      {block.items.map((item) => (
+                        <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+                          <span
+                            style={{
+                              flex: 'none',
+                              width: 20,
+                              height: 20,
+                              borderRadius: '50%',
+                              background: 'linear-gradient(100deg,#4CC163,#2FA8D8)',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              fontSize: 11,
+                              color: '#04101F',
+                              marginTop: 2,
+                            }}
+                          >
+                            ✓
+                          </span>
+                          <span style={{ fontSize: 15.5, lineHeight: 1.55, color: 'rgba(234,240,247,.82)' }}>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )
+                }
+                return (
+                  <p key={i} style={{ margin: '16px 0 0', fontSize: 16, lineHeight: 1.75, color: 'rgba(234,240,247,.72)' }}>
+                    {block.text}
+                  </p>
+                )
+              })}
 
-          <h2 style={{ margin: '40px 0 0', fontSize: 'clamp(22px,2.6vw,30px)', fontWeight: 800, letterSpacing: '-.015em', color: '#FFFFFF' }}>What We Completed</h2>
-          <ul style={{ listStyle: 'none', margin: '18px 0 0', padding: 0, display: 'flex', flexDirection: 'column', gap: 13 }}>
-            {post.checklist.map((item) => (
-              <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
-                <span
-                  style={{
-                    flex: 'none',
-                    width: 20,
-                    height: 20,
-                    borderRadius: '50%',
-                    background: 'linear-gradient(100deg,#4CC163,#2FA8D8)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: 11,
-                    color: '#04101F',
-                    marginTop: 2,
-                  }}
-                >
-                  ✓
-                </span>
-                <span style={{ fontSize: 15.5, lineHeight: 1.55, color: 'rgba(234,240,247,.82)' }}>{item}</span>
-              </li>
-            ))}
-          </ul>
+              {post.faqs && post.faqs.length > 0 && (
+                <>
+                  <h2 style={{ margin: '48px 0 0', fontSize: 'clamp(22px,2.6vw,30px)', fontWeight: 800, letterSpacing: '-.015em', color: '#FFFFFF' }}>FAQs</h2>
+                  {post.faqs.map((f) => (
+                    <div key={f.q} style={{ marginTop: 22 }}>
+                      <h3 style={{ margin: 0, fontSize: 17.5, fontWeight: 700, letterSpacing: '-.01em', color: '#FFFFFF' }}>{f.q}</h3>
+                      <p style={{ margin: '10px 0 0', fontSize: 16, lineHeight: 1.75, color: 'rgba(234,240,247,.72)' }}>{f.a}</p>
+                    </div>
+                  ))}
+                </>
+              )}
+            </>
+          ) : (
+            /* ---------- Case-study layout ---------- */
+            <>
+              <h2 style={{ margin: '40px 0 0', fontSize: 'clamp(22px,2.6vw,30px)', fontWeight: 800, letterSpacing: '-.015em', color: '#FFFFFF' }}>The Problem</h2>
+              <p style={{ margin: '14px 0 0', fontSize: 16, lineHeight: 1.75, color: 'rgba(234,240,247,.72)' }}>{post.problem}</p>
 
-          <h2 style={{ margin: '40px 0 0', fontSize: 'clamp(22px,2.6vw,30px)', fontWeight: 800, letterSpacing: '-.015em', color: '#FFFFFF' }}>The Result</h2>
-          <p style={{ margin: '14px 0 0', fontSize: 16, lineHeight: 1.75, color: 'rgba(234,240,247,.72)' }}>{linkifyResult(post.result, post.resultLinks)}</p>
+              <h2 style={{ margin: '40px 0 0', fontSize: 'clamp(22px,2.6vw,30px)', fontWeight: 800, letterSpacing: '-.015em', color: '#FFFFFF' }}>What We Completed</h2>
+              <ul style={{ listStyle: 'none', margin: '18px 0 0', padding: 0, display: 'flex', flexDirection: 'column', gap: 13 }}>
+                {(post.checklist ?? []).map((item) => (
+                  <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+                    <span
+                      style={{
+                        flex: 'none',
+                        width: 20,
+                        height: 20,
+                        borderRadius: '50%',
+                        background: 'linear-gradient(100deg,#4CC163,#2FA8D8)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: 11,
+                        color: '#04101F',
+                        marginTop: 2,
+                      }}
+                    >
+                      ✓
+                    </span>
+                    <span style={{ fontSize: 15.5, lineHeight: 1.55, color: 'rgba(234,240,247,.82)' }}>{item}</span>
+                  </li>
+                ))}
+              </ul>
 
-          {/* Instagram button */}
-          <div style={{ marginTop: 30 }}>
-            <a href={post.instagram} target="_blank" rel="noopener noreferrer" className="ms-ig-btn">
-              <InstagramGlyph />
-              View This Job on Instagram <span aria-hidden>↗</span>
-            </a>
-          </div>
+              <h2 style={{ margin: '40px 0 0', fontSize: 'clamp(22px,2.6vw,30px)', fontWeight: 800, letterSpacing: '-.015em', color: '#FFFFFF' }}>The Result</h2>
+              <p style={{ margin: '14px 0 0', fontSize: 16, lineHeight: 1.75, color: 'rgba(234,240,247,.72)' }}>{linkifyResult(post.result ?? '', post.resultLinks ?? [])}</p>
+
+              {/* Instagram button */}
+              {post.instagram && (
+                <div style={{ marginTop: 30 }}>
+                  <a href={post.instagram} target="_blank" rel="noopener noreferrer" className="ms-ig-btn">
+                    <InstagramGlyph />
+                    View This Job on Instagram <span aria-hidden>↗</span>
+                  </a>
+                </div>
+              )}
+            </>
+          )}
         </article>
 
         {/* ---------- CTA band ---------- */}

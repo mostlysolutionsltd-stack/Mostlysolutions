@@ -268,8 +268,8 @@ export default function Booking() {
           >
             <div style={{ fontSize: 13, fontWeight: 600, color: 'rgba(234,240,247,.55)' }}>Prefer to call?</div>
             <div style={{ display: 'flex', gap: 18, flexWrap: 'wrap', marginTop: 8 }}>
-              <a href="tel:+441189000000" style={{ color: '#2FA8D8', textDecoration: 'none', fontSize: 16, fontWeight: 700 }}>
-                +44 118 900 0000
+              <a href="tel:+448002084745" style={{ color: '#2FA8D8', textDecoration: 'none', fontSize: 16, fontWeight: 700 }}>
+                0800 208 4745
               </a>
               <a href="https://wa.me/447722019897" target="_blank" rel="noopener noreferrer" style={{ color: '#4CC163', textDecoration: 'none', fontSize: 16, fontWeight: 700 }}>
                 WhatsApp Us
@@ -477,8 +477,8 @@ export default function Booking() {
                   }}
                 >
                   Sorry, we couldn&apos;t send that just now. Please try again, or reach us directly:{' '}
-                  <a href="tel:+441189000000" style={{ color: '#2FA8D8', fontWeight: 700, textDecoration: 'none' }}>
-                    +44 118 900 0000
+                  <a href="tel:+448002084745" style={{ color: '#2FA8D8', fontWeight: 700, textDecoration: 'none' }}>
+                    0800 208 4745
                   </a>{' '}
                   {errorMsg && (
                     <span style={{ display: 'block', marginTop: 8, fontSize: 11.5, opacity: 0.7 }}>({errorMsg})</span>

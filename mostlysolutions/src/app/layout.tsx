@@ -15,7 +15,7 @@ const archivo = Archivo({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://mostlysolutions.co.uk'),
+  metadataBase: new URL('https://mostlysolutions.com'),
   title: 'Mobile Car Diagnostics & Repair in London | Mostly Solutions',
   description:
     'Need reliable mobile vehicle repairs? Mostly Solutions provides expert mobile car diagnostics, mechanical repairs, battery services and vehicle detailing across London. Book a trusted mobile technician today.',

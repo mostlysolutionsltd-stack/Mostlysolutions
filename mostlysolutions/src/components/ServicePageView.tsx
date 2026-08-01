@@ -244,7 +244,7 @@ export default function ServicePageView({ service }: { service: ServiceContent }
               <Link href="/#booking" className="ms-btn-grad" style={{ fontSize: 15, padding: '14px 26px', boxShadow: '0 6px 24px rgba(47,168,216,.35)' }}>
                 Book Service
               </Link>
-              <a href="tel:+441189000000" className="ms-btn-ghost" style={{ fontSize: 15, padding: '14px 26px' }}>
+              <a href="tel:+448002084745" className="ms-btn-ghost" style={{ fontSize: 15, padding: '14px 26px' }}>
                 Call Now
               </a>
             </div>

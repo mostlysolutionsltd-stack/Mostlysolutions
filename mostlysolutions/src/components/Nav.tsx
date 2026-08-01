@@ -105,7 +105,7 @@ export default function Nav() {
               ))}
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, flex: 'none' }}>
-              <a href="tel:+441189000000" className="ms-callpill" style={{ fontSize: 13, padding: '10px 16px' }}>
+              <a href="tel:+448002084745" className="ms-callpill" style={{ fontSize: 13, padding: '10px 16px' }}>
                 Call Now
               </a>
               <a
@@ -195,7 +195,7 @@ export default function Nav() {
           </div>
           <div style={{ display: 'flex', gap: 12, marginTop: 'auto', paddingBottom: 14 }}>
             <a
-              href="tel:+441189000000"
+              href="tel:+448002084745"
               onClick={() => setMenuOpen(false)}
               className="ms-callpill"
               style={{ flex: 1, textAlign: 'center', fontSize: 15, padding: 15 }}
