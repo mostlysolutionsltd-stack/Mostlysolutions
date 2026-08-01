@@ -61,12 +61,12 @@ export default function Footer() {
           <div>
             <h4 style={{ margin: '0 0 16px', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', color: 'rgba(234,240,247,.9)' }}>CONTACT</h4>
             <p style={{ margin: 0, fontSize: 13.5, lineHeight: 1.7, color: 'rgba(234,240,247,.55)' }}>
-              Reading: 12 Caversham Road, RG1 7BZ
+              Reading: RG1
               <br />
-              London: 34 Vauxhall Bridge Road, SW1V 1AX
+              London: HA2
             </p>
-            <a href="tel:+441189000000" style={{ display: 'inline-block', marginTop: 12, color: '#2FA8D8', textDecoration: 'none', fontSize: 14, fontWeight: 700 }}>
-              +44 118 900 0000
+            <a href="tel:+448002084745" style={{ display: 'inline-block', marginTop: 12, color: '#2FA8D8', textDecoration: 'none', fontSize: 14, fontWeight: 700 }}>
+              0800 208 4745
             </a>
             <p style={{ margin: '8px 0 0', fontSize: 13.5, color: 'rgba(234,240,247,.55)' }}>hello@mostlysolutions.co.uk</p>
           </div>

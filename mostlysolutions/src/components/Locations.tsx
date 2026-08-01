@@ -3,19 +3,19 @@ import Reveal from './Reveal'
 const OFFICES = [
   {
     name: 'Reading Office',
-    address: '12 Caversham Road, Reading, RG1 7BZ',
-    phone: '+44 118 900 0000',
-    telHref: 'tel:+441189000000',
+    address: 'RG1',
+    phone: '0800 208 4745',
+    telHref: 'tel:+448002084745',
     hours: 'Mon–Sat: 7am – 8pm',
-    maps: 'https://maps.google.com/?q=Reading+RG1+7BZ',
+    maps: 'https://maps.google.com/?q=RG1',
   },
   {
     name: 'London Office',
-    address: '34 Vauxhall Bridge Road, London, SW1V 1AX',
-    phone: '+44 207 000 0000',
-    telHref: 'tel:+442070000000',
+    address: 'HA2',
+    phone: '0800 208 4745',
+    telHref: 'tel:+448002084745',
     hours: 'Mon–Sun: 8am – 9pm',
-    maps: 'https://maps.google.com/?q=Vauxhall+Bridge+Road+London',
+    maps: 'https://maps.google.com/?q=HA2',
   },
 ]
 

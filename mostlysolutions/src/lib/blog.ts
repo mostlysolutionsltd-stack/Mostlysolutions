@@ -8,6 +8,16 @@
 
 export type ResultLink = { phrase: string; href: string }
 
+// Ordered content blocks for long-form article posts (e.g. guides). When a post
+// supplies `body`, the post template renders these blocks instead of the
+// case-study layout (Problem / checklist / Result / Instagram).
+export type BlogBlock =
+  | { type: 'h2'; text: string }
+  | { type: 'p'; text: string }
+  | { type: 'ul'; items: string[] }
+
+export type BlogFaq = { q: string; a: string }
+
 export type BlogPost = {
   slug: string
   category: string // chip label
@@ -20,11 +30,15 @@ export type BlogPost = {
   image: string
   imageAlt: string
   intro: string
-  problem: string
-  checklist: string[]
-  result: string
-  resultLinks: ResultLink[]
-  instagram: string
+  // Case-study fields (job-story posts). Optional so article posts can omit them.
+  problem?: string
+  checklist?: string[]
+  result?: string
+  resultLinks?: ResultLink[]
+  instagram?: string
+  // Long-form article fields. When present, rendered in place of the case-study layout.
+  body?: BlogBlock[]
+  faqs?: BlogFaq[]
   ctaHeading: string
   ctaSub: string
   // Blog-index card fields
@@ -39,6 +53,96 @@ const ELECTRICAL = '/services/electrical-battery-london'
 const CTA_SUB = 'Fast booking, expert technicians, and honest advice — wherever you are in London or Reading.'
 
 export const BLOG_POSTS: BlogPost[] = [
+  {
+    slug: 'mobile-car-diagnostics-london',
+    category: 'Diagnostics',
+    breadcrumbCategory: 'Car Diagnostics',
+    h1: 'Mobile Car Diagnostics in London: Fast, Accurate, and Convenient Vehicle Checks',
+    date: '1 August 2026',
+    datePublished: '2026-08-01',
+    area: 'London',
+    readTime: '6 min read',
+    image: '/services/diagnostics.webp',
+    imageAlt: 'Mobile car diagnostics being carried out on a vehicle in London',
+    intro:
+      'Modern cars rely on advanced technology to keep every system working properly. When something goes wrong, it is not always easy to find the cause without the right equipment. That is why professional diagnostic services have become an essential part of vehicle maintenance. Whether your dashboard warning light appears, your car loses power, or you notice unusual performance issues, a professional inspection can identify the problem before it becomes more serious.',
+    body: [
+      { type: 'p', text: 'At Mostly Solutions, we provide reliable mobile car diagnostics in London that save you time and help you keep your vehicle in excellent condition. Instead of driving to a garage and waiting for an appointment, our experienced technicians come to your location with advanced diagnostic tools to inspect your vehicle.' },
+
+      { type: 'h2', text: 'What Are Car Diagnostics?' },
+      { type: 'p', text: "A vehicle diagnostic service checks your car's electronic systems using specialised equipment. Every modern vehicle has sensors that monitor the engine, transmission, brakes, battery, emissions, and many other components. When one of these systems detects a fault, it stores a fault code." },
+      { type: 'p', text: 'A professional automotive diagnostic service reads these codes and helps identify the exact issue affecting your vehicle. This allows technicians to recommend the correct repair instead of replacing parts through guesswork.' },
+
+      { type: 'h2', text: 'Why Choose Mobile Car Diagnostics?' },
+      { type: 'p', text: 'Many drivers have busy schedules and cannot spend hours waiting at a repair shop. Mobile diagnostic services provide a convenient solution.' },
+      { type: 'p', text: 'With mobile car diagnostics in London, our technician arrives at your home, office, or roadside location with professional equipment. The vehicle is inspected where it is parked, making the process simple and stress free.' },
+      { type: 'p', text: 'Benefits include:' },
+      { type: 'ul', items: ['Saving time', 'No need to tow your vehicle in many cases', 'Quick identification of faults', 'Professional advice from experienced technicians', 'Accurate reports before repairs begin'] },
+
+      { type: 'h2', text: 'Signs Your Vehicle Needs a Diagnostic Check' },
+      { type: 'p', text: 'Your vehicle often gives warning signs before a major problem develops. Booking a diagnostic check early can prevent expensive repairs later.' },
+      { type: 'p', text: 'Common signs include:' },
+      { type: 'ul', items: ['Engine warning light remains on', 'Poor fuel economy', 'Difficulty starting the vehicle', 'Loss of engine power', 'Rough idling', 'Unusual noises', 'Transmission problems', 'Increased exhaust smoke'] },
+      { type: 'p', text: 'Ignoring these symptoms can allow small issues to become much more costly.' },
+
+      { type: 'h2', text: 'What Happens During a Car Diagnostic Test?' },
+      { type: 'p', text: 'A professional car diagnostic test involves much more than simply reading fault codes.' },
+      { type: 'p', text: 'The technician will:' },
+      { type: 'ul', items: ['Connect advanced diagnostic equipment', 'Read stored fault codes', 'Check live vehicle data', 'Inspect electrical systems', 'Test engine performance', 'Identify the source of the problem', 'Explain the findings clearly'] },
+      { type: 'p', text: 'This detailed process helps ensure the correct repair is recommended the first time.' },
+
+      { type: 'h2', text: 'Why Accurate Diagnostics Matter' },
+      { type: 'p', text: 'Replacing parts without identifying the real fault often wastes time and money.' },
+      { type: 'p', text: "A proper automotive diagnostic test allows technicians to understand exactly what your vehicle needs. Instead of guessing, repairs are based on real information collected from the vehicle's electronic systems." },
+      { type: 'p', text: 'This approach reduces unnecessary repairs and helps restore your vehicle more quickly.' },
+
+      { type: 'h2', text: 'Common Problems Found During Engine Diagnostics' },
+      { type: 'p', text: 'Many vehicle faults begin with small warning signs that drivers may overlook.' },
+      { type: 'p', text: 'An engine diagnostic can identify issues such as:' },
+      { type: 'ul', items: ['Faulty oxygen sensors', 'Ignition coil failures', 'Spark plug problems', 'Fuel injector faults', 'Air flow sensor issues', 'Battery charging problems', 'Emission system faults', 'Cooling system concerns'] },
+      { type: 'p', text: 'Finding these problems early can improve vehicle performance and prevent larger repairs.' },
+
+      { type: 'h2', text: 'Looking for Car Diagnostic Services Near You?' },
+      { type: 'p', text: 'Many drivers search online for car diagnostic near me when a warning light suddenly appears or their vehicle starts behaving differently.' },
+      { type: 'p', text: 'Choosing a trusted mobile service means you do not have to worry about driving a potentially unsafe vehicle to a workshop. Mostly Solutions brings professional equipment directly to your location across London, providing a convenient and reliable solution when you need it most.' },
+      { type: 'p', text: 'Likewise, if you are searching for mobile car diagnostics near me, our mobile service is designed to reach customers wherever they are, helping them receive expert assistance without unnecessary delays.' },
+
+      { type: 'h2', text: 'Vehicles We Diagnose' },
+      { type: 'p', text: 'Our technicians work with many different makes and models, including:' },
+      { type: 'ul', items: ['Petrol vehicles', 'Diesel vehicles', 'Hybrid vehicles', 'Commercial vans', 'Family cars', 'Executive vehicles'] },
+      { type: 'p', text: 'Using advanced equipment allows us to diagnose a wide range of electronic and mechanical faults accurately.' },
+
+      { type: 'h2', text: 'Why Choose Mostly Solutions?' },
+      { type: 'p', text: 'Choosing the right diagnostic service gives you confidence that your vehicle is being checked by experienced professionals.' },
+      { type: 'p', text: 'Our customers choose Mostly Solutions because we offer:' },
+      { type: 'ul', items: ['Experienced technicians', 'Mobile service across London', 'Modern diagnostic equipment', 'Honest advice', 'Fast response', 'Competitive pricing', 'Reliable customer service'] },
+      { type: 'p', text: 'We focus on identifying the problem correctly before recommending repairs, helping customers avoid unnecessary costs.' },
+
+      { type: 'h2', text: 'Prevent Future Vehicle Problems' },
+      { type: 'p', text: 'Regular diagnostics are not only useful when warning lights appear. Preventive inspections can identify developing faults before they become serious.' },
+      { type: 'p', text: 'Routine diagnostic check services help maintain vehicle performance, improve fuel efficiency, and increase reliability. They also provide peace of mind before long journeys or seasonal travel.' },
+      { type: 'p', text: 'If your vehicle has recently shown warning lights or unusual behaviour, booking a professional inspection today can help prevent larger repair bills tomorrow.' },
+
+      { type: 'h2', text: 'Conclusion' },
+      { type: 'p', text: 'Vehicle diagnostics have become one of the most important services for modern cars. Advanced electronic systems require specialised equipment and experienced technicians to identify faults accurately.' },
+      { type: 'p', text: 'Whether you need mobile car diagnostics in London, a complete car diagnostic test, an engine diagnostic, or a full automotive diagnostic, Mostly Solutions provides professional mobile services that come directly to you.' },
+      { type: 'p', text: 'Our goal is to make vehicle diagnostics simple, convenient, and accurate so you can get back on the road with confidence.' },
+    ],
+    faqs: [
+      { q: 'What is a car diagnostic test?', a: "A car diagnostic test uses professional equipment to scan your vehicle's electronic systems, identify fault codes, and determine the cause of warning lights or performance issues." },
+      { q: 'How long does a diagnostic check take?', a: 'A standard diagnostic check usually takes between 30 and 60 minutes, depending on the vehicle and the complexity of the issue.' },
+      { q: 'Can mobile diagnostics fix my vehicle?', a: 'The diagnostic service identifies the problem first. If the issue can be repaired on site, the technician will advise you. Some repairs may require additional parts or workshop equipment.' },
+      { q: 'Is an engine diagnostic necessary if the warning light disappears?', a: "Yes. Even if the warning light goes off, fault codes may still be stored in the vehicle's system. An engine diagnostic can identify any underlying issues before they become more serious." },
+      { q: 'Do you provide mobile car diagnostics across London?', a: 'Yes. We provide mobile car diagnostics in London and travel to homes, workplaces, and roadside locations for customer convenience.' },
+      { q: 'When should I search for car diagnostic services?', a: 'If your vehicle shows warning lights, loses power, has trouble starting, or is not performing as it should, it is time to book a professional inspection. Many drivers search for car diagnostic near me when they need quick help, while those who prefer on site assistance often search for mobile car diagnostics near me to have an experienced technician come directly to their home, workplace, or roadside location.' },
+      { q: 'What is the difference between an automotive diagnostic and an automotive diagnostic test?', a: "Both terms refer to the process of checking a vehicle's electronic systems. An automotive diagnostic identifies faults, while an automotive diagnostic test includes a complete scan and detailed analysis to help determine the correct repair." },
+    ],
+    ctaHeading: 'Need a Diagnostic Check?',
+    ctaSub: CTA_SUB,
+    dateArea: '1 Aug 2026 · London',
+    excerpt:
+      'Dashboard warning light on or car losing power? Our mobile car diagnostics come to you across London with advanced equipment to find faults fast — accurately and conveniently.',
+  },
   {
     slug: 'audi-rs5-brake-replacement-reading',
     category: 'Brakes',
