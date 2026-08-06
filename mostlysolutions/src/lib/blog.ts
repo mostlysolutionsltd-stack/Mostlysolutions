@@ -11,9 +11,13 @@ export type ResultLink = { phrase: string; href: string }
 // Ordered content blocks for long-form article posts (e.g. guides). When a post
 // supplies `body`, the post template renders these blocks instead of the
 // case-study layout (Problem / checklist / Result / Instagram).
+// A run of inline text within a paragraph. `bold` renders <strong>, `href`
+// renders an inline link (internal route). Plain runs have neither.
+export type InlineSpan = { text: string; bold?: boolean; href?: string }
+
 export type BlogBlock =
   | { type: 'h2'; text: string }
-  | { type: 'p'; text: string }
+  | { type: 'p'; text: string; spans?: InlineSpan[] }
   | { type: 'ul'; items: string[] }
 
 export type BlogFaq = { q: string; a: string }
@@ -30,6 +34,8 @@ export type BlogPost = {
   image: string
   imageAlt: string
   intro: string
+  // Optional inline spans for the intro paragraph (used when the lead paragraph contains a link).
+  introSpans?: InlineSpan[]
   // Case-study fields (job-story posts). Optional so article posts can omit them.
   problem?: string
   checklist?: string[]
@@ -53,6 +59,238 @@ const ELECTRICAL = '/services/electrical-battery-london'
 const CTA_SUB = 'Fast booking, expert technicians, and honest advice — wherever you are in London or Reading.'
 
 export const BLOG_POSTS: BlogPost[] = [
+  {
+    slug: 'mobile-car-electrician-london',
+    category: 'Electrical',
+    breadcrumbCategory: 'Auto Electrician',
+    h1: 'Why Choosing a Mobile Car Electrician Saves You Time and Money',
+    date: '6 August 2026',
+    datePublished: '2026-08-06',
+    area: 'London',
+    readTime: '6 min read',
+    image: '/services/electrical.webp',
+    imageAlt: 'Mobile car electrician diagnosing a vehicle electrical fault in London',
+    intro:
+      'Modern vehicles depend on advanced electrical systems for smooth and reliable performance. From starting your car in the morning to operating lights, sensors, batteries, and infotainment systems, every component relies on a healthy electrical system. When something goes wrong, finding a trusted mobile car electrician in London can save you from unnecessary towing costs and long waits at a workshop.',
+    introSpans: [
+      { text: 'Modern vehicles depend on advanced electrical systems for smooth and reliable performance. From starting your car in the morning to operating lights, sensors, batteries, and infotainment systems, every component relies on a healthy electrical system. When something goes wrong, finding a trusted ' },
+      { text: 'mobile car electrician in London', href: ELECTRICAL },
+      { text: ' can save you from unnecessary towing costs and long waits at a workshop.' },
+    ],
+    body: [
+      { type: 'p', text: 'At Mostly Solutions, we provide fast and professional mobile electrical services across London, Guildford, Reading, Oxford, Watford, Hemel Hempstead, High Wycombe, Slough, and St Albans. Whether you have a flat battery, faulty wiring, or an electrical warning light, our experienced technicians come to your location and get your vehicle back on the road.' },
+
+      { type: 'h2', text: 'Why You Need a Professional Car Electrician' },
+      { type: 'p', text: 'Vehicle electrical systems have become more advanced over the years. Even a small fault can affect several functions in your car. Choosing a qualified car electrician means the problem is diagnosed correctly without replacing parts that are still working.' },
+      {
+        type: 'p',
+        text: 'A professional auto electrician has the right equipment to identify electrical faults quickly. This saves time and helps prevent further damage to your vehicle.',
+        spans: [
+          { text: 'A professional ' },
+          { text: 'auto electrician', href: ELECTRICAL },
+          { text: ' has the right equipment to identify electrical faults quickly. This saves time and helps prevent further damage to your vehicle.' },
+        ],
+      },
+      {
+        type: 'p',
+        text: 'If you have searched for vehicle electrician near me or auto electricians near me, you are probably looking for someone who can reach you quickly. That is exactly what our mobile service is designed to do.',
+        spans: [
+          { text: 'If you have searched for vehicle electrician near me or ' },
+          { text: 'auto electricians near me', href: ELECTRICAL },
+          { text: ', you are probably looking for someone who can reach you quickly. That is exactly what our mobile service is designed to do.' },
+        ],
+      },
+
+      { type: 'h2', text: 'Benefits of a Mobile Auto Electrician' },
+      { type: 'p', text: 'A mobile service removes the hassle of arranging transport for a vehicle that cannot be driven safely. Instead of visiting a garage, our technician comes directly to your home, workplace, or roadside location.' },
+      { type: 'p', text: 'Choosing a mobile car electrician offers several advantages.' },
+      { type: 'ul', items: ['Convenient service at your preferred location.', 'Faster diagnosis and repairs.', 'No towing costs.', 'Professional tools and equipment.', 'Suitable for most vehicle makes and models.'] },
+      {
+        type: 'p',
+        text: 'Many customers search online for mobile auto electrician near me or mobile auto electricians near me because they need immediate assistance. Our mobile team is equipped to complete many electrical repairs during the first visit.',
+        spans: [
+          { text: 'Many customers search online for ' },
+          { text: 'mobile auto electrician near me', href: ELECTRICAL },
+          { text: ' or mobile auto electricians near me because they need immediate assistance. Our mobile team is equipped to complete many electrical repairs during the first visit.' },
+        ],
+      },
+
+      { type: 'h2', text: 'Common Electrical Problems We Fix' },
+      { type: 'p', text: 'Electrical faults can appear without warning. Some issues develop over time, while others happen suddenly because of worn components or damaged wiring.' },
+      { type: 'p', text: 'Our team regularly repairs problems such as:' },
+      { type: 'ul', items: ['Battery charging issues.', 'Alternator faults.', 'Starter motor problems.', 'Lighting failures.', 'Electric window faults.', 'Central locking issues.', 'Dashboard warning lights.', 'Faulty wiring.', 'Sensor failures.'] },
+      { type: 'p', text: 'If your vehicle has any of these symptoms, a qualified car auto electrician can diagnose the issue before it becomes more expensive to repair.' },
+
+      { type: 'h2', text: 'Mobile Battery Replacement' },
+      { type: 'p', text: 'One of the most common reasons drivers contact us is a flat battery. Sometimes the battery simply reaches the end of its life, while in other cases an electrical fault causes repeated battery drain.' },
+      { type: 'p', text: 'If you have searched for mobile battery replacement near me, our technicians can test your battery, charging system, and alternator before fitting a suitable replacement if required.' },
+      { type: 'p', text: 'This ensures the battery is not replaced unnecessarily and helps avoid repeat breakdowns.' },
+
+      { type: 'h2', text: 'Car Electrical Diagnostics' },
+      { type: 'p', text: 'Electrical faults are not always obvious. A warning light may appear even though the vehicle still drives normally. Ignoring these signs can lead to larger repair bills later.' },
+      { type: 'p', text: 'A professional car electrical specialist uses advanced diagnostic equipment to identify hidden faults within the electrical system.' },
+      { type: 'p', text: 'Instead of guessing which component has failed, we accurately locate the source of the problem and recommend the most suitable repair.' },
+
+      { type: 'h2', text: 'Mobile Repairs Across London and Surrounding Areas' },
+      { type: 'p', text: 'We proudly provide mobile electrical services throughout London and nearby towns including Guildford, Reading, Oxford, Watford, Hemel Hempstead, High Wycombe, Slough, and St Albans.' },
+      { type: 'p', text: 'Whether you need an emergency repair outside your office or help at home, our technicians travel to your location with the tools needed for professional repairs.' },
+      { type: 'p', text: 'People often search for mobile car electrician near me when they experience unexpected electrical problems. Our mobile service makes getting expert help simple and convenient.' },
+
+      { type: 'h2', text: 'Why Experience Matters' },
+      { type: 'p', text: 'Modern vehicles contain dozens of electronic control units connected by complex wiring systems. Diagnosing electrical faults requires knowledge, experience, and specialist testing equipment.' },
+      { type: 'p', text: 'Our experienced automobile electricians understand how different vehicle systems work together. This allows us to identify faults efficiently while reducing unnecessary repairs.' },
+      { type: 'p', text: 'Whether you drive a family car, commercial van, or company vehicle, our technicians provide dependable electrical solutions.' },
+
+      { type: 'h2', text: 'Signs Your Car Needs Electrical Attention' },
+      { type: 'p', text: 'Many drivers ignore small electrical issues until the vehicle refuses to start. Early diagnosis can prevent larger problems.' },
+      { type: 'p', text: 'Watch for signs such as:' },
+      { type: 'ul', items: ['Dim headlights.', 'Battery warning lights.', 'Difficulty starting.', 'Electrical accessories stopping unexpectedly.', 'Burning smell from wiring.', 'Repeated battery failure.', 'Slow power windows.'] },
+      { type: 'p', text: 'If you notice any of these issues, contact a trusted car auto electrician mobile service before the problem becomes more serious.' },
+
+      { type: 'h2', text: 'Finding the Right Auto Electrician' },
+      { type: 'p', text: 'Choosing the right technician is important for both safety and reliability.' },
+      { type: 'p', text: 'Look for professionals who offer:' },
+      { type: 'ul', items: ['Mobile repair services.', 'Modern diagnostic equipment.', 'Experience with different vehicle brands.', 'Transparent pricing.', 'Fast response times.', 'Positive customer reviews.'] },
+      { type: 'p', text: 'When searching online for auto electrics near me, car electrics near me, or mobile auto electrician near me, choose a company that has experience handling a wide range of vehicle electrical problems.' },
+
+      { type: 'h2', text: 'Why Choose Mostly Solutions' },
+      { type: 'p', text: 'At Mostly Solutions, we understand that vehicle breakdowns are stressful. Our goal is to provide reliable electrical repairs without making you visit a garage.' },
+      { type: 'p', text: 'Our customers choose us because we offer:' },
+      { type: 'ul', items: ['Fast mobile response.', 'Experienced technicians.', 'Accurate fault diagnosis.', 'Quality replacement parts.', 'Competitive pricing.', 'Friendly customer service.'] },
+      { type: 'p', text: 'Whether you are in Central London or nearby areas such as Reading, Oxford, Guildford, Watford, Hemel Hempstead, High Wycombe, Slough, or St Albans, we are ready to help with your vehicle electrical needs.' },
+
+      { type: 'h2', text: 'Conclusion' },
+      { type: 'p', text: 'Electrical faults should never be ignored. A small issue today can quickly become a costly repair tomorrow. Choosing a trusted mobile car electrician in London gives you the convenience of professional repairs wherever your vehicle is located.' },
+      { type: 'p', text: 'Whether you need a qualified car electrician, expert auto electrician, reliable car electrical specialist, or urgent mobile battery replacement near you, Mostly Solutions provides dependable mobile services across London and the surrounding areas. Our experienced technicians are committed to keeping your vehicle safe, reliable, and ready for every journey.' },
+    ],
+    faqs: [
+      { q: 'What does a mobile car electrician do?', a: 'A mobile car electrician diagnoses and repairs vehicle electrical faults at your location. This includes battery problems, wiring faults, lighting issues, alternator repairs, starter motor faults, and diagnostic testing.' },
+      { q: 'When should I call an auto electrician?', a: 'You should contact an auto electrician if your vehicle struggles to start, displays warning lights, has electrical accessories that stop working, or experiences repeated battery failures.' },
+      { q: 'Do you provide mobile services outside London?', a: 'Yes. We provide services across London, Guildford, Reading, Oxford, Watford, Hemel Hempstead, High Wycombe, Slough, and St Albans.' },
+      { q: 'Can you replace my battery at home?', a: 'Yes. If you are searching for mobile battery replacement near you, our technicians can test your battery and install a replacement at your home, workplace, or roadside location.' },
+      { q: 'How do I know if my alternator is faulty?', a: 'Common signs include a battery warning light, dim headlights, difficulty starting the vehicle, or frequent battery drain. Our technicians can test the charging system and confirm the cause.' },
+      { q: 'Why should I choose a mobile auto electrician?', a: 'A mobile car electrician saves time by coming directly to your location, reducing towing costs and allowing many repairs to be completed without visiting a garage.' },
+    ],
+    ctaHeading: 'Car Electrical Fault?',
+    ctaSub: CTA_SUB,
+    dateArea: '6 Aug 2026 · London',
+    excerpt:
+      'Flat battery, faulty wiring, or an electrical warning light? A mobile car electrician comes to you across London — saving towing costs and garage waits.',
+  },
+  {
+    slug: 'mobile-mechanic-reading-berkshire',
+    category: 'Mechanical',
+    breadcrumbCategory: 'Mobile Mechanic',
+    h1: 'Why More Drivers Choose a Mobile Mechanic in Reading Berkshire',
+    date: '6 August 2026',
+    datePublished: '2026-08-06',
+    area: 'Reading, Berkshire',
+    readTime: '6 min read',
+    image: '/services/mechanical.webp',
+    imageAlt: 'Mobile mechanic servicing a car at a customer location in Reading, Berkshire',
+    intro:
+      'Keeping your vehicle in good condition is essential for safe and reliable driving. However, finding the time to visit a garage is not always easy. Busy work schedules, family commitments, and unexpected breakdowns can make a trip to a workshop inconvenient. That is why many drivers now choose a mobile mechanic in Reading Berkshire for servicing and repairs.',
+    introSpans: [
+      { text: 'Keeping your vehicle in good condition is essential for safe and reliable driving. However, finding the time to visit a garage is not always easy. Busy work schedules, family commitments, and unexpected breakdowns can make a trip to a workshop inconvenient. That is why many drivers now choose a ' },
+      { text: 'mobile mechanic in Reading Berkshire', href: MECHANICAL },
+      { text: ' for servicing and repairs.' },
+    ],
+    body: [
+      { type: 'p', text: 'At Mostly Solutions, we bring professional vehicle repairs directly to your home, workplace, or roadside location. Our experienced technicians provide reliable servicing across Reading and the surrounding areas, helping you save both time and money without compromising on quality.' },
+
+      { type: 'h2', text: 'The Convenience of Mobile Vehicle Repairs' },
+      { type: 'p', text: 'A traditional garage visit often means arranging transport, waiting for your appointment, and being without your vehicle for hours. A mobile mechanic removes these problems by coming directly to you.' },
+      { type: 'p', text: 'Whether your car is parked at home or outside your office, our team can carry out many repairs and servicing jobs on site. If you are looking for a trusted mobile mechanic in Reading Berks, our service is designed to make vehicle maintenance simple and stress free.' },
+      { type: 'p', text: 'Our technicians arrive fully equipped with professional tools and diagnostic equipment, allowing them to complete many repairs during the first visit.' },
+
+      { type: 'h2', text: 'Professional Car Servicing Without Visiting a Garage' },
+      {
+        type: 'p',
+        text: 'Regular maintenance helps keep your vehicle running efficiently while reducing the risk of unexpected breakdowns. Choosing a professional car service in Reading ensures your vehicle remains safe, reliable, and performs at its best.',
+        spans: [
+          { text: 'Regular maintenance helps keep your vehicle running efficiently while reducing the risk of unexpected breakdowns. Choosing a professional ' },
+          { text: 'car service in Reading', href: MECHANICAL },
+          { text: ' ensures your vehicle remains safe, reliable, and performs at its best.' },
+        ],
+      },
+      { type: 'p', text: 'Our servicing includes:' },
+      { type: 'ul', items: ['Oil and filter replacement', 'Air and cabin filter replacement', 'Brake inspections', 'Fluid level checks', 'Battery testing', 'Tyre inspection', 'Diagnostic scanning', 'General safety inspection'] },
+      { type: 'p', text: 'Routine servicing can also improve fuel efficiency and help identify small issues before they become expensive repairs.' },
+
+      { type: 'h2', text: 'Why Choose a Mobile Mechanic?' },
+      { type: 'p', text: 'A mobile mechanic offers the same professional service you would expect from a workshop while providing greater flexibility.' },
+      { type: 'p', text: 'Some of the benefits include:' },
+      { type: 'ul', items: ['Repairs at your preferred location', 'No towing costs', 'Less disruption to your day', 'Transparent pricing', 'Professional diagnostics', 'Convenient appointment times'] },
+      {
+        type: 'p',
+        text: 'Choosing an experienced auto mobile mechanic in Reading means you receive expert vehicle care without leaving your home or workplace.',
+        spans: [
+          { text: 'Choosing an experienced ' },
+          { text: 'auto mobile mechanic in Reading', href: MECHANICAL },
+          { text: ' means you receive expert vehicle care without leaving your home or workplace.' },
+        ],
+      },
+
+      { type: 'h2', text: 'Common Repairs We Carry Out' },
+      { type: 'p', text: 'Modern vehicles require skilled technicians who understand both mechanical and electronic systems. Our experienced team handles a wide range of repairs for most makes and models.' },
+      { type: 'p', text: 'We regularly complete:' },
+      { type: 'ul', items: ['Brake repairs', 'Battery replacement', 'Alternator replacement', 'Starter motor repairs', 'Suspension repairs', 'Engine diagnostics', 'Cooling system repairs', 'Spark plug replacement', 'Drive belt replacement', 'Electrical fault diagnosis'] },
+      { type: 'p', text: 'Whether your vehicle requires routine maintenance or emergency repairs, our technicians can often complete the work during the same visit.' },
+
+      { type: 'h2', text: 'Mobile Diagnostics That Save Time' },
+      { type: 'p', text: 'Dashboard warning lights should never be ignored. Even if your vehicle appears to drive normally, hidden faults may be developing beneath the surface.' },
+      { type: 'p', text: 'Our mobile diagnostic equipment allows us to identify problems quickly and accurately. This helps avoid unnecessary part replacements while reducing repair costs.' },
+      { type: 'p', text: 'Drivers searching for a reliable mobile mechanic in Reading Berkshire often contact us after warning lights appear or their vehicle develops starting problems. Early diagnosis usually prevents more serious repairs later.' },
+
+      { type: 'h2', text: 'Supporting Drivers Across Reading' },
+      { type: 'p', text: "Reading is one of Berkshire's busiest towns, with thousands of commuters travelling every day. A breakdown or mechanical fault can quickly disrupt your plans." },
+      { type: 'p', text: 'Our mobile service covers Reading and nearby areas, allowing customers to receive professional repairs without arranging transport to a garage.' },
+      { type: 'p', text: 'Whether you are at home, at work, or stranded after a breakdown, our experienced mechanics are ready to help.' },
+      {
+        type: 'p',
+        text: 'If you need a dependable mobile mechanic in Reading Berks, we provide fast and convenient support where you need it most.',
+        spans: [
+          { text: 'If you need a dependable ' },
+          { text: 'mobile mechanic in Reading Berks', href: MECHANICAL },
+          { text: ', we provide fast and convenient support where you need it most.' },
+        ],
+      },
+
+      { type: 'h2', text: 'Routine Servicing Helps Prevent Costly Repairs' },
+      { type: 'p', text: 'Many expensive repairs begin as small maintenance issues that are ignored.' },
+      { type: 'p', text: 'Regular servicing can help prevent:' },
+      { type: 'ul', items: ['Engine wear', 'Brake problems', 'Battery failure', 'Cooling system faults', 'Poor fuel economy', 'Unexpected breakdowns'] },
+      { type: 'p', text: 'Booking a regular car service in Reading helps protect your investment while improving the reliability of your vehicle throughout the year.' },
+
+      { type: 'h2', text: 'Experienced Mechanics You Can Trust' },
+      { type: 'p', text: 'Vehicle repairs require knowledge, experience, and attention to detail. Our technicians work on a wide variety of petrol, diesel, hybrid, and commercial vehicles.' },
+      { type: 'p', text: 'Every repair begins with a careful inspection so we can recommend the most effective solution for your vehicle.' },
+      { type: 'p', text: 'Whether you need routine servicing, emergency repairs, or diagnostic testing, our team delivers honest advice and quality workmanship every time.' },
+
+      { type: 'h2', text: 'Why Choose Mostly Solutions?' },
+      { type: 'p', text: 'At Mostly Solutions, customer satisfaction is our priority. We understand that vehicle problems can happen at the most inconvenient times, so we aim to provide fast, dependable, and affordable mobile repairs.' },
+      { type: 'p', text: 'Customers choose us because we offer:' },
+      { type: 'ul', items: ['Experienced mechanics', 'Professional diagnostic equipment', 'Convenient mobile service', 'Competitive pricing', 'Quality replacement parts', 'Friendly customer support'] },
+      { type: 'p', text: 'Our goal is to keep your vehicle running safely while making the repair process as easy as possible.' },
+
+      { type: 'h2', text: 'Conclusion' },
+      { type: 'p', text: 'A reliable vehicle starts with regular maintenance and timely repairs. Choosing a trusted mobile mechanic in Reading Berkshire gives you professional servicing without the inconvenience of visiting a garage.' },
+      { type: 'p', text: 'Whether you need routine maintenance, emergency repairs, diagnostics, or a complete car service in Reading, Mostly Solutions provides dependable mobile support that comes directly to you. If you are searching for a trusted auto mobile mechanic in Reading or an experienced mobile mechanic in Reading Berks, our team is ready to help keep your vehicle in excellent condition.' },
+    ],
+    faqs: [
+      { q: 'What services does a mobile mechanic provide?', a: 'A mobile mechanic can carry out servicing, diagnostics, brake repairs, battery replacement, starter motor repairs, alternator replacement, and many other mechanical repairs at your location.' },
+      { q: 'Is a mobile mechanic as reliable as a garage?', a: 'Yes. A qualified mobile mechanic uses professional tools and diagnostic equipment to perform many of the same repairs completed in a workshop.' },
+      { q: 'How often should I book a car service?', a: "Most manufacturers recommend servicing every 12 months or according to your vehicle's mileage. Regular maintenance helps reduce breakdowns and extends the life of your vehicle." },
+      { q: 'Can you repair my car at my workplace?', a: 'Yes. Our mobile mechanics can carry out many repairs and servicing jobs at your workplace, home, or roadside location if it is safe to do so.' },
+      { q: 'Do you cover all areas of Reading?', a: 'Yes. We provide mobile vehicle repairs throughout Reading and surrounding areas across Berkshire.' },
+      { q: 'Why should I choose Mostly Solutions?', a: 'We provide experienced mobile mechanics, convenient appointments, professional diagnostics, quality repairs, and reliable customer service across Reading and Berkshire.' },
+    ],
+    ctaHeading: 'Need a Mobile Mechanic in Reading?',
+    ctaSub: CTA_SUB,
+    dateArea: '6 Aug 2026 · Reading',
+    excerpt:
+      'Skip the garage trip — our mobile mechanics bring professional servicing, diagnostics, and repairs to your home or workplace across Reading and Berkshire.',
+  },
   {
     slug: 'mobile-car-diagnostics-london',
     category: 'Diagnostics',

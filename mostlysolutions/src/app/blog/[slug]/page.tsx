@@ -5,7 +5,7 @@ import Link from 'next/link'
 import SiteHeader from '@/components/SiteHeader'
 import SiteFooter from '@/components/SiteFooter'
 import { InstagramGlyph } from '@/components/icons'
-import { BLOG_POSTS, getPost, type ResultLink } from '@/lib/blog'
+import { BLOG_POSTS, getPost, type ResultLink, type InlineSpan } from '@/lib/blog'
 
 export function generateStaticParams() {
   return BLOG_POSTS.map((p) => ({ slug: p.slug }))
@@ -28,6 +28,22 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
       images: [post.image],
     },
   }
+}
+
+// Render inline spans: plain text, bold (<strong>), and/or internal links.
+function renderSpans(spans: InlineSpan[]): ReactNode {
+  return spans.map((s, i) => {
+    if (s.href) {
+      const link = (
+        <Link href={s.href} className="ms-svc-inline-link">
+          {s.text}
+        </Link>
+      )
+      return <span key={i}>{s.bold ? <strong>{link}</strong> : link}</span>
+    }
+    if (s.bold) return <strong key={i}>{s.text}</strong>
+    return <span key={i}>{s.text}</span>
+  })
 }
 
 // Wrap the first non-overlapping occurrence of each declared phrase in a link.
@@ -147,7 +163,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           </div>
 
           {/* Body */}
-          <p style={{ margin: '34px 0 0', fontSize: 16.5, lineHeight: 1.8, color: 'rgba(234,240,247,.8)' }}>{post.intro}</p>
+          <p style={{ margin: '34px 0 0', fontSize: 16.5, lineHeight: 1.8, color: 'rgba(234,240,247,.8)' }}>
+            {post.introSpans ? renderSpans(post.introSpans) : post.intro}
+          </p>
 
           {post.body ? (
             /* ---------- Long-form article layout ---------- */
@@ -190,7 +208,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 }
                 return (
                   <p key={i} style={{ margin: '16px 0 0', fontSize: 16, lineHeight: 1.75, color: 'rgba(234,240,247,.72)' }}>
-                    {block.text}
+                    {block.spans ? renderSpans(block.spans) : block.text}
                   </p>
                 )
               })}
