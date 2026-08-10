@@ -23,7 +23,7 @@ const localBusinessJsonLd = {
   url: 'https://mostlysolutions.com',
   image: 'https://mostlysolutions.com/icon.webp',
   telephone: '0800 208 4745',
-  email: 'hello@mostlysolutions.co.uk',
+  email: 'mostlysolutionsltd@gmail.com',
   priceRange: '££',
   areaServed: ['Reading', 'London'],
   address: [
