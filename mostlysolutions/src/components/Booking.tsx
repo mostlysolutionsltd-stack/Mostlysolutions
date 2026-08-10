@@ -431,7 +431,14 @@ export default function Booking() {
                 )}
               </div>
               <div style={{ ...inputStyle, display: 'flex', flexDirection: 'column', gap: 6 }}>
+                <label
+                  htmlFor="booking-date"
+                  style={{ fontSize: 12.5, fontWeight: 600, color: 'rgba(234,240,247,.75)', paddingLeft: 4 }}
+                >
+                  Preferred Date *
+                </label>
                 <input
+                  id="booking-date"
                   type="date"
                   name="date"
                   min={todayISO}

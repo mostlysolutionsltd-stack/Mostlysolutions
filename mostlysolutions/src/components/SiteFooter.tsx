@@ -67,7 +67,9 @@ export default function SiteFooter() {
             <a href="tel:+448002084745" style={{ display: 'inline-block', marginTop: 12, color: '#2FA8D8', textDecoration: 'none', fontSize: 14, fontWeight: 700 }}>
               0800 208 4745
             </a>
-            <p style={{ margin: '8px 0 0', fontSize: 13.5, color: 'rgba(234,240,247,.55)' }}>hello@mostlysolutions.co.uk</p>
+            <a href="mailto:mostlysolutionsltd@gmail.com" style={{ display: 'inline-block', margin: '8px 0 0', fontSize: 13.5, color: 'rgba(234,240,247,.55)', textDecoration: 'none' }}>
+              mostlysolutionsltd@gmail.com
+            </a>
           </div>
         </div>
 
