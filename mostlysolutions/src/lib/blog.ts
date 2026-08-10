@@ -305,11 +305,27 @@ export const BLOG_POSTS: BlogPost[] = [
     intro:
       'Modern cars rely on advanced technology to keep every system working properly. When something goes wrong, it is not always easy to find the cause without the right equipment. That is why professional diagnostic services have become an essential part of vehicle maintenance. Whether your dashboard warning light appears, your car loses power, or you notice unusual performance issues, a professional inspection can identify the problem before it becomes more serious.',
     body: [
-      { type: 'p', text: 'At Mostly Solutions, we provide reliable mobile car diagnostics in London that save you time and help you keep your vehicle in excellent condition. Instead of driving to a garage and waiting for an appointment, our experienced technicians come to your location with advanced diagnostic tools to inspect your vehicle.' },
+      {
+        type: 'p',
+        text: 'At Mostly Solutions, we provide reliable mobile car diagnostics in London that save you time and help you keep your vehicle in excellent condition. Instead of driving to a garage and waiting for an appointment, our experienced technicians come to your location with advanced diagnostic tools to inspect your vehicle.',
+        spans: [
+          { text: 'At Mostly Solutions, we provide reliable ' },
+          { text: 'mobile car diagnostics in London', href: DIAGNOSTICS },
+          { text: ' that save you time and help you keep your vehicle in excellent condition. Instead of driving to a garage and waiting for an appointment, our experienced technicians come to your location with advanced diagnostic tools to inspect your vehicle.' },
+        ],
+      },
 
       { type: 'h2', text: 'What Are Car Diagnostics?' },
       { type: 'p', text: "A vehicle diagnostic service checks your car's electronic systems using specialised equipment. Every modern vehicle has sensors that monitor the engine, transmission, brakes, battery, emissions, and many other components. When one of these systems detects a fault, it stores a fault code." },
-      { type: 'p', text: 'A professional automotive diagnostic service reads these codes and helps identify the exact issue affecting your vehicle. This allows technicians to recommend the correct repair instead of replacing parts through guesswork.' },
+      {
+        type: 'p',
+        text: 'A professional automotive diagnostic service reads these codes and helps identify the exact issue affecting your vehicle. This allows technicians to recommend the correct repair instead of replacing parts through guesswork.',
+        spans: [
+          { text: 'A professional ' },
+          { text: 'automotive diagnostic', href: DIAGNOSTICS },
+          { text: ' service reads these codes and helps identify the exact issue affecting your vehicle. This allows technicians to recommend the correct repair instead of replacing parts through guesswork.' },
+        ],
+      },
 
       { type: 'h2', text: 'Why Choose Mobile Car Diagnostics?' },
       { type: 'p', text: 'Many drivers have busy schedules and cannot spend hours waiting at a repair shop. Mobile diagnostic services provide a convenient solution.' },
@@ -324,7 +340,15 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: 'p', text: 'Ignoring these symptoms can allow small issues to become much more costly.' },
 
       { type: 'h2', text: 'What Happens During a Car Diagnostic Test?' },
-      { type: 'p', text: 'A professional car diagnostic test involves much more than simply reading fault codes.' },
+      {
+        type: 'p',
+        text: 'A professional car diagnostic test involves much more than simply reading fault codes.',
+        spans: [
+          { text: 'A professional ' },
+          { text: 'car diagnostic test', href: DIAGNOSTICS },
+          { text: ' involves much more than simply reading fault codes.' },
+        ],
+      },
       { type: 'p', text: 'The technician will:' },
       { type: 'ul', items: ['Connect advanced diagnostic equipment', 'Read stored fault codes', 'Check live vehicle data', 'Inspect electrical systems', 'Test engine performance', 'Identify the source of the problem', 'Explain the findings clearly'] },
       { type: 'p', text: 'This detailed process helps ensure the correct repair is recommended the first time.' },
@@ -343,7 +367,15 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: 'h2', text: 'Looking for Car Diagnostic Services Near You?' },
       { type: 'p', text: 'Many drivers search online for car diagnostic near me when a warning light suddenly appears or their vehicle starts behaving differently.' },
       { type: 'p', text: 'Choosing a trusted mobile service means you do not have to worry about driving a potentially unsafe vehicle to a workshop. Mostly Solutions brings professional equipment directly to your location across London, providing a convenient and reliable solution when you need it most.' },
-      { type: 'p', text: 'Likewise, if you are searching for mobile car diagnostics near me, our mobile service is designed to reach customers wherever they are, helping them receive expert assistance without unnecessary delays.' },
+      {
+        type: 'p',
+        text: 'Likewise, if you are searching for mobile car diagnostics near me, our mobile service is designed to reach customers wherever they are, helping them receive expert assistance without unnecessary delays.',
+        spans: [
+          { text: 'Likewise, if you are searching for ' },
+          { text: 'mobile car diagnostics near me', href: DIAGNOSTICS },
+          { text: ', our mobile service is designed to reach customers wherever they are, helping them receive expert assistance without unnecessary delays.' },
+        ],
+      },
 
       { type: 'h2', text: 'Vehicles We Diagnose' },
       { type: 'p', text: 'Our technicians work with many different makes and models, including:' },
