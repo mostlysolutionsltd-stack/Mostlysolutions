@@ -55,10 +55,235 @@ export type BlogPost = {
 const DIAGNOSTICS = '/services/car-diagnostics-london'
 const MECHANICAL = '/services/mechanical-work-london'
 const ELECTRICAL = '/services/electrical-battery-london'
+const SERVICES = '/services'
 
 const CTA_SUB = 'Fast booking, expert technicians, and honest advice — wherever you are in London or Reading.'
 
 export const BLOG_POSTS: BlogPost[] = [
+  {
+    slug: 'car-servicing-repair-london',
+    category: 'Servicing',
+    breadcrumbCategory: 'Servicing & Repair',
+    h1: 'Car Servicing and Repair in London: Convenient Mobile Vehicle Care at Your Door',
+    date: '12 August 2026',
+    datePublished: '2026-08-12',
+    area: 'London',
+    readTime: '6 min read',
+    image: '/services/mechanical.webp',
+    imageAlt: 'Mobile car servicing and repair being carried out at a customer location in London',
+    intro:
+      'Keeping your vehicle properly maintained is one of the best ways to stay safe on London roads and avoid unexpected repair bills. Regular servicing can identify developing problems before they become expensive, while professional repairs can get your vehicle back on the road without unnecessary delays.',
+    body: [
+      { type: 'p', text: 'For drivers looking for reliable car servicing London services, MostlySolutions provides professional mobile automotive support at your home, workplace or roadside. The company offers diagnostics, mechanical work, electrical services, servicing and MOT preparation, with technicians equipped to work at your location.' },
+
+      { type: 'h2', text: 'Reliable Car Servicing in London' },
+      { type: 'p', text: 'Finding time to visit a traditional garage can be difficult, particularly when you have work, family commitments and a busy schedule. This is where mobile servicing can make a real difference.' },
+      {
+        type: 'p',
+        text: 'With car servicing in London, your vehicle can be inspected and maintained at a convenient location. Instead of spending hours travelling to a garage and waiting for your vehicle, a mobile technician comes to you.',
+        spans: [
+          { text: 'With ' },
+          { text: 'car servicing in London', href: SERVICES },
+          { text: ', your vehicle can be inspected and maintained at a convenient location. Instead of spending hours travelling to a garage and waiting for your vehicle, a mobile technician comes to you.' },
+        ],
+      },
+      { type: 'p', text: 'Regular london car servicing can help identify issues with brakes, suspension, fluids, batteries, electrical components and other important vehicle systems. Keeping up with servicing can also help maintain performance and reliability.' },
+      { type: 'p', text: 'MostlySolutions uses trained technicians and professional diagnostic equipment to inspect vehicles and identify faults accurately.' },
+
+      { type: 'h2', text: 'Professional Car Repair London Drivers Can Rely On' },
+      { type: 'p', text: 'Not every vehicle problem requires a traditional workshop visit. Many repairs can be carried out at your home, workplace or roadside when the right equipment and expertise are available.' },
+      { type: 'p', text: 'If you need car repair London, a mobile service can provide a practical alternative to taking your vehicle into a garage. From mechanical faults to electrical problems, the technician can assess the vehicle and explain the required repair before work begins.' },
+      {
+        type: 'p',
+        text: 'For drivers searching for car repair in London, choosing an experienced mobile provider can save time while still giving you access to professional vehicle care.',
+        spans: [
+          { text: 'For drivers searching for ' },
+          { text: 'car repair in London', href: SERVICES },
+          { text: ', choosing an experienced mobile provider can save time while still giving you access to professional vehicle care.' },
+        ],
+      },
+      { type: 'p', text: 'MostlySolutions provides mechanical repairs including brakes, suspension, exhaust work, servicing and MOT preparation. Its electrical services include battery health checks, alternator testing, starter motor replacement and electrical diagnostics.' },
+
+      { type: 'h2', text: 'When Mobile Car Repair Makes Sense' },
+      { type: 'p', text: 'A breakdown or vehicle fault is inconvenient, particularly when your car refuses to start outside your home or workplace. This is where mobile car repair London services can be particularly useful.' },
+      { type: 'p', text: 'Rather than arranging recovery to a garage for every problem, a mobile mechanic can visit your location and assess the vehicle. Depending on the fault, repairs may be completed on site.' },
+      { type: 'p', text: 'Mobile car repair is suitable for many common problems, including certain mechanical, electrical and starting issues. It can also be useful when your vehicle is difficult or inconvenient to drive.' },
+      { type: 'p', text: 'For London drivers, having access to mobile car repair can provide greater convenience and reduce the disruption caused by unexpected vehicle problems.' },
+
+      { type: 'h2', text: 'Cars and Repairs: Why Regular Maintenance Matters' },
+      { type: 'p', text: 'Understanding the relationship between cars and repairs is important for every vehicle owner. Small issues can sometimes develop into larger problems when they are ignored.' },
+      { type: 'p', text: 'For example, an unusual noise, warning light, starting difficulty or change in braking performance should not simply be dismissed. Getting the vehicle checked early can help identify the cause and determine whether a repair or routine maintenance is required.' },
+      {
+        type: 'p',
+        text: 'Professional automotive repair is about more than fixing a problem after a breakdown. Good vehicle care also involves preventative maintenance and regular inspections.',
+        spans: [
+          { text: 'Professional ' },
+          { text: 'automotive repair', href: SERVICES },
+          { text: ' is about more than fixing a problem after a breakdown. Good vehicle care also involves preventative maintenance and regular inspections.' },
+        ],
+      },
+
+      { type: 'h2', text: 'Searching for Auto Repair Near Me?' },
+      { type: 'p', text: 'Many London drivers use searches such as auto repair near me when they need help quickly. The important thing is not simply finding the closest provider, but choosing a service with qualified technicians, suitable equipment and a clear approach to repairs.' },
+      {
+        type: 'p',
+        text: 'The same applies when searching for auto service near me. A convenient location is useful, but professional workmanship and transparent communication matter just as much.',
+        spans: [
+          { text: 'The same applies when searching for ' },
+          { text: 'auto service near me', href: SERVICES },
+          { text: '. A convenient location is useful, but professional workmanship and transparent communication matter just as much.' },
+        ],
+      },
+      { type: 'p', text: 'MostlySolutions offers mobile services designed to bring professional vehicle care directly to customers. The company states that its technicians are IMI certified, have more than 10 years of experience and use Bosch grade diagnostic equipment.' },
+
+      { type: 'h2', text: 'Mobile Car Maintenance for Busy Drivers' },
+      { type: 'p', text: 'Routine auto maintenance can help keep your vehicle dependable throughout the year. Oil and fluid checks, inspections, brake checks, battery assessments and other maintenance tasks can help identify potential problems before they become serious.' },
+      { type: 'p', text: 'With mobile car maintenance, you do not necessarily need to rearrange your day around a garage appointment. A technician can come to your home or workplace, depending on the service required.' },
+      { type: 'p', text: 'Car maintenance mobile services are particularly useful for people who rely on their vehicles every day. Regular maintenance can also support better vehicle performance and help reduce the likelihood of unexpected faults.' },
+
+      { type: 'h2', text: 'Car Vehicle Repair at Your Location' },
+      { type: 'p', text: 'When your vehicle develops a problem, getting professional assistance quickly is important. Car vehicle repair can cover a wide range of mechanical and electrical issues depending on the condition of the vehicle.' },
+      { type: 'p', text: 'A mobile technician can assess the problem, carry out diagnostics where required and explain the repair options. This approach gives drivers a clearer understanding of what is wrong before proceeding with the work.' },
+      { type: 'p', text: "For people searching for mobile vehicle repair near me, MostlySolutions offers a convenient option by bringing its equipment and technicians directly to the customer's location." },
+
+      { type: 'h2', text: 'Why Choose MostlySolutions?' },
+      { type: 'p', text: 'Choosing a vehicle repair company is an important decision. You want technicians who understand modern vehicles and can diagnose problems properly rather than simply replacing parts without identifying the underlying fault.' },
+      { type: 'p', text: 'MostlySolutions provides mobile automotive diagnostics and repair services across London and Reading. Its services include mechanical work, diagnostics, electrical and battery services, detailing and MOT preparation.' },
+      { type: 'p', text: 'The company says its technicians use OEM grade parts backed by a 12 month warranty, with transparent pricing and no hidden charges.' },
+      { type: 'p', text: 'The biggest advantage is convenience. Instead of taking time out of your day to visit a workshop, the service comes to you.' },
+
+      { type: 'h2', text: 'Book Your Car Service or Repair' },
+      { type: 'p', text: 'Whether your vehicle needs routine servicing, a diagnostic check, mechanical repair or electrical assistance, getting the problem addressed early can save time and prevent further complications.' },
+      { type: 'p', text: 'If you are looking for car servicing London, car repair London, mobile car repair London or professional automotive repair, MostlySolutions can provide mobile support at your location.' },
+      { type: 'p', text: 'You can contact MostlySolutions on 0800 208 4745 to discuss your vehicle requirements or arrange a booking.' },
+    ],
+    faqs: [
+      { q: 'How often should I service my car?', a: 'The recommended servicing interval depends on your vehicle, mileage, age and manufacturer requirements. Check your vehicle handbook and speak with a qualified technician if you are unsure.' },
+      { q: 'Can mobile car repair be done at my home?', a: "Yes. Many mechanical and electrical services can be completed at a customer's home, workplace or roadside, depending on the fault and the work required. MostlySolutions provides mobile services at customer locations." },
+      { q: 'What should I do if my car will not start?', a: 'If your vehicle will not start, avoid repeatedly attempting to start it. The issue could involve the battery, starter motor, alternator, fuel system or another component. A professional diagnostic inspection can help identify the cause.' },
+      { q: 'Is mobile car servicing suitable for all vehicles?', a: 'Mobile servicing can be suitable for many vehicles, although the exact service depends on the vehicle and the work required. A technician can advise you before the appointment.' },
+      { q: 'Can you help with car electrical problems?', a: 'Yes. Electrical services can include battery health checks, alternator testing, starter motor replacement and electrical diagnostics.' },
+      { q: 'Why choose mobile vehicle repair instead of a garage?', a: 'The main advantage is convenience. You do not have to arrange transport to a garage or spend time sitting in a waiting room. A mobile technician can come to your location and assess the vehicle there.' },
+      { q: 'How can I book a car service in London?', a: 'You can contact MostlySolutions directly to discuss your vehicle and service requirements. The company provides booking options for customers in London and confirms appointments after receiving the booking request.' },
+    ],
+    ctaHeading: 'Book Your Car Service or Repair',
+    ctaSub: CTA_SUB,
+    dateArea: '12 Aug 2026 · London',
+    excerpt:
+      'Skip the garage trip — MostlySolutions brings professional car servicing, repairs, diagnostics and MOT prep to your home, workplace or roadside across London.',
+  },
+  {
+    slug: 'mobile-mechanic-st-albans',
+    category: 'Mechanical',
+    breadcrumbCategory: 'Mobile Mechanic',
+    h1: 'Reliable Mobile Mechanics in St Albans for Convenient Car Repairs',
+    date: '11 August 2026',
+    datePublished: '2026-08-11',
+    area: 'St Albans',
+    readTime: '6 min read',
+    image: '/services/mechanical.webp',
+    imageAlt: 'Mobile mechanic inspecting a vehicle at a customer location in St Albans',
+    intro:
+      'When your car develops a problem, getting it to a garage can be difficult, especially if the vehicle will not start or is unsafe to drive. That is where a reliable mobile mechanic can make a real difference. Instead of arranging recovery or waiting at a workshop, you can have a qualified professional come to your location and inspect your vehicle.',
+    body: [
+      {
+        type: 'p',
+        text: 'Mostly Solutions provides convenient automotive services designed to make vehicle repairs easier for customers. If you are looking for a mobile mechanic in St Albans, professional help can come directly to your home, workplace, or another suitable location.',
+        spans: [
+          { text: 'Mostly Solutions provides convenient automotive services designed to make vehicle repairs easier for customers. If you are looking for a ' },
+          { text: 'mobile mechanic in St Albans', href: MECHANICAL },
+          { text: ', professional help can come directly to your home, workplace, or another suitable location.' },
+        ],
+      },
+
+      { type: 'h2', text: 'Convenient Car Repairs in St Albans' },
+      { type: 'p', text: 'Finding reliable car repairs in St Albans does not always mean taking time out of your day to visit a garage. Mobile vehicle services are designed around your convenience, allowing many mechanical and electrical issues to be assessed at your location.' },
+      { type: 'p', text: 'Whether your vehicle has developed a starting problem, warning light, battery issue, electrical fault, or another mechanical concern, having a professional inspect the vehicle where it is located can save time and unnecessary inconvenience.' },
+      { type: 'p', text: 'A mechanic in St Albans can assess the condition of your vehicle, identify the likely cause of a problem, and advise you on the most suitable repair. For customers who have busy schedules, this approach can be much more convenient than arranging a traditional garage visit.' },
+
+      { type: 'h2', text: 'Why Choose a Mobile Mechanic?' },
+      { type: 'p', text: 'A mobile mechanic provides an alternative to the traditional garage experience. Rather than taking your vehicle to a workshop, the mechanic comes to you where practical.' },
+      { type: 'p', text: 'This can be particularly useful when your car is parked at home, outside your workplace, or has developed a problem while you are away from your usual garage.' },
+      { type: 'p', text: 'There are several reasons customers choose mobile mechanics:' },
+      { type: 'ul', items: ['Convenient appointments at a suitable location', 'Less disruption to your daily routine', 'Professional inspection of your vehicle', 'Help with mechanical and electrical problems', 'A practical option when your vehicle cannot easily be driven'] },
+      {
+        type: 'p',
+        text: 'If you have searched online for mobile mechanics near me, you are probably looking for someone who can respond to your location without making you arrange unnecessary vehicle recovery.',
+        spans: [
+          { text: 'If you have searched online for ' },
+          { text: 'mobile mechanics near me', href: MECHANICAL },
+          { text: ', you are probably looking for someone who can respond to your location without making you arrange unnecessary vehicle recovery.' },
+        ],
+      },
+
+      { type: 'h2', text: 'Professional Mobile Car Mechanical Services' },
+      { type: 'p', text: 'A mobile car mechanic can deal with a range of common vehicle problems. Depending on the issue and the vehicle, services may include mechanical inspections, fault finding, battery related problems, starting issues, electrical diagnostics, and other automotive repairs.' },
+      { type: 'p', text: 'If your vehicle is experiencing an unusual noise, difficulty starting, dashboard warning, electrical fault, or performance problem, getting the issue checked early can help prevent further complications.' },
+      { type: 'p', text: 'Customers searching for mobile car mechanics often want a convenient service without the need to leave their vehicle at a garage for an extended period.' },
+      { type: 'p', text: 'The advantage is simple. You can explain the symptoms, provide your vehicle location, and arrange for a professional assessment.' },
+
+      { type: 'h2', text: 'Searching for an Auto Mechanic Close to Me?' },
+      {
+        type: 'p',
+        text: 'When a vehicle problem occurs unexpectedly, many people immediately search for an auto mechanic close to me. Location is important because getting assistance quickly can reduce the stress associated with a breakdown or vehicle fault.',
+        spans: [
+          { text: 'When a vehicle problem occurs unexpectedly, many people immediately search for an ' },
+          { text: 'auto mechanic close to me', href: MECHANICAL },
+          { text: '. Location is important because getting assistance quickly can reduce the stress associated with a breakdown or vehicle fault.' },
+        ],
+      },
+      { type: 'p', text: 'Instead of spending time looking for a garage that accepts your vehicle, a mobile service can provide a more convenient solution where suitable.' },
+      { type: 'p', text: 'If you are searching for motor mechanics near me, consider choosing a professional service that can assess your vehicle at your location and explain what needs to be done before proceeding with the repair.' },
+
+      { type: 'h2', text: 'Car Mechanic Services for St Albans Drivers' },
+      { type: 'p', text: 'Choosing a car mechanic in St Albans gives local drivers access to professional assistance without necessarily having to arrange a trip to a garage.' },
+      { type: 'p', text: 'Mobile servicing can be especially helpful for people who depend on their vehicle for work, family commitments, shopping, and everyday travel. A vehicle problem can quickly disrupt your plans, so having access to a mobile service can provide valuable convenience.' },
+      { type: 'p', text: 'From mechanical concerns to electrical faults, the right technician can help identify the issue and recommend an appropriate solution.' },
+
+      { type: 'h2', text: 'Electrical Vehicle Problems' },
+      { type: 'p', text: 'Modern vehicles rely heavily on electrical systems. Problems with batteries, starting systems, sensors, lights, charging systems, wiring, and other electrical components can affect the reliability of your vehicle.' },
+      {
+        type: 'p',
+        text: 'If you are searching for an electrical mechanic near me, getting professional assistance is important because electrical faults can sometimes be difficult to identify without appropriate diagnostic equipment and experience.',
+        spans: [
+          { text: 'If you are searching for an ' },
+          { text: 'electrical mechanic near me', href: ELECTRICAL },
+          { text: ', getting professional assistance is important because electrical faults can sometimes be difficult to identify without appropriate diagnostic equipment and experience.' },
+        ],
+      },
+      { type: 'p', text: 'A professional vehicle inspection can help determine whether the problem is mechanical, electrical, or related to another vehicle system.' },
+
+      { type: 'h2', text: 'What Can a Mobile Mechanic Help With?' },
+      { type: 'p', text: 'A mobile mechanic car service can be useful for a variety of vehicle concerns. The exact service available will depend on the vehicle and the nature of the problem.' },
+      { type: 'p', text: 'Common reasons customers request assistance include:' },
+      { type: 'ul', items: ['Vehicle starting problems', 'Battery related issues', 'Electrical faults', 'Warning lights', 'Mechanical inspections', 'Engine related concerns', 'Vehicle diagnostics', 'General repair requirements'] },
+      { type: 'p', text: 'If you are unsure what is wrong with your vehicle, professional fault finding can help establish the cause before deciding on the next step.' },
+
+      { type: 'h2', text: 'Avoid Unnecessary Delays' },
+      { type: 'p', text: 'Ignoring a small vehicle problem can sometimes lead to a larger and more expensive issue. If your car is showing unusual symptoms, arranging an inspection sooner rather than later can be a sensible decision.' },
+      { type: 'p', text: 'People searching for auto mechanics near me or mobile mobile mechanics are often dealing with a problem that needs attention quickly. A mobile service can provide a convenient way to get professional assistance without automatically relying on vehicle recovery.' },
+      { type: 'p', text: 'The term mobile mobile mechanics may appear in searches, but what matters is finding a genuine professional who can provide suitable automotive assistance at your location.' },
+
+      { type: 'h2', text: 'Book Mobile Mechanical Assistance in St Albans' },
+      { type: 'p', text: 'If you need dependable vehicle assistance, Mostly Solutions can help make the process straightforward. Instead of searching repeatedly for mobile mechanic in St Albans, you can contact a professional service and explain the issue affecting your vehicle.' },
+      { type: 'p', text: 'Whether you need mechanical assistance, electrical fault finding, diagnostics, or general vehicle repair support, getting the problem assessed by a professional can give you a clearer understanding of what needs to happen next.' },
+      { type: 'p', text: 'For drivers looking for convenient automotive assistance, mobile services provide a practical alternative to visiting a traditional garage.' },
+      { type: 'p', text: 'If you need professional assistance with your vehicle, contact Mostly Solutions today and discuss your requirements with the team. Getting the problem checked promptly can help you understand the issue and get back on the road with greater confidence.' },
+    ],
+    faqs: [
+      { q: 'How does a mobile mechanic work?', a: 'A mobile mechanic travels to your chosen location to inspect your vehicle. Depending on the problem, the mechanic may be able to complete the repair at the location or advise you if further workshop based work is required.' },
+      { q: 'Can a mobile mechanic repair my car at home?', a: 'In many situations, yes. The type of repair that can be completed at home depends on the fault, vehicle, equipment required, and safety considerations. A professional can assess the situation and explain the available options.' },
+      { q: 'What should I do if my car will not start?', a: 'Avoid repeatedly attempting to start the vehicle if you suspect there is a serious fault. Contact a professional mobile mechanic and explain the symptoms. They can assess the vehicle and determine whether the issue is related to the battery, starter, electrical system, or another component.' },
+      { q: 'How can I find mobile mechanics near me in St Albans?', a: 'Search for a reputable local service using terms such as mobile mechanics near me, mobile car mechanics, or car mechanic in St Albans. Check the services offered and contact the provider to discuss your vehicle problem before arranging an appointment.' },
+      { q: 'Can a mobile mechanic deal with electrical problems?', a: 'A suitable technician may be able to diagnose and repair various vehicle electrical problems. If you are searching for an electrical mechanic near me, explain the symptoms clearly so the technician can determine what equipment and expertise may be required.' },
+      { q: 'Why choose a mobile mechanic instead of a garage?', a: 'Convenience is one of the main benefits. A mobile mechanic can come to your location, reducing the need to arrange transport for your vehicle. This can save time and make dealing with unexpected vehicle problems considerably easier.' },
+    ],
+    ctaHeading: 'Need a Mobile Mechanic in St Albans?',
+    ctaSub: CTA_SUB,
+    dateArea: '11 Aug 2026 · St Albans',
+    excerpt:
+      'Car won’t start or unsafe to drive? Our reliable mobile mechanics come to your home or workplace across St Albans for mechanical, electrical and diagnostic help.',
+  },
   {
     slug: 'mobile-car-electrician-london',
     category: 'Electrical',
