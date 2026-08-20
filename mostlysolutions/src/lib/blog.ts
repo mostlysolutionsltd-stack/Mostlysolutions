@@ -69,7 +69,7 @@ export const BLOG_POSTS: BlogPost[] = [
     datePublished: '2026-08-12',
     area: 'London',
     readTime: '6 min read',
-    image: '/services/mechanical.webp',
+    image: '/blog/car-servicing-repair-london.jpg',
     imageAlt: 'Mobile car servicing and repair being carried out at a customer location in London',
     intro:
       'Keeping your vehicle properly maintained is one of the best ways to stay safe on London roads and avoid unexpected repair bills. Regular servicing can identify developing problems before they become expensive, while professional repairs can get your vehicle back on the road without unnecessary delays.',
@@ -181,7 +181,7 @@ export const BLOG_POSTS: BlogPost[] = [
     datePublished: '2026-08-11',
     area: 'St Albans',
     readTime: '6 min read',
-    image: '/services/mechanical.webp',
+    image: '/blog/mobile-mechanic-st-albans.jpg',
     imageAlt: 'Mobile mechanic inspecting a vehicle at a customer location in St Albans',
     intro:
       'When your car develops a problem, getting it to a garage can be difficult, especially if the vehicle will not start or is unsafe to drive. That is where a reliable mobile mechanic can make a real difference. Instead of arranging recovery or waiting at a workshop, you can have a qualified professional come to your location and inspect your vehicle.',
@@ -293,7 +293,7 @@ export const BLOG_POSTS: BlogPost[] = [
     datePublished: '2026-08-06',
     area: 'London',
     readTime: '6 min read',
-    image: '/services/electrical.webp',
+    image: '/blog/mobile-car-electrician-london.jpg',
     imageAlt: 'Mobile car electrician diagnosing a vehicle electrical fault in London',
     intro:
       'Modern vehicles depend on advanced electrical systems for smooth and reliable performance. From starting your car in the morning to operating lights, sensors, batteries, and infotainment systems, every component relies on a healthy electrical system. When something goes wrong, finding a trusted mobile car electrician in London can save you from unnecessary towing costs and long waits at a workshop.',
