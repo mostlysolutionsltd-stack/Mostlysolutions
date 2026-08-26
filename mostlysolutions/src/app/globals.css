@@ -367,6 +367,14 @@ h4 {
 .ms-card-title-link:hover {
   color: #4cc163;
 }
+.ms-area-link {
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+.ms-area-link:hover {
+  border-color: #4cc163 !important;
+  background: rgba(76, 193, 99, 0.12) !important;
+  transform: translateY(-1px);
+}
 .ms-learn-link {
   color: #2fa8d8;
   text-decoration: none;
