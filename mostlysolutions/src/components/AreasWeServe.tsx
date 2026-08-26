@@ -1,13 +1,15 @@
-const AREAS = [
-  'London',
-  'Guildford',
-  'Reading',
-  'Oxford',
-  'Watford',
-  'Hemel Hempstead',
-  'High Wycombe',
-  'Slough',
-  'St Albans',
+import Link from 'next/link'
+
+const AREAS: { name: string; href?: string }[] = [
+  { name: 'London' },
+  { name: 'Guildford' },
+  { name: 'Reading', href: '/services/mobile-mechanic-reading-berkshire' },
+  { name: 'Oxford' },
+  { name: 'Watford' },
+  { name: 'Hemel Hempstead' },
+  { name: 'High Wycombe' },
+  { name: 'Slough' },
+  { name: 'St Albans' },
 ]
 
 function PinGlyph() {
@@ -60,27 +62,47 @@ export default function AreasWeServe() {
             marginTop: 'clamp(30px,4vw,44px)',
           }}
         >
-          {AREAS.map((area) => (
-            <span
-              key={area}
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 9,
-                padding: '11px 18px',
-                borderRadius: 99,
-                border: '1px solid rgba(255,255,255,.1)',
-                background: 'rgba(255,255,255,.04)',
-                fontSize: 'clamp(13.5px,1.5vw,15px)',
-                fontWeight: 600,
-                color: 'rgba(234,240,247,.85)',
-                whiteSpace: 'nowrap',
-              }}
-            >
-              <PinGlyph />
-              {area}
-            </span>
-          ))}
+          {AREAS.map((area) => {
+            const pillStyle = {
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 9,
+              padding: '11px 18px',
+              borderRadius: 99,
+              border: '1px solid rgba(255,255,255,.1)',
+              background: 'rgba(255,255,255,.04)',
+              fontSize: 'clamp(13.5px,1.5vw,15px)',
+              fontWeight: 600,
+              color: 'rgba(234,240,247,.85)',
+              whiteSpace: 'nowrap',
+            } as const
+
+            if (area.href) {
+              return (
+                <Link
+                  key={area.name}
+                  href={area.href}
+                  className="ms-area-link"
+                  style={{
+                    ...pillStyle,
+                    textDecoration: 'none',
+                    borderColor: 'rgba(76,193,99,.45)',
+                    color: '#EAF0F7',
+                  }}
+                >
+                  <PinGlyph />
+                  {area.name}
+                </Link>
+              )
+            }
+
+            return (
+              <span key={area.name} style={pillStyle}>
+                <PinGlyph />
+                {area.name}
+              </span>
+            )
+          })}
         </div>
       </div>
     </section>

@@ -321,6 +321,74 @@ export const SERVICES: ServiceContent[] = [
       },
     ],
   },
+  {
+    slug: 'mobile-mechanic-reading-berkshire',
+    metaTitle: 'Mobile Mechanic in Reading Berkshire | Mostly Solutions',
+    metaDescription:
+      'Professional mobile mechanic in Reading, Berkshire. We bring servicing, diagnostics, brake, suspension, exhaust and battery repairs to your home, workplace or roadside — no garage visit needed.',
+    breadcrumb: 'Mobile Mechanic Reading',
+    h1: 'Mobile Mechanic in Reading Berkshire',
+    tagline: 'Professional Mobile Car Repairs Across Reading and Berkshire',
+    intro:
+      'When your car needs attention, getting it to a garage can be stressful and inconvenient. Mobile mechanic in Reading Berkshire services provide a practical solution by bringing professional vehicle repairs and maintenance directly to your home, workplace or suitable roadside location.',
+    sections: [
+      {
+        h2: 'Professional Mobile Car Repairs in Reading',
+        paras: [
+          'At Mostly Solutions, we provide reliable mobile automotive services across Reading and surrounding areas. Our technicians can diagnose vehicle problems, carry out mechanical repairs and help get your car back on the road without the need for a traditional garage visit, using fully equipped vans and professional diagnostic equipment.',
+          'Finding a dependable mobile mechanic in Reading Berks can save you valuable time. Instead of arranging recovery or waiting at a workshop, you can arrange for a technician to come to you.',
+          'Our mobile services can help with a wide range of common vehicle problems, including brake issues, servicing, suspension repairs, exhaust problems, battery concerns and diagnostic checks. We can also investigate warning lights, starting problems and other faults affecting your vehicle.',
+          'Whether your car has stopped working at home or you simply need convenient maintenance at your workplace, our mobile approach makes getting professional assistance easier.',
+        ],
+      },
+      {
+        h2: 'Why Choose Mostly Solutions',
+        paras: [
+          'We focus on straightforward service, professional workmanship and clear communication. Our technicians use modern diagnostic equipment to identify faults and explain the required work before repairs are carried out. Our IMI certified technicians carry out repairs using OEM grade parts, backed by a 12 month warranty.',
+          'Choosing a mobile mechanic means you can avoid unnecessary trips to a garage while receiving expert assistance at a location that suits you.',
+        ],
+      },
+      {
+        h2: 'Mobile Mechanic Services in Reading',
+        paras: [
+          'If you are searching for a mobile mechanic in Reading Berkshire for servicing, diagnostics or repairs, Mostly Solutions can help. We work with different makes and models and aim to provide a convenient service tailored to your vehicle’s needs.',
+          'From routine maintenance to unexpected breakdown problems, our mobile technicians can assess the issue and advise you on the most suitable solution.',
+        ],
+      },
+    ],
+    checklistTitle: 'We can assist with',
+    checklist: [
+      'Vehicle servicing',
+      'Brake repairs',
+      'Suspension repairs',
+      'Exhaust repairs',
+      'Battery related work',
+      'Diagnostic checks',
+      'Warning light investigation',
+      'Starting problem diagnosis',
+      'General mechanical repairs',
+      'Routine maintenance',
+    ],
+    ctaHeading: 'Book Your Mobile Mechanic in Reading',
+    faqs: [
+      {
+        q: 'Can a mobile mechanic come to my home in Reading?',
+        a: 'Yes. Mobile mechanics can provide services at suitable home, workplace or roadside locations, depending on the repair required.',
+      },
+      {
+        q: 'What services can a mobile mechanic provide?',
+        a: 'Common services include vehicle diagnostics, servicing, brake repairs, suspension work, exhaust repairs, battery related work and other mechanical repairs.',
+      },
+      {
+        q: 'Do you provide mobile mechanic services across Reading?',
+        a: 'Yes. Mostly Solutions provides mobile automotive services in Reading and the surrounding area.',
+      },
+      {
+        q: 'How can I book a mobile mechanic?',
+        a: 'Contact Mostly Solutions with your vehicle details and the problem you are experiencing. The team can discuss your requirements and arrange a suitable mobile appointment.',
+      },
+    ],
+  },
 ]
 
 export function getService(slug: string): ServiceContent | undefined {

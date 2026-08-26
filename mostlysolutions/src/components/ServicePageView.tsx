@@ -17,6 +17,7 @@ const HERO_IMAGE: Record<string, string> = {
   'mechanical-work-london': '/services/mechanical.webp',
   'electrical-battery-london': '/services/electrical.webp',
   'car-detailing-london': '/services/detailing.webp',
+  'mobile-mechanic-reading-berkshire': '/blog/mobile-car-electrician-london.jpg',
 }
 
 // Wrap the first mention of each *other* service in a link to its page.
