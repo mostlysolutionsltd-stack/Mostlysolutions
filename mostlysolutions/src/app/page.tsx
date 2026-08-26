@@ -8,6 +8,7 @@ import WeComeToYou from '@/components/WeComeToYou'
 import Reviews from '@/components/Reviews'
 import Stories from '@/components/Stories'
 import Locations from '@/components/Locations'
+import AreasWeServe from '@/components/AreasWeServe'
 import FAQ from '@/components/FAQ'
 import Booking from '@/components/Booking'
 import SiteFooter from '@/components/SiteFooter'
@@ -25,7 +26,7 @@ const localBusinessJsonLd = {
   telephone: '0800 208 4745',
   email: 'mostlysolutionsltd@gmail.com',
   priceRange: '££',
-  areaServed: ['Reading', 'London'],
+  areaServed: ['London', 'Guildford', 'Reading', 'Oxford', 'Watford', 'Hemel Hempstead', 'High Wycombe', 'Slough', 'St Albans'],
   address: [
     {
       '@type': 'PostalAddress',
@@ -57,6 +58,7 @@ export default function Home() {
         <Reviews />
         <Stories />
         <Locations />
+        <AreasWeServe />
         <FAQ />
         <Booking />
       </main>

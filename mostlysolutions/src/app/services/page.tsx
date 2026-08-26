@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import SiteHeader from '@/components/SiteHeader'
 import SiteFooter from '@/components/SiteFooter'
+import AreasWeServe from '@/components/AreasWeServe'
 import { WhatsAppGlyph } from '@/components/icons'
 
 export const metadata: Metadata = {
@@ -218,6 +219,8 @@ export default function ServicesLanding() {
             </div>
           ))}
         </section>
+
+        <AreasWeServe />
 
         {/* ---------- CTA band ---------- */}
         <section style={{ position: 'relative', overflow: 'hidden', padding: 'clamp(64px,9vw,110px) clamp(16px,5vw,48px)', textAlign: 'center' }}>
