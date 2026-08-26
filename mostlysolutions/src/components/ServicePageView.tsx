@@ -4,6 +4,7 @@ import { SERVICE_ANCHORS, type ServiceContent } from '@/lib/services'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import ServiceFAQAccordion from './ServiceFAQ'
+import AreasWeServe from './AreasWeServe'
 import { WhatsAppGlyph } from './icons'
 
 const WHATSAPP_HREF = 'https://wa.me/447722019897'
@@ -225,6 +226,8 @@ export default function ServicePageView({ service }: { service: ServiceContent }
           </div>
           <ServiceFAQAccordion faqs={service.faqs} />
         </section>
+
+        <AreasWeServe />
 
         {/* ---------- CTA band ---------- */}
         <section

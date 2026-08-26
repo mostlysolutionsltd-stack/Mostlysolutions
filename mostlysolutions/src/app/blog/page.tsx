@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import SiteHeader from '@/components/SiteHeader'
 import SiteFooter from '@/components/SiteFooter'
+import AreasWeServe from '@/components/AreasWeServe'
 import { BLOG_POSTS } from '@/lib/blog'
 
 export const metadata: Metadata = {
@@ -96,6 +97,8 @@ export default function BlogIndex() {
             ))}
           </div>
         </section>
+
+        <AreasWeServe />
       </main>
 
       <SiteFooter />

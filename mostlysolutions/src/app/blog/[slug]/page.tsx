@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import SiteHeader from '@/components/SiteHeader'
 import SiteFooter from '@/components/SiteFooter'
+import AreasWeServe from '@/components/AreasWeServe'
 import { InstagramGlyph } from '@/components/icons'
 import { BLOG_POSTS, getPost, type ResultLink, type InlineSpan } from '@/lib/blog'
 
@@ -272,6 +273,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             </>
           )}
         </article>
+
+        <AreasWeServe />
 
         {/* ---------- CTA band ---------- */}
         <section
