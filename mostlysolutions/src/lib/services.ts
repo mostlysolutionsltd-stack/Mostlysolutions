@@ -43,7 +43,7 @@ export const SERVICE_ANCHORS: { slug: string; phrases: string[] }[] = [
   },
   {
     slug: 'car-detailing-london',
-    phrases: ['mobile car detailing in London', 'ceramic coating', 'car detailing'],
+    phrases: ['mobile car detailing in London', 'detailing and protection', 'ceramic coating', 'car detailing'],
   },
 ]
 
@@ -386,6 +386,261 @@ export const SERVICES: ServiceContent[] = [
       {
         q: 'How can I book a mobile mechanic?',
         a: 'Contact Mostly Solutions with your vehicle details and the problem you are experiencing. The team can discuss your requirements and arrange a suitable mobile appointment.',
+      },
+    ],
+  },
+  {
+    slug: 'mobile-car-services-guildford',
+    metaTitle: 'Mobile Car Services in Guildford | Mostly Solutions',
+    metaDescription:
+      'Professional mobile car services in Guildford — diagnostics, mechanical work, electrical and battery services, and detailing brought to your home, workplace or roadside.',
+    breadcrumb: 'Guildford',
+    h1: 'Mobile Car Services in Guildford',
+    tagline: 'Professional Mobile Vehicle Care Across Guildford',
+    intro:
+      'Looking for a convenient and reliable way to take care of your vehicle? Mostly Solutions provides professional mobile car services in Guildford, bringing vehicle support directly to your home, workplace or another suitable location. Our services include mobile car diagnostics, mechanical work, electrical and battery services, and detailing and protection.',
+    sections: [
+      {
+        h2: 'Mobile Car Diagnostics',
+        paras: [
+          'A dashboard warning light, starting problem or unusual vehicle behaviour can be a sign that your car needs attention. Our Mobile Car Diagnostics service helps identify potential faults using professional diagnostic equipment.',
+          'We can investigate engine faults, warning lights, sensor problems and various electronic issues. A diagnostic check can help identify the cause of a problem before unnecessary repairs or part replacements are carried out.',
+          'If you need car diagnostics in Guildford, our mobile service makes it easier to get your vehicle checked without making an unnecessary trip to a garage.',
+        ],
+      },
+      {
+        h2: 'Mechanical Work',
+        paras: [
+          'Mechanical problems can make everyday driving difficult and, in some cases, unsafe. Our Mechanical Work service provides assistance with suitable vehicle repairs and maintenance.',
+          'We can help with various mechanical issues involving components such as brakes, suspension, engine and clutch systems. Our mobile approach means we can attend your vehicle at a convenient location, helping reduce the disruption caused by a garage visit.',
+          'For customers looking for mobile mechanical services in Guildford, Mostly Solutions offers a practical and convenient option.',
+        ],
+      },
+      {
+        h2: 'Electrical and Batteries',
+        paras: [
+          "Electrical faults can affect your vehicle's ability to start and operate correctly. Battery problems, starting issues, warning lights and other electrical faults can occur without warning.",
+          'Our Electrical & Batteries service provides professional assistance with suitable automotive electrical and battery related problems. If you need a car electrician in Guildford or are experiencing battery difficulties, our mobile service can provide convenient support.',
+        ],
+      },
+      {
+        h2: 'Detailing and Protection',
+        paras: [
+          "Your vehicle's appearance can deteriorate through regular use, road dirt and everyday wear. Our Detailing & Protection service helps keep your vehicle looking clean and well maintained.",
+          'From interior cleaning to exterior care, professional detailing can improve the appearance of your vehicle and help maintain its condition. Whether you are preparing your car for sale or simply want to keep it looking its best, we can help.',
+        ],
+      },
+      {
+        h2: 'Why Choose Mostly Solutions?',
+        paras: [
+          'Mostly Solutions provides a convenient approach to vehicle care. Instead of spending time arranging a garage visit, you can have suitable services carried out at a location that works for you.',
+          'From diagnostics and mechanical work to electrical assistance, battery services and detailing, we provide practical automotive solutions for customers across Guildford.',
+          'Contact Mostly Solutions today to discuss your vehicle requirements and arrange a convenient mobile service.',
+        ],
+      },
+    ],
+    checklistTitle: 'We can assist with',
+    checklist: [
+      'Engine & warning light diagnostics',
+      'Sensor & electronic fault finding',
+      'Brakes, suspension & clutch',
+      'Servicing & maintenance',
+      'Battery testing & replacement',
+      'Alternator & starting faults',
+      'Interior & exterior detailing',
+      'Paint protection',
+    ],
+    ctaHeading: 'Book Mobile Car Services in Guildford',
+    faqs: [
+      {
+        q: 'Do you provide mobile car diagnostics?',
+        a: 'Yes. We provide mobile car diagnostics and can attend suitable locations to investigate potential vehicle faults.',
+      },
+      {
+        q: 'Can you help with car electrical problems?',
+        a: 'Yes. Our Electrical & Batteries service can assist with suitable electrical and battery related vehicle problems.',
+      },
+      {
+        q: 'Do you offer mobile mechanical services?',
+        a: 'Yes. We provide mobile mechanical assistance for suitable vehicle repairs and maintenance requirements.',
+      },
+      {
+        q: 'Do you provide car detailing?',
+        a: 'Yes. Our Detailing & Protection service helps maintain the interior and exterior appearance of your vehicle.',
+      },
+      {
+        q: 'Do you cover Guildford?',
+        a: 'Yes. Mostly Solutions provides mobile automotive services for customers in Guildford and surrounding areas.',
+      },
+    ],
+  },
+  {
+    slug: 'mobile-car-services-oxford',
+    metaTitle: 'Mobile Car Services in Oxford | Mostly Solutions',
+    metaDescription:
+      'Professional mobile car services in Oxford — diagnostics, mechanical work, electrical and battery services, and detailing brought to your home, workplace or roadside.',
+    breadcrumb: 'Oxford',
+    h1: 'Mobile Car Services in Oxford',
+    tagline: 'Professional Mobile Vehicle Care Across Oxford',
+    intro:
+      'Looking for a convenient and reliable way to take care of your vehicle? Mostly Solutions provides professional mobile car services in Oxford, bringing vehicle support directly to your home, workplace or another suitable location. Our services include mobile car diagnostics, mechanical work, electrical and battery services, and detailing and protection.',
+    sections: [
+      {
+        h2: 'Mobile Car Diagnostics',
+        paras: [
+          'A dashboard warning light, starting problem or unusual vehicle behaviour can be a sign that your car needs attention. Our Mobile Car Diagnostics service helps identify potential faults using professional diagnostic equipment.',
+          'We can investigate engine faults, warning lights, sensor problems and various electronic issues. A diagnostic check can help identify the cause of a problem before unnecessary repairs or part replacements are carried out.',
+          'If you need car diagnostics in Oxford, our mobile service makes it easier to get your vehicle checked without making an unnecessary trip to a garage.',
+        ],
+      },
+      {
+        h2: 'Mechanical Work',
+        paras: [
+          'Mechanical problems can make everyday driving difficult and, in some cases, unsafe. Our Mechanical Work service provides assistance with suitable vehicle repairs and maintenance.',
+          'We can help with various mechanical issues involving components such as brakes, suspension, engine and clutch systems. Our mobile approach means we can attend your vehicle at a convenient location, helping reduce the disruption caused by a garage visit.',
+          'For customers looking for mobile mechanical services in Oxford, Mostly Solutions offers a practical and convenient option.',
+        ],
+      },
+      {
+        h2: 'Electrical and Batteries',
+        paras: [
+          "Electrical faults can affect your vehicle's ability to start and operate correctly. Battery problems, starting issues, warning lights and other electrical faults can occur without warning.",
+          'Our Electrical & Batteries service provides professional assistance with suitable automotive electrical and battery related problems. If you need a car electrician in Oxford or are experiencing battery difficulties, our mobile service can provide convenient support.',
+        ],
+      },
+      {
+        h2: 'Detailing and Protection',
+        paras: [
+          "Your vehicle's appearance can deteriorate through regular use, road dirt and everyday wear. Our Detailing & Protection service helps keep your vehicle looking clean and well maintained.",
+          'From interior cleaning to exterior care, professional detailing can improve the appearance of your vehicle and help maintain its condition. Whether you are preparing your car for sale or simply want to keep it looking its best, we can help.',
+        ],
+      },
+      {
+        h2: 'Why Choose Mostly Solutions?',
+        paras: [
+          'Mostly Solutions provides a convenient approach to vehicle care. Instead of spending time arranging a garage visit, you can have suitable services carried out at a location that works for you.',
+          'From diagnostics and mechanical work to electrical assistance, battery services and detailing, we provide practical automotive solutions for customers across Oxford.',
+          'Contact Mostly Solutions today to discuss your vehicle requirements and arrange a convenient mobile service.',
+        ],
+      },
+    ],
+    checklistTitle: 'We can assist with',
+    checklist: [
+      'Engine & warning light diagnostics',
+      'Sensor & electronic fault finding',
+      'Brakes, suspension & clutch',
+      'Servicing & maintenance',
+      'Battery testing & replacement',
+      'Alternator & starting faults',
+      'Interior & exterior detailing',
+      'Paint protection',
+    ],
+    ctaHeading: 'Book Mobile Car Services in Oxford',
+    faqs: [
+      {
+        q: 'Do you provide mobile car diagnostics?',
+        a: 'Yes. We provide mobile car diagnostics and can attend suitable locations to investigate potential vehicle faults.',
+      },
+      {
+        q: 'Can you help with car electrical problems?',
+        a: 'Yes. Our Electrical & Batteries service can assist with suitable electrical and battery related vehicle problems.',
+      },
+      {
+        q: 'Do you offer mobile mechanical services?',
+        a: 'Yes. We provide mobile mechanical assistance for suitable vehicle repairs and maintenance requirements.',
+      },
+      {
+        q: 'Do you provide car detailing?',
+        a: 'Yes. Our Detailing & Protection service helps maintain the interior and exterior appearance of your vehicle.',
+      },
+      {
+        q: 'Do you cover Oxford?',
+        a: 'Yes. Mostly Solutions provides mobile automotive services for customers in Oxford and surrounding areas.',
+      },
+    ],
+  },
+  {
+    slug: 'mobile-car-services-watford',
+    metaTitle: 'Mobile Car Services in Watford | Mostly Solutions',
+    metaDescription:
+      'Professional mobile car services in Watford — diagnostics, mechanical work, electrical and battery services, and detailing brought to your home, workplace or roadside.',
+    breadcrumb: 'Watford',
+    h1: 'Mobile Car Services in Watford',
+    tagline: 'Professional Mobile Vehicle Care Across Watford',
+    intro:
+      'Looking for a convenient way to get your vehicle checked, repaired or maintained? Mostly Solutions provides professional mobile car services in Watford, bringing reliable vehicle support directly to your home, workplace or another suitable location. Our services include mobile car diagnostics, mechanical work, electrical and battery services, and detailing and protection.',
+    sections: [
+      {
+        h2: 'Mobile Car Diagnostics',
+        paras: [
+          'A warning light, starting issue or unusual vehicle behaviour can indicate an underlying problem. Our Mobile Car Diagnostics service helps identify potential faults using professional diagnostic equipment.',
+          'We can investigate engine faults, warning lights, sensor issues and various electronic problems. Finding the cause of a fault can help you make an informed decision about the repairs your vehicle may require.',
+          'If you need car diagnostics in Watford, our mobile service provides a convenient way to have your vehicle checked without the need for an unnecessary garage visit.',
+        ],
+      },
+      {
+        h2: 'Mechanical Work',
+        paras: [
+          "Mechanical problems can affect your vehicle's performance, reliability and safety. Our Mechanical Work service provides assistance with suitable vehicle repairs and maintenance.",
+          'We can help with a range of mechanical issues involving components such as brakes, suspension, engine and clutch systems. Our mobile approach allows us to attend your vehicle at a convenient location, helping reduce the disruption caused by taking your car to a garage.',
+          'For customers looking for mobile mechanical services in Watford, Mostly Solutions offers a practical solution.',
+        ],
+      },
+      {
+        h2: 'Electrical and Batteries',
+        paras: [
+          'Electrical and battery problems can happen without warning and may leave you unable to start or use your vehicle.',
+          'Our Electrical & Batteries service provides assistance with suitable automotive electrical and battery related problems. If you need a car electrician in Watford, are experiencing starting difficulties or believe your battery needs attention, our mobile service can help.',
+        ],
+      },
+      {
+        h2: 'Detailing and Protection',
+        paras: [
+          "Regular driving exposes your vehicle to dirt, dust, road grime and everyday wear. Our Detailing & Protection service helps maintain your vehicle's interior and exterior appearance.",
+          'Professional detailing can refresh the look of your car and help keep it in better condition. Whether you are preparing your vehicle for sale or simply want it looking its best, our detailing service provides convenient vehicle care.',
+        ],
+      },
+      {
+        h2: 'Why Choose Mostly Solutions?',
+        paras: [
+          'Mostly Solutions makes vehicle care more convenient by bringing suitable automotive services directly to you. Whether your vehicle needs diagnostics, mechanical assistance, electrical support, battery services or detailing, we aim to provide a straightforward and professional service.',
+          'We provide mobile automotive solutions for customers across Watford and surrounding areas.',
+          'Contact Mostly Solutions today to discuss your vehicle requirements and arrange a convenient service.',
+        ],
+      },
+    ],
+    checklistTitle: 'We can assist with',
+    checklist: [
+      'Engine & warning light diagnostics',
+      'Sensor & electronic fault finding',
+      'Brakes, suspension & clutch',
+      'Servicing & maintenance',
+      'Battery testing & replacement',
+      'Alternator & starting faults',
+      'Interior & exterior detailing',
+      'Paint protection',
+    ],
+    ctaHeading: 'Book Mobile Car Services in Watford',
+    faqs: [
+      {
+        q: 'Do you provide mobile car diagnostics?',
+        a: 'Yes. We provide mobile car diagnostics and can attend suitable locations to investigate potential vehicle faults.',
+      },
+      {
+        q: 'Can you help with car electrical problems?',
+        a: 'Yes. Our Electrical & Batteries service can assist with suitable automotive electrical and battery related issues.',
+      },
+      {
+        q: 'Do you offer mobile mechanical services?',
+        a: 'Yes. We provide mobile mechanical assistance for suitable vehicle repairs and maintenance requirements.',
+      },
+      {
+        q: 'Do you provide car detailing?',
+        a: 'Yes. Our Detailing & Protection service helps maintain the appearance and condition of your vehicle.',
+      },
+      {
+        q: 'Do you cover Watford?',
+        a: 'Yes. Mostly Solutions provides mobile automotive services for customers in Watford and surrounding areas.',
       },
     ],
   },

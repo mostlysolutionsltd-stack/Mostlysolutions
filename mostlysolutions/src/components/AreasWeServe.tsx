@@ -2,10 +2,10 @@ import Link from 'next/link'
 
 const AREAS: { name: string; href?: string }[] = [
   { name: 'London' },
-  { name: 'Guildford' },
+  { name: 'Guildford', href: '/services/mobile-car-services-guildford' },
   { name: 'Reading', href: '/services/mobile-mechanic-reading-berkshire' },
-  { name: 'Oxford' },
-  { name: 'Watford' },
+  { name: 'Oxford', href: '/services/mobile-car-services-oxford' },
+  { name: 'Watford', href: '/services/mobile-car-services-watford' },
   { name: 'Hemel Hempstead' },
   { name: 'High Wycombe' },
   { name: 'Slough' },
