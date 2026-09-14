@@ -60,446 +60,436 @@ const SERVICES = '/services'
 const CTA_SUB = 'Fast booking, expert technicians, and honest advice — wherever you are in London or Reading.'
 
 export const BLOG_POSTS: BlogPost[] = [
-{
-  slug: 'car-broken-down-in-hemel-hempstead-what-to-do-when-you-need-a-mobile-mechanic',
-  category: 'Mechanical',
-  breadcrumbCategory: 'Mobile Mechanic',
-  h1: 'Car Broken Down in Hemel Hempstead? What to Do When You Need a Mobile Mechanic',
-  date: '13 September 2026',
-  datePublished: '2026-09-13',
-  area: 'Hemel Hempstead',
-  readTime: '7 min read',
-  image: '/blog/car-wont-start-mobile-mechanic-hemel-hempstead.jpg',
-  imageAlt: 'Mobile mechanic checking a broken down car in Hemel Hempstead',
-  intro:
-    'There is never a convenient time for your car to develop a problem.',
-  body: [
-    {
-      type: 'p',
-      text: 'You might be getting ready for work, taking the children to school, heading home after a long day, or preparing for an important journey. Then suddenly, the car will not start, a warning light appears, or you notice that something does not feel right while driving.'
-    },
-
-    {
-      type: 'p',
-      text: 'The first question is usually simple: Who can come and look at my car?'
-    },
-
-    {
-      type: 'p',
-      text: 'For many drivers, taking a vehicle to a garage is not easy when the car has already developed a problem. This is where a mobile mechanic can make things much easier.'
-    },
-
-    {
-      type: 'p',
-      text: 'If you need a mobile mechanic in Hemel Hempstead, Mostly Solutions can provide mobile mechanical assistance at a suitable location, bringing the service to your home, workplace or roadside where appropriate. The company lists Hemel Hempstead among its areas of coverage.',
-      spans: [
-        { text: 'If you need a ' },
-        { text: 'mobile mechanic in Hemel Hempstead', href: MECHANICAL },
-        { text: ', Mostly Solutions can provide mobile mechanical assistance at a suitable location, bringing the service to your home, workplace or roadside where appropriate. The company lists Hemel Hempstead among its areas of coverage.' },
-      ],
-    },
-
-    {
-      type: 'h2',
-      text: 'Your Car Will Not Start'
-    },
-
-    {
-      type: 'p',
-      text: 'One of the most stressful situations is turning the key or pressing the start button and getting nothing.'
-    },
-
-    {
-      type: 'p',
-      text: 'You may hear a clicking noise, the engine may turn over without starting, or there may be no response at all.'
-    },
-
-    {
-      type: 'p',
-      text: 'There are several possible causes, including battery problems, starter motor faults, electrical issues, fuel problems and other mechanical faults.'
-    },
-
-    {
-      type: 'p',
-      text: 'Trying to guess the problem can waste time.'
-    },
-
-    {
-      type: 'p',
-      text: 'If your car is sitting outside your home or workplace, a mobile mechanic can inspect the vehicle at its location and determine what needs to be checked.'
-    },
-
-    {
-      type: 'p',
-      text: 'This can be much more convenient than arranging recovery before you even know what has gone wrong.'
-    },
-
-    {
-      type: 'h2',
-      text: 'When You Need a Mechanic but Cannot Get to a Garage'
-    },
-
-    {
-      type: 'p',
-      text: 'A traditional garage requires you to get the vehicle there.'
-    },
-
-    {
-      type: 'p',
-      text: 'That sounds simple when the car is running normally. It becomes a completely different situation when the vehicle has broken down.'
-    },
-
-    {
-      type: 'p',
-      text: 'You might not have access to another car. You may not want to pay for recovery. You may also have no idea whether the vehicle is safe to drive.'
-    },
-
-    {
-      type: 'p',
-      text: 'This is why customers often search for auto mechanic close to me when they need help with a vehicle problem.',
-      spans: [
-        { text: 'This is why customers often search for ' },
-        { text: 'auto mechanic close to me', href: MECHANICAL },
-        { text: ' when they need help with a vehicle problem.' },
-      ],
-    },
-
-    {
-      type: 'p',
-      text: 'The important thing is to find a mechanic who can assess the situation and explain what needs to happen next.'
-    },
-
-    {
-      type: 'h2',
-      text: 'Why Choose a Mobile Mechanic?'
-    },
-
-    {
-      type: 'p',
-      text: 'The biggest advantage of a mobile mechanic is convenience.'
-    },
-
-    {
-      type: 'p',
-      text: 'Instead of taking your vehicle to a workshop, the mechanic comes to you where appropriate.'
-    },
-
-    {
-      type: 'p',
-      text: 'That could mean your driveway, workplace or another suitable location.'
-    },
-
-    {
-      type: 'p',
-      text: 'A mobile mechanic in Hemel Hempstead can be particularly useful when your vehicle cannot be driven safely or has stopped working completely.',
-      spans: [
-        { text: 'A ' },
-        { text: 'mobile mechanic in Hemel Hempstead', href: MECHANICAL },
-        { text: ' can be particularly useful when your vehicle cannot be driven safely or has stopped working completely.' },
-      ],
-    },
-
-    {
-      type: 'p',
-      text: 'Mobile mechanics can carry out a range of repairs and maintenance work without requiring every problem to be dealt with inside a traditional workshop.'
-    },
-
-    {
-      type: 'p',
-      text: 'However, some complex repairs may still require workshop facilities. A good mechanic should be able to explain this after assessing the vehicle.'
-    },
-
-    {
-      type: 'h2',
-      text: 'What If the Problem Started While Driving?'
-    },
-
-    {
-      type: 'p',
-      text: 'A vehicle problem that develops while you are driving should always be taken seriously.'
-    },
-
-    {
-      type: 'p',
-      text: 'You might notice:'
-    },
-
-    {
-      type: 'ul',
-      items: [
-        'A sudden loss of power',
-        'Unusual engine noises',
-        'Difficulty changing gears',
-        'Warning lights',
-        'Problems with braking',
-        'Steering difficulties',
-        'Overheating',
-        'Smoke or unusual smells'
-      ]
-    },
-
-    {
-      type: 'p',
-      text: 'If the vehicle feels unsafe, find a safe place to stop and seek professional assistance.'
-    },
-
-    {
-      type: 'p',
-      text: 'Once the vehicle is safely parked, a mobile mechanic may be able to inspect it at the location.'
-    },
-
-    {
-      type: 'p',
-      text: 'If you have been searching for mobile mechanics near me, the key benefit is having a professional come to the vehicle rather than immediately trying to move a potentially faulty car.',
-      spans: [
-        { text: 'If you have been searching for ' },
-        { text: 'mobile mechanics near me', href: MECHANICAL },
-        { text: ', the key benefit is having a professional come to the vehicle rather than immediately trying to move a potentially faulty car.' },
-      ],
-    },
-
-    {
-      type: 'h2',
-      text: 'Common Problems a Mobile Mechanic Can Investigate'
-    },
-
-    {
-      type: 'p',
-      text: 'Not every mechanical problem results in a complete breakdown.'
-    },
-
-    {
-      type: 'p',
-      text: 'Sometimes you notice a smaller issue first.'
-    },
-
-    {
-      type: 'p',
-      text: 'Perhaps the brakes have started making a noise. The engine feels less responsive. The car is vibrating. A warning light has appeared. Or the vehicle has become difficult to start in the morning.'
-    },
-
-    {
-      type: 'p',
-      text: 'These symptoms should not automatically be ignored.'
-    },
-
-    {
-      type: 'p',
-      text: 'A mobile car mechanic in Hemel Hempstead can investigate common problems involving areas such as:',
-      spans: [
-        { text: 'A ' },
-        { text: 'mobile car mechanic in Hemel Hempstead', href: MECHANICAL },
-        { text: ' can investigate common problems involving areas such as:' },
-      ],
-    },
-
-    {
-      type: 'ul',
-      items: [
-        'Brakes',
-        'Batteries',
-        'Starting systems',
-        'Engine problems',
-        'Suspension',
-        'Exhaust systems',
-        'Steering',
-        'Servicing',
-        'Vehicle diagnostics',
-        'General mechanical faults'
-      ]
-    },
-
-    {
-      type: 'p',
-      text: 'The appropriate repair depends on the vehicle and the fault found during the inspection.'
-    },
-
-    {
-      type: 'h2',
-      text: 'Do Not Ignore a Small Problem'
-    },
-
-    {
-      type: 'p',
-      text: 'One of the biggest mistakes drivers make is waiting until a minor problem becomes a major one.'
-    },
-
-    {
-      type: 'p',
-      text: 'A strange noise might seem harmless. A warning light might disappear. The vehicle might still start every morning.'
-    },
-
-    {
-      type: 'p',
-      text: 'But that does not necessarily mean the problem has gone away.'
-    },
-
-    {
-      type: 'p',
-      text: 'Getting a developing fault checked can help you understand whether immediate attention is required or whether the vehicle can safely continue to be used.'
-    },
-
-    {
-      type: 'p',
-      text: 'This is particularly useful if you are planning a long journey.'
-    },
-
-    {
-      type: 'h2',
-      text: 'Searching for Mobile Mechanics in Hemel Hempstead'
-    },
-
-    {
-      type: 'p',
-      text: 'When your car needs attention, you want a service that is convenient and suitable for the problem.'
-    },
-
-    {
-      type: 'p',
-      text: 'A search for mobile mechanics in Hemel Hempstead can help you find services that come to customers rather than requiring every vehicle to be taken to a garage.',
-      spans: [
-        { text: 'A search for ' },
-        { text: 'mobile mechanics in Hemel Hempstead', href: MECHANICAL },
-        { text: ' can help you find services that come to customers rather than requiring every vehicle to be taken to a garage.' },
-      ],
-    },
-
-    {
-      type: 'p',
-      text: "Mostly Solutions provides mobile mechanical services and states that its technicians can work at the customer's home, workplace or roadside."
-    },
-
-    {
-      type: 'p',
-      text: 'The company also lists mechanical work such as brakes, suspension, exhausts, servicing and MOT preparation among its services.'
-    },
-
-    {
-      type: 'h2',
-      text: 'What If You Are Looking for a Mobile Mechanic Near Me?'
-    },
-
-    {
-      type: 'p',
-      text: 'When your vehicle stops working unexpectedly, searching mobile mechanics near me is often about finding someone who can reach you conveniently.',
-      spans: [
-        { text: 'When your vehicle stops working unexpectedly, searching ' },
-        { text: 'mobile mechanics near me', href: MECHANICAL },
-        { text: ' is often about finding someone who can reach you conveniently.' },
-      ],
-    },
-
-    {
-      type: 'p',
-      text: 'However, the nearest service is not necessarily the right service.'
-    },
-
-    {
-      type: 'p',
-      text: 'You should consider whether the mechanic has experience with your type of vehicle, whether they have the appropriate tools and whether they can actually carry out the repair you need.'
-    },
-
-    {
-      type: 'p',
-      text: 'A mobile mechanic should also be able to tell you when a repair requires workshop equipment rather than attempting a job that cannot reasonably be completed at the roadside.'
-    },
-
-    {
-      type: 'h2',
-      text: 'Get Your Car Checked Before the Problem Gets Worse'
-    },
-
-    {
-      type: 'p',
-      text: 'A car problem can quickly turn an ordinary day into a stressful one.'
-    },
-
-    {
-      type: 'p',
-      text: 'If your vehicle will not start, has developed unusual symptoms or has broken down in Hemel Hempstead, getting professional assistance can help you understand the problem and decide what to do next.'
-    },
-
-    {
-      type: 'p',
-      text: 'Instead of immediately arranging recovery or continuing to drive a vehicle that may have a serious fault, consider having the vehicle inspected at its current location where appropriate.'
-    },
-
-    {
-      type: 'p',
-      text: 'Mostly Solutions provides mobile mechanical support for drivers in Hemel Hempstead and surrounding areas.'
-    },
-
-    {
-      type: 'p',
-      text: 'If you need a mobile mechanic in Hemel Hempstead or a mobile car mechanic in Hemel Hempstead, contact Mostly Solutions to discuss the problem with your vehicle and arrange suitable assistance.',
-      spans: [
-        { text: 'If you need a ' },
-        { text: 'mobile mechanic in Hemel Hempstead', href: MECHANICAL },
-        { text: ' or a ' },
-        { text: 'mobile car mechanic in Hemel Hempstead', href: MECHANICAL },
-        { text: ', contact Mostly Solutions to discuss the problem with your vehicle and arrange suitable assistance.' },
-      ],
-    },
-  ],
-
-  faqs: [
-    {
-      q: 'What can a mobile mechanic do?',
-      a: 'A mobile mechanic can carry out various servicing, maintenance, diagnostic and mechanical repairs at a suitable location. The exact work depends on the vehicle and the nature of the problem.'
-    },
-
-    {
-      q: 'Can a mobile mechanic come to my home?',
-      a: 'Yes. Mobile mechanics are designed to provide assistance at convenient locations such as your home or workplace, where the repair is suitable for mobile work.'
-    },
-
-    {
-      q: 'What should I do if my car breaks down?',
-      a: 'Move to a safe location if possible, switch on your hazard lights and seek professional assistance. Avoid continuing to drive if the vehicle appears unsafe.'
-    },
-
-    {
-      q: 'How can I find an auto mechanic close to me?',
-      a: 'If you are in Hemel Hempstead and need local assistance, searching for auto mechanic close to me can help you identify nearby services. However, check that the mechanic provides the type of repair your vehicle requires.',
-      spans: [
-        { text: 'If you are in Hemel Hempstead and need local assistance, searching for ' },
-        { text: 'auto mechanic close to me', href: MECHANICAL },
-        { text: ' can help you identify nearby services. However, check that the mechanic provides the type of repair your vehicle requires.' },
-      ],
-    },
-
-    {
-      q: 'When should I search for mobile mechanics near me?',
-      a: 'A search for mobile mechanics near me is particularly useful when your vehicle has developed a problem at home, work or another location and you would prefer a mechanic to come to the vehicle.',
-      spans: [
-        { text: 'A search for ' },
-        { text: 'mobile mechanics near me', href: MECHANICAL },
-        { text: ' is particularly useful when your vehicle has developed a problem at home, work or another location and you would prefer a mechanic to come to the vehicle.' },
-      ],
-    },
-
-    {
-      q: 'Can a mobile car mechanic repair a car that will not start?',
-      a: 'It depends on the cause. A mobile mechanic can investigate common starting problems and may be able to complete the repair at the vehicle\'s location. More complex repairs may require workshop facilities.'
-    },
-
-    {
-      q: 'Does Mostly Solutions provide mobile mechanics in Hemel Hempstead?',
-      a: 'Yes. Mostly Solutions lists Hemel Hempstead among its service areas and provides mobile mechanical support.'
-    },
-
-    {
-      q: 'How do I book a mobile mechanic?',
-      a: 'You can contact Mostly Solutions with details about your vehicle and the problem you are experiencing. The team can discuss the issue and determine the appropriate service.'
-    }
-  ],
-
-  ctaHeading: 'Get Your Car Checked in Hemel Hempstead',
-  ctaSub: CTA_SUB,
-  dateArea: '13 Sep 2026 · Hemel Hempstead',
-  excerpt:
-    "Car broken down in Hemel Hempstead? Before arranging recovery or replacing parts without knowing the cause, get professional mobile mechanical assistance at a suitable location."
-},
+  {
+    slug: 'car-broken-down-in-hemel-hempstead-what-to-do-when-you-need-a-mobile-mechanic',
+    category: 'Mechanical',
+    breadcrumbCategory: 'Mobile Mechanic',
+    h1: 'Car Broken Down in Hemel Hempstead? What to Do When You Need a Mobile Mechanic',
+    date: '13 September 2026',
+    datePublished: '2026-09-13',
+    area: 'Hemel Hempstead',
+    readTime: '7 min read',
+    image: '/blog/car-wont-start-mobile-mechanic-hemel-hempstead.jpg',
+    imageAlt: 'Mobile mechanic checking a broken down car in Hemel Hempstead',
+    intro:
+      'There is never a convenient time for your car to develop a problem.',
+    body: [
+      {
+        type: 'p',
+        text: 'You might be getting ready for work, taking the children to school, heading home after a long day, or preparing for an important journey. Then suddenly, the car will not start, a warning light appears, or you notice that something does not feel right while driving.'
+      },
+
+      {
+        type: 'p',
+        text: 'The first question is usually simple: Who can come and look at my car?'
+      },
+
+      {
+        type: 'p',
+        text: 'For many drivers, taking a vehicle to a garage is not easy when the car has already developed a problem. This is where a mobile mechanic can make things much easier.'
+      },
+
+      {
+        type: 'p',
+        text: 'If you need a mobile mechanic in Hemel Hempstead, Mostly Solutions can provide mobile mechanical assistance at a suitable location, bringing the service to your home, workplace or roadside where appropriate. The company lists Hemel Hempstead among its areas of coverage.',
+        spans: [
+          { text: 'If you need a ' },
+          { text: 'mobile mechanic in Hemel Hempstead', href: MECHANICAL },
+          { text: ', Mostly Solutions can provide mobile mechanical assistance at a suitable location, bringing the service to your home, workplace or roadside where appropriate. The company lists Hemel Hempstead among its areas of coverage.' },
+        ],
+      },
+
+      {
+        type: 'h2',
+        text: 'Your Car Will Not Start'
+      },
+
+      {
+        type: 'p',
+        text: 'One of the most stressful situations is turning the key or pressing the start button and getting nothing.'
+      },
+
+      {
+        type: 'p',
+        text: 'You may hear a clicking noise, the engine may turn over without starting, or there may be no response at all.'
+      },
+
+      {
+        type: 'p',
+        text: 'There are several possible causes, including battery problems, starter motor faults, electrical issues, fuel problems and other mechanical faults.'
+      },
+
+      {
+        type: 'p',
+        text: 'Trying to guess the problem can waste time.'
+      },
+
+      {
+        type: 'p',
+        text: 'If your car is sitting outside your home or workplace, a mobile mechanic can inspect the vehicle at its location and determine what needs to be checked.'
+      },
+
+      {
+        type: 'p',
+        text: 'This can be much more convenient than arranging recovery before you even know what has gone wrong.'
+      },
+
+      {
+        type: 'h2',
+        text: 'When You Need a Mechanic but Cannot Get to a Garage'
+      },
+
+      {
+        type: 'p',
+        text: 'A traditional garage requires you to get the vehicle there.'
+      },
+
+      {
+        type: 'p',
+        text: 'That sounds simple when the car is running normally. It becomes a completely different situation when the vehicle has broken down.'
+      },
+
+      {
+        type: 'p',
+        text: 'You might not have access to another car. You may not want to pay for recovery. You may also have no idea whether the vehicle is safe to drive.'
+      },
+
+      {
+        type: 'p',
+        text: 'This is why customers often search for auto mechanic close to me when they need help with a vehicle problem.',
+        spans: [
+          { text: 'This is why customers often search for ' },
+          { text: 'auto mechanic close to me', href: MECHANICAL },
+          { text: ' when they need help with a vehicle problem.' },
+        ],
+      },
+
+      {
+        type: 'p',
+        text: 'The important thing is to find a mechanic who can assess the situation and explain what needs to happen next.'
+      },
+
+      {
+        type: 'h2',
+        text: 'Why Choose a Mobile Mechanic?'
+      },
+
+      {
+        type: 'p',
+        text: 'The biggest advantage of a mobile mechanic is convenience.'
+      },
+
+      {
+        type: 'p',
+        text: 'Instead of taking your vehicle to a workshop, the mechanic comes to you where appropriate.'
+      },
+
+      {
+        type: 'p',
+        text: 'That could mean your driveway, workplace or another suitable location.'
+      },
+
+      {
+        type: 'p',
+        text: 'A mobile mechanic in Hemel Hempstead can be particularly useful when your vehicle cannot be driven safely or has stopped working completely.',
+        spans: [
+          { text: 'A ' },
+          { text: 'mobile mechanic in Hemel Hempstead', href: MECHANICAL },
+          { text: ' can be particularly useful when your vehicle cannot be driven safely or has stopped working completely.' },
+        ],
+      },
+
+      {
+        type: 'p',
+        text: 'Mobile mechanics can carry out a range of repairs and maintenance work without requiring every problem to be dealt with inside a traditional workshop.'
+      },
+
+      {
+        type: 'p',
+        text: 'However, some complex repairs may still require workshop facilities. A good mechanic should be able to explain this after assessing the vehicle.'
+      },
+
+      {
+        type: 'h2',
+        text: 'What If the Problem Started While Driving?'
+      },
+
+      {
+        type: 'p',
+        text: 'A vehicle problem that develops while you are driving should always be taken seriously.'
+      },
+
+      {
+        type: 'p',
+        text: 'You might notice:'
+      },
+
+      {
+        type: 'ul',
+        items: [
+          'A sudden loss of power',
+          'Unusual engine noises',
+          'Difficulty changing gears',
+          'Warning lights',
+          'Problems with braking',
+          'Steering difficulties',
+          'Overheating',
+          'Smoke or unusual smells'
+        ]
+      },
+
+      {
+        type: 'p',
+        text: 'If the vehicle feels unsafe, find a safe place to stop and seek professional assistance.'
+      },
+
+      {
+        type: 'p',
+        text: 'Once the vehicle is safely parked, a mobile mechanic may be able to inspect it at the location.'
+      },
+
+      {
+        type: 'p',
+        text: 'If you have been searching for mobile mechanics near me, the key benefit is having a professional come to the vehicle rather than immediately trying to move a potentially faulty car.',
+        spans: [
+          { text: 'If you have been searching for ' },
+          { text: 'mobile mechanics near me', href: MECHANICAL },
+          { text: ', the key benefit is having a professional come to the vehicle rather than immediately trying to move a potentially faulty car.' },
+        ],
+      },
+
+      {
+        type: 'h2',
+        text: 'Common Problems a Mobile Mechanic Can Investigate'
+      },
+
+      {
+        type: 'p',
+        text: 'Not every mechanical problem results in a complete breakdown.'
+      },
+
+      {
+        type: 'p',
+        text: 'Sometimes you notice a smaller issue first.'
+      },
+
+      {
+        type: 'p',
+        text: 'Perhaps the brakes have started making a noise. The engine feels less responsive. The car is vibrating. A warning light has appeared. Or the vehicle has become difficult to start in the morning.'
+      },
+
+      {
+        type: 'p',
+        text: 'These symptoms should not automatically be ignored.'
+      },
+
+      {
+        type: 'p',
+        text: 'A mobile car mechanic in Hemel Hempstead can investigate common problems involving areas such as:',
+        spans: [
+          { text: 'A ' },
+          { text: 'mobile car mechanic in Hemel Hempstead', href: MECHANICAL },
+          { text: ' can investigate common problems involving areas such as:' },
+        ],
+      },
+
+      {
+        type: 'ul',
+        items: [
+          'Brakes',
+          'Batteries',
+          'Starting systems',
+          'Engine problems',
+          'Suspension',
+          'Exhaust systems',
+          'Steering',
+          'Servicing',
+          'Vehicle diagnostics',
+          'General mechanical faults'
+        ]
+      },
+
+      {
+        type: 'p',
+        text: 'The appropriate repair depends on the vehicle and the fault found during the inspection.'
+      },
+
+      {
+        type: 'h2',
+        text: 'Do Not Ignore a Small Problem'
+      },
+
+      {
+        type: 'p',
+        text: 'One of the biggest mistakes drivers make is waiting until a minor problem becomes a major one.'
+      },
+
+      {
+        type: 'p',
+        text: 'A strange noise might seem harmless. A warning light might disappear. The vehicle might still start every morning.'
+      },
+
+      {
+        type: 'p',
+        text: 'But that does not necessarily mean the problem has gone away.'
+      },
+
+      {
+        type: 'p',
+        text: 'Getting a developing fault checked can help you understand whether immediate attention is required or whether the vehicle can safely continue to be used.'
+      },
+
+      {
+        type: 'p',
+        text: 'This is particularly useful if you are planning a long journey.'
+      },
+
+      {
+        type: 'h2',
+        text: 'Searching for Mobile Mechanics in Hemel Hempstead'
+      },
+
+      {
+        type: 'p',
+        text: 'When your car needs attention, you want a service that is convenient and suitable for the problem.'
+      },
+
+      {
+        type: 'p',
+        text: 'A search for mobile mechanics in Hemel Hempstead can help you find services that come to customers rather than requiring every vehicle to be taken to a garage.',
+        spans: [
+          { text: 'A search for ' },
+          { text: 'mobile mechanics in Hemel Hempstead', href: MECHANICAL },
+          { text: ' can help you find services that come to customers rather than requiring every vehicle to be taken to a garage.' },
+        ],
+      },
+
+      {
+        type: 'p',
+        text: "Mostly Solutions provides mobile mechanical services and states that its technicians can work at the customer's home, workplace or roadside."
+      },
+
+      {
+        type: 'p',
+        text: 'The company also lists mechanical work such as brakes, suspension, exhausts, servicing and MOT preparation among its services.'
+      },
+
+      {
+        type: 'h2',
+        text: 'What If You Are Looking for a Mobile Mechanic Near Me?'
+      },
+
+      {
+        type: 'p',
+        text: 'When your vehicle stops working unexpectedly, searching mobile mechanics near me is often about finding someone who can reach you conveniently.',
+        spans: [
+          { text: 'When your vehicle stops working unexpectedly, searching ' },
+          { text: 'mobile mechanics near me', href: MECHANICAL },
+          { text: ' is often about finding someone who can reach you conveniently.' },
+        ],
+      },
+
+      {
+        type: 'p',
+        text: 'However, the nearest service is not necessarily the right service.'
+      },
+
+      {
+        type: 'p',
+        text: 'You should consider whether the mechanic has experience with your type of vehicle, whether they have the appropriate tools and whether they can actually carry out the repair you need.'
+      },
+
+      {
+        type: 'p',
+        text: 'A mobile mechanic should also be able to tell you when a repair requires workshop equipment rather than attempting a job that cannot reasonably be completed at the roadside.'
+      },
+
+      {
+        type: 'h2',
+        text: 'Get Your Car Checked Before the Problem Gets Worse'
+      },
+
+      {
+        type: 'p',
+        text: 'A car problem can quickly turn an ordinary day into a stressful one.'
+      },
+
+      {
+        type: 'p',
+        text: 'If your vehicle will not start, has developed unusual symptoms or has broken down in Hemel Hempstead, getting professional assistance can help you understand the problem and decide what to do next.'
+      },
+
+      {
+        type: 'p',
+        text: 'Instead of immediately arranging recovery or continuing to drive a vehicle that may have a serious fault, consider having the vehicle inspected at its current location where appropriate.'
+      },
+
+      {
+        type: 'p',
+        text: 'Mostly Solutions provides mobile mechanical support for drivers in Hemel Hempstead and surrounding areas.'
+      },
+
+      {
+        type: 'p',
+        text: 'If you need a mobile mechanic in Hemel Hempstead or a mobile car mechanic in Hemel Hempstead, contact Mostly Solutions to discuss the problem with your vehicle and arrange suitable assistance.',
+        spans: [
+          { text: 'If you need a ' },
+          { text: 'mobile mechanic in Hemel Hempstead', href: MECHANICAL },
+          { text: ' or a ' },
+          { text: 'mobile car mechanic in Hemel Hempstead', href: MECHANICAL },
+          { text: ', contact Mostly Solutions to discuss the problem with your vehicle and arrange suitable assistance.' },
+        ],
+      },
+    ],
+
+    faqs: [
+      {
+        q: 'What can a mobile mechanic do?',
+        a: 'A mobile mechanic can carry out various servicing, maintenance, diagnostic and mechanical repairs at a suitable location. The exact work depends on the vehicle and the nature of the problem.'
+      },
+
+      {
+        q: 'Can a mobile mechanic come to my home?',
+        a: 'Yes. Mobile mechanics are designed to provide assistance at convenient locations such as your home or workplace, where the repair is suitable for mobile work.'
+      },
+
+      {
+        q: 'What should I do if my car breaks down?',
+        a: 'Move to a safe location if possible, switch on your hazard lights and seek professional assistance. Avoid continuing to drive if the vehicle appears unsafe.'
+      },
+
+      {
+        q: 'How can I find an auto mechanic close to me?',
+        a: 'If you are in Hemel Hempstead and need local assistance, searching for auto mechanic close to me can help you identify nearby services. However, check that the mechanic provides the type of repair your vehicle requires.',
+      },
+
+      {
+        q: 'When should I search for mobile mechanics near me?',
+        a: 'A search for mobile mechanics near me is particularly useful when your vehicle has developed a problem at home, work or another location and you would prefer a mechanic to come to the vehicle.',
+      },
+
+      {
+        q: 'Can a mobile car mechanic repair a car that will not start?',
+        a: 'It depends on the cause. A mobile mechanic can investigate common starting problems and may be able to complete the repair at the vehicle\'s location. More complex repairs may require workshop facilities.'
+      },
+
+      {
+        q: 'Does Mostly Solutions provide mobile mechanics in Hemel Hempstead?',
+        a: 'Yes. Mostly Solutions lists Hemel Hempstead among its service areas and provides mobile mechanical support.'
+      },
+
+      {
+        q: 'How do I book a mobile mechanic?',
+        a: 'You can contact Mostly Solutions with details about your vehicle and the problem you are experiencing. The team can discuss the issue and determine the appropriate service.'
+      }
+    ],
+
+    ctaHeading: 'Get Your Car Checked in Hemel Hempstead',
+    ctaSub: CTA_SUB,
+    dateArea: '13 Sep 2026 · Hemel Hempstead',
+    excerpt:
+      "Car broken down in Hemel Hempstead? Before arranging recovery or replacing parts without knowing the cause, get professional mobile mechanical assistance at a suitable location."
+  },
   {
     slug: 'engine-warning-light-oxford',
     category: 'Diagnostics',
