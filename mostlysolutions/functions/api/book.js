@@ -95,7 +95,7 @@ export async function onRequestPost(context) {
 
   const payload = {
     from,
-    to: [to],
+    to: [to, "mostlysolutions4@gmail.com"], // for enquiries to validate progress
     subject: `New Booking — ${service} (${name})`,
     html,
     text,
