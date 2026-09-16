@@ -96,7 +96,6 @@ export async function onRequestPost(context) {
   const payload = {
     from,
     to: [to],
-    cc: ['mostlysolutions4@gmail.com'],
     subject: `New Booking — ${service} (${name})`,
     html,
     text,
