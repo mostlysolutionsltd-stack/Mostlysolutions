@@ -31,19 +31,19 @@ export type ServiceContent = {
 export const SERVICE_ANCHORS: { slug: string; phrases: string[] }[] = [
   {
     slug: 'car-diagnostics-london',
-    phrases: ['mobile car diagnostics service in London', 'mobile car diagnostics service', 'mobile car diagnostics', 'car diagnostics'],
+    phrases: ['mobile car diagnostics service in London', 'mobile car diagnostics service', 'mobile car diagnostics','car diagnostics in Hemel Hempstead', 'car diagnostics', 'car diagnostics in High Wycombe', 'Mobile Car Diagnostics', 'mobile car services in Hemel Hempstead'],
   },
   {
     slug: 'mechanical-work-london',
-    phrases: ['mechanical work in London', 'mechanical repairs', 'mechanical work'],
+    phrases: ['mechanical work in London', 'mechanical repairs', 'mechanical work', 'Mechanical Work', 'mobile mechanical services in High Wycombe', 'mobile mechanical services in Hemel Hempstead'],
   },
   {
     slug: 'electrical-battery-london',
-    phrases: ['car battery replacement in London', 'electrical and battery services', 'auto electrical', 'battery replacement'],
+    phrases: ['car battery replacement in London', 'electrical and battery services', 'auto electrical', 'battery replacement', 'Electrical & Batteries', 'car electrician in High Wycombe', 'car electrician in Hemel Hempstead'],
   },
   {
     slug: 'car-detailing-london',
-    phrases: ['mobile car detailing in London', 'detailing and protection', 'ceramic coating', 'car detailing'],
+    phrases: ['mobile car detailing in London', 'detailing and protection', 'ceramic coating', 'car detailing', ' Detailing & Protection'],
   },
 ]
 
@@ -320,6 +320,250 @@ export const SERVICES: ServiceContent[] = [
         a: 'Absolutely. Applying ceramic coating and paint protection to a new car is one of the best times to do it, locking in that fresh finish. We prepare and protect the paint so it stays looking its best.',
       },
     ],
+  },
+  {
+  slug: 'mobile-car-services-hemel-hempstead',
+
+  metaTitle: 'Mobile Car Services in Hemel Hempstead | Mostly Solutions',
+
+  metaDescription:
+    'Professional mobile car services in Hemel Hempstead including diagnostics, mechanical repairs, electrical and battery services, detailing and vehicle protection.',
+
+  breadcrumb: 'Mobile Car Services',
+
+  h1: 'Mobile Car Services in Hemel Hempstead',
+
+  tagline: 'Professional Mobile Vehicle Services at Your Doorstep',
+
+  intro:
+    'Mostly Solutions provides professional mobile car services in Hemel Hempstead, bringing reliable vehicle support directly to your home, workplace or another suitable location. Our services include mobile car diagnostics, mechanical work, electrical and battery services, and detailing and protection.',
+
+  sections: [
+
+    {
+      h2: 'Mobile Car Diagnostics',
+
+      paras: [
+        'A dashboard warning light, starting problem or unusual vehicle behaviour can indicate an underlying issue. Our Mobile Car Diagnostics service uses professional diagnostic equipment to help identify potential vehicle faults.',
+
+        'We can investigate engine faults, warning lights, sensor problems and various electronic issues. Identifying the cause of a fault can help you understand what your vehicle needs and avoid unnecessary repairs. If you need car diagnostics in Hemel Hempstead, our mobile service provides a convenient way to have your vehicle checked without taking time out for a garage visit.',
+      ],
+    },
+
+    {
+      h2: 'Mechanical Work',
+
+      paras: [
+        'Mechanical problems can affect your vehicle’s performance, reliability and safety. Our Mechanical Work service provides assistance with suitable vehicle repairs and maintenance.',
+
+        'We can help with various mechanical issues involving brakes, suspension, engine, clutch and other vehicle components. Our mobile approach allows us to attend your vehicle at a convenient location, helping reduce the disruption caused by taking your car to a garage. For customers looking for mobile mechanical services in Hemel Hempstead, Mostly Solutions provides a practical and convenient option.',
+      ],
+    },
+
+    {
+      h2: 'Electrical and Batteries',
+
+      paras: [
+        'Electrical and battery problems can occur without warning and may prevent your vehicle from starting or operating correctly. Our Electrical & Batteries service provides assistance with suitable automotive electrical and battery related problems.',
+
+        'If you need a car electrician in Hemel Hempstead, are experiencing starting difficulties or believe your battery needs attention, our mobile service can help identify and address suitable electrical and battery issues at a convenient location.',
+      ],
+    },
+
+    {
+      h2: 'Detailing and Protection',
+
+      paras: [
+        'Regular driving exposes your vehicle to dirt, dust, road grime and everyday wear. Our Detailing & Protection service helps maintain your vehicle’s interior and exterior appearance.',
+
+        'Professional detailing can refresh the look of your car and help keep it in better condition. Whether you are preparing your vehicle for sale or simply want to keep it looking its best, our mobile vehicle care service provides a convenient option for customers in Hemel Hempstead.',
+      ],
+    },
+
+    {
+      h2: 'Why Choose Mostly Solutions?',
+
+      paras: [
+        'Mostly Solutions makes vehicle care more convenient by bringing suitable automotive services directly to you. Whether your vehicle needs diagnostics, mechanical assistance, electrical support, battery services or detailing, we aim to provide a straightforward and professional service.',
+
+        'We provide mobile automotive solutions for customers across Hemel Hempstead and surrounding areas. Our aim is to make vehicle maintenance and repairs more convenient by providing suitable services at a location that works for you.',
+      ],
+    },
+
+  ],
+
+  checklistTitle: 'Our mobile car services include',
+
+  checklist: [
+    'Mobile car diagnostics',
+    'Vehicle fault diagnosis',
+    'Mechanical repairs',
+    'Brake and suspension assistance',
+    'Electrical fault assistance',
+    'Car battery services',
+    'Starter and charging system assistance',
+    'Vehicle detailing',
+    'Exterior and interior vehicle care',
+    'Vehicle protection services',
+  ],
+
+  ctaHeading: 'Book Your Mobile Car Service Today',
+
+  faqs: [
+
+    {
+      q: 'Do you provide mobile car diagnostics in Hemel Hempstead?',
+
+      a: 'Yes. We provide mobile car diagnostics in Hemel Hempstead and can attend suitable locations to investigate potential vehicle faults, warning lights and other diagnostic issues.',
+    },
+
+    {
+      q: 'Can you help with car electrical problems?',
+
+      a: 'Yes. Our Electrical & Batteries service can assist with suitable automotive electrical and battery related issues, including starting difficulties and other electrical problems.',
+    },
+
+    {
+      q: 'Do you offer mobile mechanical services in Hemel Hempstead?',
+
+      a: 'Yes. We provide mobile mechanical assistance for suitable vehicle repairs and maintenance requirements, including issues involving brakes, suspension, engine and other vehicle components.',
+    },
+
+    {
+      q: 'Do you provide car detailing in Hemel Hempstead?',
+
+      a: 'Yes. Our Detailing & Protection service helps maintain the appearance and condition of your vehicle, including suitable interior and exterior detailing requirements.',
+    },
+
+    {
+      q: 'Do you cover Hemel Hempstead and surrounding areas?',
+
+      a: 'Yes. Mostly Solutions provides mobile automotive services for customers in Hemel Hempstead and surrounding areas. Contact us to discuss your vehicle requirements and arrange a convenient service.',
+    },
+
+  ],
+  },
+  {
+  slug: 'mobile-car-services-high-wycombe',
+
+  metaTitle: 'Mobile Car Services in High Wycombe | Mostly Solutions',
+
+  metaDescription:
+    'Professional mobile car services in High Wycombe including diagnostics, mechanical repairs, electrical and battery services, detailing and vehicle protection.',
+
+  breadcrumb: 'Mobile Car Services',
+
+  h1: 'Mobile Car Services in High Wycombe',
+
+  tagline: 'Professional Mobile Vehicle Services at Your Doorstep',
+
+  intro:
+    'Mostly Solutions provides professional mobile car services in High Wycombe, bringing reliable vehicle support directly to your home, workplace or another suitable location. Our services include mobile car diagnostics, mechanical work, electrical and battery services, and detailing and protection.',
+
+  sections: [
+
+    {
+      h2: 'Mobile Car Diagnostics',
+
+      paras: [
+        'A dashboard warning light, starting problem or unusual vehicle behaviour can indicate an underlying issue. Our Mobile Car Diagnostics service uses professional diagnostic equipment to help identify potential vehicle faults.',
+
+        'We can investigate engine faults, warning lights, sensor problems and various electronic issues. Identifying the cause of a fault can help you understand what your vehicle needs and avoid unnecessary repairs. If you need car diagnostics in High Wycombe, our mobile service provides a convenient way to have your vehicle checked without taking time out for a garage visit.',
+      ],
+    },
+
+    {
+      h2: 'Mechanical Work',
+
+      paras: [
+        'Mechanical problems can affect your vehicle’s performance, reliability and safety. Our Mechanical Work service provides assistance with suitable vehicle repairs and maintenance.',
+
+        'We can help with various mechanical issues involving brakes, suspension, engine, clutch and other vehicle components. Our mobile approach allows us to attend your vehicle at a convenient location, helping reduce the disruption caused by taking your car to a garage. For customers looking for mobile mechanical services in High Wycombe, Mostly Solutions provides a practical and convenient option.',
+      ],
+    },
+
+    {
+      h2: 'Electrical and Batteries',
+
+      paras: [
+        'Electrical and battery problems can occur without warning and may prevent your vehicle from starting or operating correctly. Our Electrical & Batteries service provides assistance with suitable automotive electrical and battery related problems.',
+
+        'If you need a car electrician in High Wycombe, are experiencing starting difficulties or believe your battery needs attention, our mobile service can help identify and address suitable electrical and battery issues at a convenient location.',
+      ],
+    },
+
+    {
+      h2: 'Detailing and Protection',
+
+      paras: [
+        'Regular driving exposes your vehicle to dirt, dust, road grime and everyday wear. Our Detailing & Protection service helps maintain your vehicle’s interior and exterior appearance.',
+
+        'Professional detailing can refresh the look of your car and help keep it in better condition. Whether you are preparing your vehicle for sale or simply want to keep it looking its best, our mobile vehicle care service provides a convenient option for customers in High Wycombe.',
+      ],
+    },
+
+    {
+      h2: 'Why Choose Mostly Solutions?',
+
+      paras: [
+        'Mostly Solutions makes vehicle care more convenient by bringing suitable automotive services directly to you. Whether your vehicle needs diagnostics, mechanical assistance, electrical support, battery services or detailing, we aim to provide a straightforward and professional service.',
+
+        'We provide mobile automotive solutions for customers across High Wycombe and surrounding areas. Our aim is to make vehicle maintenance and repairs more convenient by providing suitable services at a location that works for you.',
+      ],
+    },
+
+  ],
+
+  checklistTitle: 'Our mobile car services include',
+
+  checklist: [
+    'Mobile car diagnostics',
+    'Vehicle fault diagnosis',
+    'Mechanical repairs',
+    'Brake and suspension assistance',
+    'Electrical fault assistance',
+    'Car battery services',
+    'Starter and charging system assistance',
+    'Vehicle detailing',
+    'Exterior and interior vehicle care',
+    'Vehicle protection services',
+  ],
+
+  ctaHeading: 'Book Your Mobile Car Service Today',
+
+  faqs: [
+
+    {
+      q: 'Do you provide mobile car diagnostics in High Wycombe?',
+
+      a: 'Yes. We provide mobile car diagnostics in High Wycombe and can attend suitable locations to investigate potential vehicle faults, warning lights and other diagnostic issues.',
+    },
+
+    {
+      q: 'Can you help with car electrical problems?',
+
+      a: 'Yes. Our Electrical & Batteries service can assist with suitable automotive electrical and battery related issues, including starting difficulties and other electrical problems.',
+    },
+
+    {
+      q: 'Do you offer mobile mechanical services in High Wycombe?',
+
+      a: 'Yes. We provide mobile mechanical assistance for suitable vehicle repairs and maintenance requirements, including issues involving brakes, suspension, engine and other vehicle components.',
+    },
+
+    {
+      q: 'Do you provide car detailing in High Wycombe?',
+
+      a: 'Yes. Our Detailing & Protection service helps maintain the appearance and condition of your vehicle, including suitable interior and exterior detailing requirements.',
+    },
+
+    {
+      q: 'Do you cover High Wycombe and surrounding areas?',
+
+      a: 'Yes. Mostly Solutions provides mobile automotive services for customers in High Wycombe and surrounding areas. Contact us to discuss your vehicle requirements and arrange a convenient service.',
+    },
+
+  ],
   },
   {
     slug: 'mobile-mechanic-reading-berkshire',
