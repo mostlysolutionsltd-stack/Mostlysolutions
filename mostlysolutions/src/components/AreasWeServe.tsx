@@ -6,8 +6,8 @@ const AREAS: { name: string; href?: string }[] = [
   { name: 'Reading', href: '/services/mobile-mechanic-reading-berkshire' },
   { name: 'Oxford', href: '/services/mobile-car-services-oxford' },
   { name: 'Watford', href: '/services/mobile-car-services-watford' },
-  { name: 'Hemel Hempstead' },
-  { name: 'High Wycombe' },
+  { name: 'Hemel Hempstead', href: '/services/mobile-car-services-hemel-hempstead'},
+  { name: 'High Wycombe', href: '/services/mobile-car-services-high-wycombe'},
   { name: 'Slough' },
   { name: 'St Albans' },
 ]
