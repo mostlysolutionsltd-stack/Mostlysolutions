@@ -55,11 +55,434 @@ export type BlogPost = {
 const DIAGNOSTICS = '/services/car-diagnostics-london'
 const MECHANICAL = '/services/mechanical-work-london'
 const ELECTRICAL = '/services/electrical-battery-london'
+const DETAILING = '/services/car-detailing-london'
 const SERVICES = '/services'
+
+
 
 const CTA_SUB = 'Fast booking, expert technicians, and honest advice — wherever you are in London or Reading.'
 
 export const BLOG_POSTS: BlogPost[] = [
+  {
+  slug: 'why-does-my-car-still-look-dull-after-washing-london',
+  category: 'Detailing',
+  breadcrumbCategory: 'Car Detailing',
+  h1: 'Why Does My Car Still Look Dull After Washing? A Guide for London Drivers',
+  date: '20 September 2026',
+  datePublished: '2026-09-20',
+  area: 'London',
+  readTime: '6 min read',
+  image: '/blog/car-detailing-london.png',
+  imageAlt: 'Professional car detailing and paint correction for a vehicle in London',
+  intro:
+    'You wash your car regularly, but it still does not look as good as it should.',
+
+  body: [
+    {
+      type: 'p',
+      text: 'You wash your car regularly, but it still does not look as good as it should. The paint may look dull, fine swirl marks may be visible in the sunlight, and dirt seems to return soon after the car has been cleaned.'
+    },
+
+    {
+      type: 'p',
+      text: 'You might even have tried different car washes, cleaning products and quick valets without getting the finish you were hoping for.'
+    },
+
+    {
+      type: 'p',
+      text: 'The problem may not be that your car needs another basic wash.'
+    },
+
+    {
+      type: 'p',
+      text: 'A normal wash removes surface dirt, but it does not necessarily deal with embedded contamination, paint defects, swirl marks or a lack of paint protection. Professional detailing goes further by cleaning, correcting and protecting the vehicle surfaces.'
+    },
+
+    {
+      type: 'p',
+      text: 'For London drivers dealing with a tired looking vehicle, professional car detailing in London can help restore the appearance of the paintwork while making the vehicle easier to maintain.',
+      spans: [
+        { text: 'For London drivers dealing with a tired looking vehicle, professional ' },
+        { text: 'car detailing in London', href: DETAILING },
+        { text: ' can help restore the appearance of the paintwork while making the vehicle easier to maintain.' },
+      ],
+    },
+
+    {
+      type: 'h2',
+      text: 'Why Does Your Car Look Dull After Washing?'
+    },
+
+    {
+      type: 'p',
+      text: 'A clean car should look glossy, but washing alone cannot correct every problem affecting the paint.'
+    },
+
+    {
+      type: 'p',
+      text: 'Over time, paintwork can collect road grime, environmental contaminants, water marks and fine surface imperfections. Repeated washing, particularly when unsuitable techniques or dirty equipment are used, can also contribute to visible swirl marks and fine scratches.'
+    },
+
+    {
+      type: 'p',
+      text: 'This is why your car can be completely clean but still look flat.'
+    },
+
+    {
+      type: 'p',
+      text: 'If the paint has lost its clarity and gloss, simply washing it again may not produce much difference.'
+    },
+
+    {
+      type: 'p',
+      text: 'The surface may need decontamination, polishing or paint correction before a protective treatment is applied.'
+    },
+
+    {
+      type: 'h2',
+      text: 'The Difference Between Valeting and Detailing'
+    },
+
+    {
+      type: 'p',
+      text: 'Many car owners use the words valeting and detailing interchangeably, but there is a difference between the two.'
+    },
+
+    {
+      type: 'p',
+      text: 'Car valeting in London generally focuses on cleaning the vehicle inside and outside. It can include vacuuming, washing, cleaning the wheels, windows and other visible areas.',
+      spans: [
+        { text: 'Car valeting in London', href: DETAILING },
+        { text: ' generally focuses on cleaning the vehicle inside and outside. It can include vacuuming, washing, cleaning the wheels, windows and other visible areas.' },
+      ],
+    },
+
+    {
+      type: 'p',
+      text: 'Detailing takes the process further.'
+    },
+
+    {
+      type: 'p',
+      text: 'A professional detail can include deep interior cleaning, paint decontamination, machine polishing and paint correction, depending on the condition of the vehicle. Mostly Solutions provides these services as part of its detailing and protection work.'
+    },
+
+    {
+      type: 'p',
+      text: 'So, if your main problem is that your car looks dirty, a valet may be suitable. If the problem is that the paint looks dull, marked or tired even after cleaning, detailing may be more appropriate.'
+    },
+
+    {
+      type: 'h2',
+      text: 'What Are Those Swirl Marks on Your Paint?'
+    },
+
+    {
+      type: 'p',
+      text: 'One of the most frustrating things for car owners is seeing fine circular marks across the paint after regularly washing the vehicle.'
+    },
+
+    {
+      type: 'p',
+      text: 'They are particularly noticeable on darker colours when sunlight hits the panels.'
+    },
+
+    {
+      type: 'p',
+      text: 'Poor washing techniques, contaminated wash equipment and unsuitable cleaning methods can contribute to fine scratches and swirl marks.'
+    },
+
+    {
+      type: 'p',
+      text: 'Once these marks are present, another wash will not remove them.'
+    },
+
+    {
+      type: 'p',
+      text: 'This is where paint correction and machine polishing can make a difference.'
+    },
+
+    {
+      type: 'p',
+      text: 'Rather than simply cleaning the surface, these processes are intended to improve the appearance of paint defects and restore clarity and gloss.'
+    },
+
+    {
+      type: 'h2',
+      text: 'When Mobile Detailing Makes More Sense'
+    },
+
+    {
+      type: 'p',
+      text: 'Finding time to take your car to a detailing centre can be difficult.'
+    },
+
+    {
+      type: 'p',
+      text: 'You may use your vehicle every day for work, have family commitments or simply prefer having the service carried out at home.'
+    },
+
+    {
+      type: 'p',
+      text: 'This is where mobile car detailing in London can be useful.',
+      spans: [
+        { text: 'This is where ' },
+        { text: 'mobile car detailing in London', href: DETAILING },
+        { text: ' can be useful.' },
+      ],
+    },
+
+    {
+      type: 'p',
+      text: 'Instead of dropping your vehicle off, a mobile detailing team can carry out suitable detailing work at your home or workplace. Mostly Solutions provides mobile detailing and protection services using professional equipment and products.'
+    },
+
+    {
+      type: 'p',
+      text: 'This means you can have your vehicle professionally cleaned and detailed without having to reorganise your day around a workshop visit.'
+    },
+
+    {
+      type: 'h2',
+      text: 'Why Does My Car Get Dirty Again So Quickly?'
+    },
+
+    {
+      type: 'p',
+      text: 'Another common complaint is that the car looks great immediately after washing but becomes dirty again within a short time.'
+    },
+
+    {
+      type: 'p',
+      text: 'Road grime, traffic contamination and other environmental contaminants can quickly settle on the vehicle.'
+    },
+
+    {
+      type: 'p',
+      text: 'If the paint has little or no protection, contaminants can adhere more easily to the surface.'
+    },
+
+    {
+      type: 'p',
+      text: 'This does not mean the solution is simply to wash the car more often.'
+    },
+
+    {
+      type: 'p',
+      text: 'A better approach can be to properly prepare the paint and apply an appropriate protective treatment.'
+    },
+
+    {
+      type: 'p',
+      text: 'Professional detailing services can include paint decontamination followed by paint protection.'
+    },
+
+    {
+      type: 'h2',
+      text: 'Protecting Your Paint After Detailing'
+    },
+
+    {
+      type: 'p',
+      text: 'Once the paint has been cleaned and corrected, protecting it can help maintain the finish.'
+    },
+
+    {
+      type: 'p',
+      text: 'Car paint protection in London can include treatments designed to provide a protective layer over the vehicle paintwork.',
+      spans: [
+        { text: 'Car paint protection in London', href: DETAILING },
+        { text: ' can include treatments designed to provide a protective layer over the vehicle paintwork.' },
+      ],
+    },
+
+    {
+      type: 'p',
+      text: 'Mostly Solutions offers ceramic coating and paint protection treatments following surface preparation, which can help protect the paint from road grime, UV exposure and other contaminants.'
+    },
+
+    {
+      type: 'p',
+      text: 'Protection does not mean you never need to wash the vehicle again.'
+    },
+
+    {
+      type: 'p',
+      text: 'Regular maintenance is still important, but a properly prepared and protected surface can make routine cleaning easier.'
+    },
+
+    {
+      type: 'h2',
+      text: 'Is Mobile Car Valeting Enough for Your Car?'
+    },
+
+    {
+      type: 'p',
+      text: 'If your vehicle simply needs a good clean, mobile car valeting in London may be exactly what you need.',
+      spans: [
+        { text: 'If your vehicle simply needs a good clean, ' },
+        { text: 'mobile car valeting in London', href: DETAILING },
+        { text: ' may be exactly what you need.' },
+      ],
+    },
+
+    {
+      type: 'p',
+      text: 'It can be particularly useful when the interior needs attention, the exterior needs washing and the vehicle has accumulated everyday dirt.'
+    },
+
+    {
+      type: 'p',
+      text: 'However, if your car has:'
+    },
+
+    {
+      type: 'ul',
+      items: [
+        'Swirl marks',
+        'Fine scratches',
+        'Dull paint',
+        'Water marks',
+        'Embedded contamination',
+        'Faded looking paint',
+        'A lack of gloss'
+      ]
+    },
+
+    {
+      type: 'p',
+      text: 'then a more comprehensive detailing service may be worth considering.'
+    },
+
+    {
+      type: 'p',
+      text: 'A professional can inspect the condition of the vehicle and advise whether cleaning, polishing, paint correction or protection is appropriate.'
+    },
+
+    {
+      type: 'h2',
+      text: 'Choosing the Right Car Detailing Service'
+    },
+
+    {
+      type: 'p',
+      text: 'Not every vehicle needs the same treatment.'
+    },
+
+    {
+      type: 'p',
+      text: 'A relatively new car may only require thorough cleaning and protection, while an older vehicle with neglected paintwork may require decontamination and correction before protection can be applied.'
+    },
+
+    {
+      type: 'p',
+      text: 'This is why an inspection is useful before deciding on a package.'
+    },
+
+    {
+      type: 'p',
+      text: 'A professional car detailing service in London should focus on the actual condition of your vehicle rather than automatically applying the same process to every car.',
+      spans: [
+        { text: 'A professional ' },
+        { text: 'car detailing service in London', href: DETAILING },
+        { text: ' should focus on the actual condition of your vehicle rather than automatically applying the same process to every car.' },
+      ],
+    },
+
+    {
+      type: 'p',
+      text: 'Mostly Solutions offers deep cleaning, hand washing, paint decontamination, paint correction, machine polishing, ceramic coating, wheel and tyre cleaning, glass cleaning and trim restoration.'
+    },
+
+    {
+      type: 'h2',
+      text: 'Bring Back the Look of Your Car'
+    },
+
+    {
+      type: 'p',
+      text: 'If you are constantly washing your car but still feel that it looks dull, the problem may be with the condition of the paint rather than the amount of cleaning.'
+    },
+
+    {
+      type: 'p',
+      text: 'A professional detail can address areas that a standard wash cannot.'
+    },
+
+    {
+      type: 'p',
+      text: 'For London drivers, car detailing in London can provide a more thorough approach to cleaning, restoring and protecting the vehicle.',
+      spans: [
+        { text: 'For London drivers, ' },
+        { text: 'car detailing in London', href: DETAILING },
+        { text: ' can provide a more thorough approach to cleaning, restoring and protecting the vehicle.' },
+      ],
+    },
+
+    {
+      type: 'p',
+      text: 'Whether your car needs a deep clean, paint correction, polishing or protection, the right treatment depends on the condition of the vehicle.'
+    },
+
+    {
+      type: 'p',
+      text: 'Mostly Solutions provides mobile detailing and protection services at your home or workplace, making it easier to give your vehicle the attention it needs without arranging a traditional garage visit.'
+    },
+
+    {
+      type: 'p',
+      text: 'If your car no longer looks as good as it once did, it may be time to look beyond a standard wash.'
+    },
+  ],
+
+  faqs: [
+    {
+      q: 'Why does my car look dull even after washing?',
+      a: 'Washing removes surface dirt, but it does not necessarily remove embedded contamination, swirl marks, fine scratches or other paint defects. These issues can make clean paintwork still appear dull.'
+    },
+
+    {
+      q: 'What is the difference between car valeting and detailing?',
+      a: 'Valeting mainly focuses on cleaning the vehicle, while detailing can involve deeper cleaning, paint decontamination, polishing, paint correction and protection.'
+    },
+
+    {
+      q: 'Can detailing remove swirl marks?',
+      a: 'Paint correction and machine polishing can improve the appearance of suitable paint defects, including some swirl marks. The amount of correction possible depends on the condition and thickness of the paint.'
+    },
+
+    {
+      q: 'Is mobile car detailing available at home?',
+      a: 'Yes. Mostly Solutions provides mobile detailing services at customers homes or workplaces, using professional equipment and supplies where required.'
+    },
+
+    {
+      q: 'Does paint protection stop my car from getting dirty?',
+      a: 'No protective treatment eliminates the need for cleaning. However, suitable paint protection can help make the surface easier to maintain and can provide additional protection against contaminants and environmental exposure.'
+    },
+
+    {
+      q: 'Is car detailing suitable for an older vehicle?',
+      a: 'Yes. The appropriate service depends on the condition of the vehicle. An older car may benefit from deep cleaning, decontamination, polishing or paint correction before a protective treatment is applied.'
+    },
+
+    {
+      q: 'How often should I have my car detailed?',
+      a: 'There is no single schedule that suits every vehicle. It depends on how the car is used, where it is parked, its paint condition and how regularly it is maintained.'
+    },
+
+    {
+      q: 'What does a professional car detailing service include?',
+      a: 'The service can vary depending on the vehicle and its condition. It may include interior cleaning, exterior washing, paint decontamination, machine polishing, paint correction and protective treatments.'
+    }
+  ],
+
+  ctaHeading: 'Give Your Car a Fresh Finish in London',
+  ctaSub: CTA_SUB,
+  dateArea: '20 Sep 2026 · London',
+  excerpt:
+    'Why does your car still look dull after washing? Learn how professional car detailing, paint correction and protection can improve the appearance of your vehicle in London.'
+},
   {
     slug: 'car-broken-down-in-hemel-hempstead-what-to-do-when-you-need-a-mobile-mechanic',
     category: 'Mechanical',
