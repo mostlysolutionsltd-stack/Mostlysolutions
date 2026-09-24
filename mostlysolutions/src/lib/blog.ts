@@ -682,7 +682,7 @@ export const BLOG_POSTS: BlogPost[] = [
     },
 
     {
-      type: 'h3',
+      type: 'h2',
       text: '1. Engine Problems'
     },
 
@@ -707,7 +707,7 @@ export const BLOG_POSTS: BlogPost[] = [
     },
 
     {
-      type: 'h3',
+      type: 'h2',
       text: '2. Blocked Air Filter or Fuel Filter'
     },
 
@@ -737,7 +737,7 @@ export const BLOG_POSTS: BlogPost[] = [
     },
 
     {
-      type: 'h3',
+      type: 'h2',
       text: '3. Turbocharger Problems'
     },
 
@@ -762,7 +762,7 @@ export const BLOG_POSTS: BlogPost[] = [
     },
 
     {
-      type: 'h3',
+      type: 'h2',
       text: '4. Faulty Sensors'
     },
 
@@ -787,7 +787,7 @@ export const BLOG_POSTS: BlogPost[] = [
     },
 
     {
-      type: 'h3',
+      type: 'h2',
       text: '5. Exhaust or Emissions Problems'
     },
 
