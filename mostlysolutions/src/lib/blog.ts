@@ -63,6 +63,1068 @@ const SERVICES = '/services'
 const CTA_SUB = 'Fast booking, expert technicians, and honest advice — wherever you are in London or Reading.'
 
 export const BLOG_POSTS: BlogPost[] = [
+{
+  slug: 'why-wont-my-car-start-after-sitting-overnight-in-london',
+  category: 'Diagnostics',
+  breadcrumbCategory: 'Car Diagnostics',
+  h1: 'Why Won’t My Car Start After Sitting Overnight? Common Causes and What to Do',
+  date: '24 September 2026',
+  datePublished: '2026-09-24',
+  area: 'London',
+  readTime: '8 min read',
+  image: '/blog/why-wont-my-car-start-after-sitting-overnight-in-london.png',
+  imageAlt: 'Car that will not start after sitting overnight in London',
+  intro:
+    'You wake up in the morning, get ready for work and try to start your car, only to find that the engine will not start. You may hear clicking sounds, notice that the engine is turning slowly, or find that the dashboard lights come on but the vehicle simply refuses to start.',
+
+  body: [
+    {
+      type: 'p',
+      text: 'A car that will not start after sitting overnight can be frustrating, especially when you need to get to work, take the children to school or travel across London. There can be several reasons for this problem. A weak battery is one possibility, but issues with the alternator, starter motor, fuel system, ignition or vehicle electronics can also prevent your car from starting.'
+    },
+
+    {
+      type: 'p',
+      text: 'If the problem keeps happening, professional car diagnostics in London can help identify the underlying fault and determine what needs to be checked or repaired.',
+      spans: [
+        { text: 'If the problem keeps happening, professional ' },
+        { text: 'car diagnostics in London', href: DIAGNOSTICS },
+        { text: ' can help identify the underlying fault and determine what needs to be checked or repaired.' }
+      ]
+    },
+
+    {
+      type: 'h2',
+      text: 'Why Won’t My Car Start After Sitting Overnight?'
+    },
+
+    {
+      type: 'p',
+      text: 'When a vehicle does not start after being parked overnight, the first thing to consider is what happens when you turn the key or press the start button.'
+    },
+
+    {
+      type: 'p',
+      text: 'If you hear a clicking sound but the engine does not turn, the battery or starter system could be involved.'
+    },
+
+    {
+      type: 'p',
+      text: 'If the engine turns over normally but does not start, the problem could be related to fuel, ignition, sensors or engine management.'
+    },
+
+    {
+      type: 'p',
+      text: 'If there is little or no electrical activity at all, the battery or another electrical component may need attention.'
+    },
+
+    {
+      type: 'p',
+      text: 'A professional car diagnostic test in London can help investigate the problem rather than relying on guesswork.',
+      spans: [
+        { text: 'A professional ' },
+        { text: 'car diagnostic test in London', href: DIAGNOSTICS },
+        { text: ' can help investigate the problem rather than relying on guesswork.' }
+      ]
+    },
+
+    {
+      type: 'h2',
+      text: 'A Weak or Failing Battery'
+    },
+
+    {
+      type: 'p',
+      text: 'One of the most common reasons a car struggles to start after sitting overnight is a weak battery.'
+    },
+
+    {
+      type: 'p',
+      text: 'Your battery provides the electrical power required to start the engine. If the battery is old, damaged or losing its charge, it may not have enough power after the vehicle has been parked for several hours.'
+    },
+
+    {
+      type: 'p',
+      text: 'You may notice that the engine turns over slowly, the dashboard lights become dim or you hear clicking when attempting to start the car.'
+    },
+
+    {
+      type: 'p',
+      text: 'Cold weather can also make an existing battery problem more noticeable.'
+    },
+
+    {
+      type: 'p',
+      text: 'If your car repeatedly struggles to start in the morning, a battery inspection and vehicle diagnostic test can help determine whether the battery is responsible.',
+      spans: [
+        { text: 'If your car repeatedly struggles to start in the morning, a battery inspection and ' },
+        { text: 'vehicle diagnostic test', href: DIAGNOSTICS },
+        { text: ' can help determine whether the battery is responsible.' }
+      ]
+    },
+
+    {
+      type: 'h2',
+      text: 'Your Alternator Could Be Causing the Problem'
+    },
+
+    {
+      type: 'p',
+      text: 'The alternator charges the battery while your engine is running. If the alternator is not working correctly, the battery may not receive enough charge.'
+    },
+
+    {
+      type: 'p',
+      text: 'This can create a situation where the vehicle starts normally after being driven but refuses to start after sitting overnight.'
+    },
+
+    {
+      type: 'p',
+      text: 'Replacing the battery alone may not solve the problem if the alternator is failing.'
+    },
+
+    {
+      type: 'p',
+      text: 'Professional automotive diagnostics can help identify charging system faults and determine whether further electrical testing is required.',
+      spans: [
+        { text: 'Professional ' },
+        { text: 'automotive diagnostics', href: DIAGNOSTICS },
+        { text: ' can help identify charging system faults and determine whether further electrical testing is required.' }
+      ]
+    },
+
+    {
+      type: 'h2',
+      text: 'An Electrical Drain May Be Discharging the Battery'
+    },
+
+    {
+      type: 'p',
+      text: 'Another possible cause is an electrical drain while the vehicle is parked.'
+    },
+
+    {
+      type: 'p',
+      text: 'Your car continues to use a small amount of electrical power when switched off. This is normal. However, a faulty component can sometimes continue consuming more power than it should.'
+    },
+
+    {
+      type: 'p',
+      text: 'Interior lights, aftermarket equipment, faulty modules and other electrical problems can potentially contribute to an overnight battery drain.'
+    },
+
+    {
+      type: 'p',
+      text: 'If the battery is repeatedly flat in the morning, the problem may not be the battery itself.'
+    },
+
+    {
+      type: 'p',
+      text: 'A professional car diagnostic service in London can help investigate potential electrical faults and identify areas that require further testing.',
+      spans: [
+        { text: 'A professional ' },
+        { text: 'car diagnostic service in London', href: DIAGNOSTICS },
+        { text: ' can help investigate potential electrical faults and identify areas that require further testing.' }
+      ]
+    },
+
+    {
+      type: 'h2',
+      text: 'Starter Motor Problems'
+    },
+
+    {
+      type: 'p',
+      text: 'If the battery appears to have sufficient power but the engine does not turn over correctly, the starter motor could be the problem.'
+    },
+
+    {
+      type: 'p',
+      text: 'The starter motor is responsible for turning the engine when you attempt to start the vehicle.'
+    },
+
+    {
+      type: 'p',
+      text: 'A failing starter motor may cause clicking sounds, slow engine cranking or no engine cranking at all.'
+    },
+
+    {
+      type: 'p',
+      text: 'Starter problems can also be intermittent. Your vehicle might start normally one morning and fail to start the next.'
+    },
+
+    {
+      type: 'p',
+      text: 'If this keeps happening, a professional car fault diagnosis can help establish whether the starter motor, battery, wiring or another component is responsible.',
+      spans: [
+        { text: 'If this keeps happening, a professional ' },
+        { text: 'car fault diagnosis', href: DIAGNOSTICS },
+        { text: ' can help establish whether the starter motor, battery, wiring or another component is responsible.' }
+      ]
+    },
+
+    {
+      type: 'h2',
+      text: 'Fuel System Problems'
+    },
+
+    {
+      type: 'p',
+      text: 'If the engine turns over normally but does not actually start, the problem could be related to fuel delivery.'
+    },
+
+    {
+      type: 'p',
+      text: 'Your vehicle needs the correct amount of fuel and air for the engine to start and run correctly.'
+    },
+
+    {
+      type: 'p',
+      text: 'Problems with the fuel pump, fuel pressure, injectors or other fuel system components can result in difficult starting.'
+    },
+
+    {
+      type: 'p',
+      text: 'In some cases, the vehicle may eventually start after several attempts.'
+    },
+
+    {
+      type: 'p',
+      text: 'An engine diagnostic check can provide useful information when investigating starting problems, although additional mechanical testing may be required depending on the symptoms.',
+      spans: [
+        { text: 'An ' },
+        { text: 'engine diagnostic check', href: DIAGNOSTICS },
+        { text: ' can provide useful information when investigating starting problems, although additional mechanical testing may be required depending on the symptoms.' }
+      ]
+    },
+
+    {
+      type: 'h2',
+      text: 'Faulty Engine Sensors'
+    },
+
+    {
+      type: 'p',
+      text: 'Modern vehicles rely on sensors to monitor engine conditions and provide information to the engine management system.'
+    },
+
+    {
+      type: 'p',
+      text: 'If an important sensor develops a fault, it can provide incorrect information to the vehicle’s computer. This may affect the starting process or cause the engine to run poorly once it starts.'
+    },
+
+    {
+      type: 'p',
+      text: 'Some sensor faults are intermittent, which can make them difficult to identify without proper equipment.'
+    },
+
+    {
+      type: 'p',
+      text: 'Professional engine diagnostics in London can help identify stored fault codes and investigate relevant vehicle data.',
+      spans: [
+        { text: 'Professional ' },
+        { text: 'engine diagnostics in London', href: DIAGNOSTICS },
+        { text: ' can help identify stored fault codes and investigate relevant vehicle data.' }
+      ]
+    },
+
+    {
+      type: 'h2',
+      text: 'Ignition System Problems'
+    },
+
+    {
+      type: 'p',
+      text: 'Petrol vehicles require the ignition system to produce a spark that helps ignite the fuel and air mixture inside the engine.'
+    },
+
+    {
+      type: 'p',
+      text: 'Faulty spark plugs, ignition coils or related components can cause difficult starting.'
+    },
+
+    {
+      type: 'p',
+      text: 'You may also notice rough running, engine misfires or reduced performance after the vehicle finally starts.'
+    },
+
+    {
+      type: 'p',
+      text: 'Replacing ignition components without confirming the cause can result in unnecessary expense. A proper vehicle fault diagnosis can help establish what needs to be investigated.',
+      spans: [
+        { text: 'Replacing ignition components without confirming the cause can result in unnecessary expense. A proper ' },
+        { text: 'vehicle fault diagnosis', href: DIAGNOSTICS },
+        { text: ' can help establish what needs to be investigated.' }
+      ]
+    },
+
+    {
+      type: 'h2',
+      text: 'Could the Immobiliser Be the Problem?'
+    },
+
+    {
+      type: 'p',
+      text: 'Modern cars often use electronic immobiliser systems to prevent unauthorised starting.'
+    },
+
+    {
+      type: 'p',
+      text: 'If the vehicle does not recognise the key correctly, the engine may not start even when the battery appears healthy.'
+    },
+
+    {
+      type: 'p',
+      text: 'You may see an immobiliser symbol or a key related message on the dashboard.'
+    },
+
+    {
+      type: 'p',
+      text: 'Problems with the key, immobiliser system or vehicle electronics may require professional automotive diagnostic testing to identify the cause.',
+      spans: [
+        { text: 'Problems with the key, immobiliser system or vehicle electronics may require professional ' },
+        { text: 'automotive diagnostic testing', href: DIAGNOSTICS },
+        { text: ' to identify the cause.' }
+      ]
+    },
+
+    {
+      type: 'h2',
+      text: 'Why Does My Car Start Later in the Day?'
+    },
+
+    {
+      type: 'p',
+      text: 'Some drivers find that their car will not start in the morning but starts normally later in the day.'
+    },
+
+    {
+      type: 'p',
+      text: 'This can happen with intermittent electrical faults, battery problems, sensor issues or other components affected by temperature.'
+    },
+
+    {
+      type: 'p',
+      text: 'For example, a weak battery may perform differently as temperatures change. An intermittent sensor or electrical fault may also disappear temporarily.'
+    },
+
+    {
+      type: 'p',
+      text: 'If this happens to you, make a note of exactly what occurs when the vehicle fails to start. This information can help a technician investigate the problem more effectively.'
+    },
+
+    {
+      type: 'h2',
+      text: 'When Should You Get Your Car Checked?'
+    },
+
+    {
+      type: 'p',
+      text: 'A single starting problem does not always mean that your vehicle has a major fault. However, if the problem happens repeatedly, it is worth getting it checked.'
+    },
+
+    {
+      type: 'p',
+      text: 'Consider booking a car diagnostic test in London if:',
+      spans: [
+        { text: 'Consider booking a ' },
+        { text: 'car diagnostic test in London', href: DIAGNOSTICS },
+        { text: ' if:' }
+      ]
+    },
+
+    {
+      type: 'ul',
+      items: [
+        'Your car repeatedly struggles to start',
+        'The engine turns over slowly',
+        'You hear clicking when starting',
+        'The engine turns over but does not start',
+        'The battery keeps going flat',
+        'Dashboard warning lights appear',
+        'The vehicle starts intermittently',
+        'The car runs poorly after starting',
+        'You notice unusual electrical behaviour'
+      ]
+    },
+
+    {
+      type: 'p',
+      text: 'Early investigation can help you understand the problem before it develops into a more serious issue.'
+    },
+
+    {
+      type: 'h2',
+      text: 'Mobile Car Diagnostics in London'
+    },
+
+    {
+      type: 'p',
+      text: 'If your car will not start outside your home or workplace, getting it to a garage can be difficult.'
+    },
+
+    {
+      type: 'p',
+      text: 'This is where mobile car diagnostics in London can provide a convenient solution. Mostly Solutions provides mobile diagnostic services across London, allowing a technician to attend a suitable location where your vehicle is parked.',
+      spans: [
+        { text: 'This is where ' },
+        { text: 'mobile car diagnostics in London', href: DIAGNOSTICS },
+        { text: ' can provide a convenient solution. Mostly Solutions provides mobile diagnostic services across London, allowing a technician to attend a suitable location where your vehicle is parked.' }
+      ]
+    },
+
+    {
+      type: 'p',
+      text: 'If you have searched online for mobile car diagnostics near me, a mobile service can save you the inconvenience of arranging transportation for a vehicle that may not be starting properly.',
+      spans: [
+        { text: 'If you have searched online for ' },
+        { text: 'mobile car diagnostics near me', href: DIAGNOSTICS },
+        { text: ', a mobile service can save you the inconvenience of arranging transportation for a vehicle that may not be starting properly.' }
+      ]
+    },
+
+    {
+      type: 'p',
+      text: 'A technician can inspect the vehicle, connect professional diagnostic equipment and investigate potential faults.'
+    },
+
+    {
+      type: 'h2',
+      text: 'Do Not Replace Parts Without Finding the Cause'
+    },
+
+    {
+      type: 'p',
+      text: 'When a car will not start, replacing the battery may seem like the obvious solution.'
+    },
+
+    {
+      type: 'p',
+      text: 'However, the battery may not always be responsible.'
+    },
+
+    {
+      type: 'p',
+      text: 'The actual problem could be the alternator, starter motor, electrical system, fuel system, ignition system or an engine sensor.'
+    },
+
+    {
+      type: 'p',
+      text: 'A professional car diagnostic service can provide useful information before you spend money replacing components.',
+      spans: [
+        { text: 'A professional ' },
+        { text: 'car diagnostic service', href: DIAGNOSTICS },
+        { text: ' can provide useful information before you spend money replacing components.' }
+      ]
+    },
+
+    {
+      type: 'p',
+      text: 'The purpose of diagnostics is to help identify the fault and establish what should be checked next.'
+    },
+
+    {
+      type: 'h2',
+      text: 'Get Mobile Car Diagnostics in London'
+    },
+
+    {
+      type: 'p',
+      text: 'If your car will not start after sitting overnight, particularly if the problem is becoming more frequent, getting it professionally checked can save time and unnecessary expense.'
+    },
+
+    {
+      type: 'p',
+      text: 'Whether the cause is a weak battery, charging problem, starter motor, electrical drain, fuel system fault, ignition issue or sensor problem, identifying the underlying cause is the first step towards an effective repair.'
+    },
+
+    {
+      type: 'p',
+      text: 'Mostly Solutions provides professional mobile car diagnostics in London, bringing diagnostic equipment directly to suitable home, workplace and roadside locations.',
+      spans: [
+        { text: 'Mostly Solutions provides professional ' },
+        { text: 'mobile car diagnostics in London', href: DIAGNOSTICS },
+        { text: ', bringing diagnostic equipment directly to suitable home, workplace and roadside locations.' }
+      ]
+    },
+
+    {
+      type: 'p',
+      text: 'If you need car diagnostics in London, an engine diagnostic check or a professional car diagnostic test in London, contact Mostly Solutions to arrange a convenient diagnostic visit.',
+      spans: [
+        { text: 'If you need ' },
+        { text: 'car diagnostics in London', href: DIAGNOSTICS },
+        { text: ', an ' },
+        { text: 'engine diagnostic check', href: DIAGNOSTICS },
+        { text: ' or a professional ' },
+        { text: 'car diagnostic test in London', href: DIAGNOSTICS },
+        { text: ', contact Mostly Solutions to arrange a convenient diagnostic visit.' }
+      ]
+    }
+  ],
+
+  faqs: [
+    {
+      q: 'Why does my car not start after sitting overnight?',
+      a: 'A weak battery, faulty alternator, electrical drain, starter motor problem, fuel system fault, ignition problem or faulty sensor can prevent a car from starting after sitting overnight.'
+    },
+
+    {
+      q: 'Why does my car struggle to start in the morning?',
+      a: 'A weak battery is a common cause, but starting problems can also be related to the charging system, starter motor, fuel delivery, ignition or engine electronics.'
+    },
+
+    {
+      q: 'Can a diagnostic test find out why my car will not start?',
+      a: 'A car diagnostic test in London can identify stored fault codes and provide useful information about electronic vehicle systems. Additional mechanical or electrical testing may also be required to confirm the exact cause.'
+    },
+
+    {
+      q: 'Should I replace my battery if my car will not start?',
+      a: 'Not necessarily. The battery may be responsible, but the alternator, starter motor or another electrical fault could be causing the problem. Testing the vehicle first can help avoid replacing parts unnecessarily.'
+    },
+
+    {
+      q: 'Can an alternator cause overnight starting problems?',
+      a: 'Yes. If the alternator is not charging the battery correctly, the battery can gradually lose its charge and eventually leave the vehicle unable to start.'
+    },
+
+    {
+      q: 'Why does my car start later but not in the morning?',
+      a: 'Temperature, battery condition and intermittent electrical or sensor faults can contribute to this problem. Professional engine diagnostics in London can help investigate recurring starting issues.'
+    },
+
+    {
+      q: 'Can you provide mobile car diagnostics in London?',
+      a: 'Yes. Mostly Solutions provides mobile car diagnostics in London and can attend suitable locations where your vehicle is parked.'
+    },
+
+    {
+      q: 'What if my car will not start at home?',
+      a: 'If your car will not start at home, avoid repeatedly attempting to start it if the battery is becoming weak. Arranging a mobile car diagnostic service in London can allow the vehicle to be investigated at its current location.'
+    },
+
+    {
+      q: 'Can electrical faults be diagnosed?',
+      a: 'Many electronic and electrical faults can be investigated using professional diagnostic equipment. Some problems may also require additional electrical testing to identify the exact cause.'
+    },
+
+    {
+      q: 'How can I book a car diagnostic service near me?',
+      a: 'If you are searching online for a car diagnostic service near me in London, you can contact Mostly Solutions to arrange a mobile diagnostic visit at a suitable location.'
+    }
+  ],
+
+  ctaHeading: 'Get Your Car Starting Problem Checked',
+  ctaSub: CTA_SUB,
+  dateArea: '24 Sep 2026 · London',
+  excerpt:
+    'Why will your car not start after sitting overnight? Learn about common causes including battery, alternator, starter motor, electrical, fuel and sensor problems and how mobile car diagnostics in London can help.'
+},
+{
+  slug: 'why-is-my-car-losing-power-while-driving-in-london',
+  category: 'Diagnostics',
+  breadcrumbCategory: 'Car Diagnostics',
+  h1: 'Why Is My Car Losing Power While Driving in London?',
+  date: '24 September 2026',
+  datePublished: '2026-09-24',
+  area: 'London',
+  readTime: '7 min read',
+  image: '/blog/why-is-my-car-losing-power-while-driving-in-london.png',
+  imageAlt: 'Car losing power while driving on a London road',
+  intro:
+    'You are driving along a busy London road when you notice something is not right. You press the accelerator, but your car does not respond as it normally does. The engine feels weak, acceleration becomes slower, or the vehicle struggles to maintain speed.',
+
+  body: [
+    {
+      type: 'p',
+      text: 'A car losing power while driving can be worrying, particularly in heavy traffic or when you are travelling on a motorway. Although the cause may sometimes be straightforward, reduced engine performance can also indicate an underlying mechanical, electrical or electronic problem.'
+    },
+
+    {
+      type: 'p',
+      text: 'Understanding the possible causes can help you decide what to do next and when you should arrange a professional car diagnostic check.',
+      spans: [
+        { text: 'Understanding the possible causes can help you decide what to do next and when you should arrange a professional ' },
+        { text: 'car diagnostic check', href: DIAGNOSTICS },
+        { text: '.' }
+      ]
+    },
+
+    {
+      type: 'h2',
+      text: 'What Does It Mean When Your Car Loses Power?'
+    },
+
+    {
+      type: 'p',
+      text: 'When a vehicle loses power, the engine is not producing its normal level of performance. You may notice that your car takes longer to accelerate, struggles when travelling uphill or does not respond properly when you press the accelerator.'
+    },
+
+    {
+      type: 'p',
+      text: 'The problem may happen suddenly or develop gradually. Some drivers experience power loss only when accelerating, while others notice that the vehicle remains underpowered throughout the journey.'
+    },
+
+    {
+      type: 'p',
+      text: 'You may also see an engine warning light or another dashboard warning at the same time.'
+    },
+
+    {
+      type: 'p',
+      text: 'Because there are many possible causes, it is important not to assume that one particular part is responsible without proper testing.'
+    },
+
+    {
+      type: 'h2',
+      text: 'Common Reasons for Loss of Engine Power'
+    },
+
+    {
+      type: 'h2',
+      text: '1. Engine Problems'
+    },
+
+    {
+      type: 'p',
+      text: 'The engine depends on the correct supply of air and fuel, together with proper ignition and timing. If something within this system is not working correctly, the vehicle can experience reduced performance.'
+    },
+
+    {
+      type: 'p',
+      text: 'Issues involving spark plugs, ignition components, fuel delivery or engine management systems can all affect acceleration.'
+    },
+
+    {
+      type: 'p',
+      text: 'An engine diagnostic can help identify stored fault information and indicate which areas may require further investigation.',
+      spans: [
+        { text: 'An ' },
+        { text: 'engine diagnostic', href: DIAGNOSTICS },
+        { text: ' can help identify stored fault information and indicate which areas may require further investigation.' }
+      ]
+    },
+
+    {
+      type: 'h2',
+      text: '2. Blocked Air Filter or Fuel Filter'
+    },
+
+    {
+      type: 'p',
+      text: 'Your engine needs a steady supply of clean air and fuel to operate efficiently.'
+    },
+
+    {
+      type: 'p',
+      text: 'A heavily restricted air filter can reduce airflow into the engine, while a blocked or restricted fuel filter can affect fuel delivery.'
+    },
+
+    {
+      type: 'p',
+      text: 'Depending on the vehicle and the severity of the restriction, you may notice poor acceleration, reduced performance or increased fuel consumption.'
+    },
+
+    {
+      type: 'p',
+      text: 'Regular car servicing in London can help identify maintenance issues before they develop into more significant problems.',
+      spans: [
+        { text: 'Regular ' },
+        { text: 'car servicing in London', href: DIAGNOSTICS },
+        { text: ' can help identify maintenance issues before they develop into more significant problems.' }
+      ]
+    },
+
+    {
+      type: 'h2',
+      text: '3. Turbocharger Problems'
+    },
+
+    {
+      type: 'p',
+      text: 'Many modern petrol and diesel vehicles use turbochargers to improve engine performance.'
+    },
+
+    {
+      type: 'p',
+      text: 'If there is a problem with the turbocharger, boost system or associated components, your vehicle may suddenly feel less powerful. You might notice particularly poor acceleration when trying to increase speed.'
+    },
+
+    {
+      type: 'p',
+      text: 'A combination of a physical inspection and car fault diagnosis can help determine what may be causing the loss of performance.',
+      spans: [
+        { text: 'A combination of a physical inspection and ' },
+        { text: 'car fault diagnosis', href: DIAGNOSTICS },
+        { text: ' can help determine what may be causing the loss of performance.' }
+      ]
+    },
+
+    {
+      type: 'h2',
+      text: '4. Faulty Sensors'
+    },
+
+    {
+      type: 'p',
+      text: 'Modern vehicles rely on numerous sensors to monitor engine operation.'
+    },
+
+    {
+      type: 'p',
+      text: 'These sensors can measure factors such as air intake, engine temperature, exhaust gases and other operating conditions. If a sensor provides incorrect information, the vehicle’s engine management system may not operate as expected.'
+    },
+
+    {
+      type: 'p',
+      text: 'A professional automotive diagnostic check can help identify relevant fault codes and provide useful information for further testing.',
+      spans: [
+        { text: 'A professional ' },
+        { text: 'automotive diagnostic', href: DIAGNOSTICS },
+        { text: ' check can help identify relevant fault codes and provide useful information for further testing.' }
+      ]
+    },
+
+    {
+      type: 'h2',
+      text: '5. Exhaust or Emissions Problems'
+    },
+
+    {
+      type: 'p',
+      text: 'A restriction within the exhaust system or an emissions related fault can also contribute to reduced engine performance.'
+    },
+
+    {
+      type: 'p',
+      text: 'You may notice slower acceleration, unusual engine behaviour or a warning light on the dashboard.'
+    },
+
+    {
+      type: 'p',
+      text: 'Diesel vehicles can also experience problems involving components such as the diesel particulate filter. The symptoms can vary depending on the vehicle and the specific fault.'
+    },
+
+    {
+      type: 'h2',
+      text: 'What Should You Do If Your Car Loses Power?'
+    },
+
+    {
+      type: 'p',
+      text: 'The first priority is your safety.'
+    },
+
+    {
+      type: 'p',
+      text: 'If your vehicle suddenly loses power while you are driving, avoid making sudden manoeuvres. Where possible, move to a safe location and be aware of surrounding traffic.'
+    },
+
+    {
+      type: 'p',
+      text: 'Pay attention to any additional symptoms. Is the engine overheating? Is there smoke? Is the car making an unusual noise? Has a warning light appeared?'
+    },
+
+    {
+      type: 'p',
+      text: 'These details can be useful when arranging a vehicle diagnostic check because they can help the technician understand what happened before the inspection.',
+      spans: [
+        { text: 'These details can be useful when arranging a ' },
+        { text: 'vehicle diagnostic check', href: DIAGNOSTICS },
+        { text: ' because they can help the technician understand what happened before the inspection.' }
+      ]
+    },
+
+    {
+      type: 'p',
+      text: 'If the vehicle feels unsafe to drive or the power loss is severe, continuing your journey may not be advisable.'
+    },
+
+    {
+      type: 'h2',
+      text: 'When Should You Arrange a Car Diagnostic Test?'
+    },
+
+    {
+      type: 'p',
+      text: 'You should consider arranging a car diagnostic test if your vehicle repeatedly loses power, develops warning lights or starts behaving differently.',
+      spans: [
+        { text: 'You should consider arranging a ' },
+        { text: 'car diagnostic test', href: DIAGNOSTICS },
+        { text: ' if your vehicle repeatedly loses power, develops warning lights or starts behaving differently.' }
+      ]
+    },
+
+    {
+      type: 'p',
+      text: 'A diagnostic scan allows professional equipment to communicate with the vehicle’s electronic control systems. Stored fault codes and other information can then be assessed.'
+    },
+
+    {
+      type: 'p',
+      text: 'However, a diagnostic code does not necessarily mean that the named component needs replacing.'
+    },
+
+    {
+      type: 'p',
+      text: 'For example, a sensor related fault could potentially be caused by the sensor itself, wiring, an electrical connection or another underlying issue.'
+    },
+
+    {
+      type: 'p',
+      text: 'That is why proper car fault diagnosis involves more than simply connecting a scanner and clearing the warning light.',
+      spans: [
+        { text: 'That is why proper ' },
+        { text: 'car fault diagnosis', href: DIAGNOSTICS },
+        { text: ' involves more than simply connecting a scanner and clearing the warning light.' }
+      ]
+    },
+
+    {
+      type: 'h2',
+      text: 'Why Mobile Diagnostics Can Be Useful in London'
+    },
+
+    {
+      type: 'p',
+      text: 'Taking a car to a garage is not always convenient, particularly when the vehicle is already experiencing performance problems.'
+    },
+
+    {
+      type: 'p',
+      text: 'This is where mobile car diagnostics in London can provide a practical option. Instead of arranging for your vehicle to be driven to a garage, a technician can attend a suitable location such as your home, workplace or another accessible location.',
+      spans: [
+        { text: 'This is where ' },
+        { text: 'mobile car diagnostics in London', href: DIAGNOSTICS },
+        { text: ' can provide a practical option. Instead of arranging for your vehicle to be driven to a garage, a technician can attend a suitable location such as your home, workplace or another accessible location.' }
+      ]
+    },
+
+    {
+      type: 'p',
+      text: 'For someone whose car is losing power, this can make the process much easier.'
+    },
+
+    {
+      type: 'p',
+      text: 'If you have searched online for mobile car diagnostics near me, you are probably looking for a service that can come to you rather than requiring you to arrange additional transport.',
+      spans: [
+        { text: 'If you have searched online for ' },
+        { text: 'mobile car diagnostics near me', href: DIAGNOSTICS },
+        { text: ', you are probably looking for a service that can come to you rather than requiring you to arrange additional transport.' }
+      ]
+    },
+
+    {
+      type: 'p',
+      text: 'Mostly Solutions provides mobile vehicle diagnostics across London, helping customers investigate warning lights, performance problems and other vehicle faults.',
+      spans: [
+        { text: 'Mostly Solutions provides ' },
+        { text: 'mobile vehicle diagnostics', href: DIAGNOSTICS },
+        { text: ' across London, helping customers investigate warning lights, performance problems and other vehicle faults.' }
+      ]
+    },
+
+    {
+      type: 'h2',
+      text: 'Can Electrical Problems Cause a Car to Lose Power?'
+    },
+
+    {
+      type: 'p',
+      text: 'Not every loss of power is caused by a mechanical engine problem.'
+    },
+
+    {
+      type: 'p',
+      text: 'Modern vehicles contain extensive electrical and electronic systems. Problems with the battery, alternator, wiring, sensors or other components can sometimes affect how the vehicle operates.'
+    },
+
+    {
+      type: 'p',
+      text: 'If you are experiencing both performance problems and electrical symptoms, car electrical diagnostics may be required alongside other testing.',
+      spans: [
+        { text: 'If you are experiencing both performance problems and electrical symptoms, ' },
+        { text: 'car electrical diagnostics', href: DIAGNOSTICS },
+        { text: ' may be required alongside other testing.' }
+      ]
+    },
+
+    {
+      type: 'p',
+      text: 'For example, difficulty starting the vehicle, flickering lights or repeated battery problems could provide additional clues about an electrical issue.'
+    },
+
+    {
+      type: 'h2',
+      text: 'Why You Should Not Ignore Repeated Power Loss'
+    },
+
+    {
+      type: 'p',
+      text: 'It can be tempting to continue driving when the vehicle appears to return to normal after losing power.'
+    },
+
+    {
+      type: 'p',
+      text: 'However, a temporary improvement does not necessarily mean that the underlying problem has disappeared.'
+    },
+
+    {
+      type: 'p',
+      text: 'Intermittent faults can sometimes be difficult to identify because they do not occur continuously. Keeping track of when the problem happens can therefore be helpful.'
+    },
+
+    {
+      type: 'p',
+      text: 'Note whether the loss of power occurs when the engine is cold or warm, during acceleration, while travelling uphill or after the vehicle has been driven for a particular length of time.'
+    },
+
+    {
+      type: 'p',
+      text: 'This information can help with engine fault diagnosis and further investigation.',
+      spans: [
+        { text: 'This information can help with ' },
+        { text: 'engine fault diagnosis', href: DIAGNOSTICS },
+        { text: ' and further investigation.' }
+      ]
+    },
+
+    {
+      type: 'h2',
+      text: 'How Mostly Solutions Can Help'
+    },
+
+    {
+      type: 'p',
+      text: 'If your car is losing power in London, getting the cause investigated is a sensible first step.'
+    },
+
+    {
+      type: 'p',
+      text: 'Mostly Solutions provides a mobile car diagnostic service designed to make vehicle fault diagnosis more convenient. Professional diagnostic equipment can be used to investigate relevant vehicle systems and identify stored fault information.',
+      spans: [
+        { text: 'Mostly Solutions provides a ' },
+        { text: 'mobile car diagnostic service', href: DIAGNOSTICS },
+        { text: ' designed to make vehicle fault diagnosis more convenient. Professional diagnostic equipment can be used to investigate relevant vehicle systems and identify stored fault information.' }
+      ]
+    },
+
+    {
+      type: 'p',
+      text: 'Depending on the results, further mechanical or electrical work may be required.'
+    },
+
+    {
+      type: 'p',
+      text: 'The important thing is to understand the problem before deciding which parts or repairs are necessary.'
+    },
+
+    {
+      type: 'p',
+      text: 'A proper diagnostic process can help avoid unnecessary part replacement and give you a clearer idea of what your vehicle needs.'
+    },
+
+    {
+      type: 'h2',
+      text: 'Final Thoughts'
+    },
+
+    {
+      type: 'p',
+      text: 'A car losing power while driving should not be ignored, especially if the problem keeps returning or is accompanied by warning lights, unusual noises, overheating or other symptoms.'
+    },
+
+    {
+      type: 'p',
+      text: 'There can be many possible causes, from routine maintenance issues and sensor faults to turbocharger, fuel, exhaust or electrical problems.'
+    },
+
+    {
+      type: 'p',
+      text: 'If you are experiencing reduced performance, arranging a professional car diagnostic service can help establish where the problem may be coming from.',
+      spans: [
+        { text: 'If you are experiencing reduced performance, arranging a professional ' },
+        { text: 'car diagnostic service', href: DIAGNOSTICS },
+        { text: ' can help establish where the problem may be coming from.' }
+      ]
+    },
+
+    {
+      type: 'p',
+      text: 'For London drivers looking for mobile car diagnostics in London, a mobile service can provide a convenient way to have the vehicle assessed at a suitable location.',
+      spans: [
+        { text: 'For London drivers looking for ' },
+        { text: 'mobile car diagnostics in London', href: DIAGNOSTICS },
+        { text: ', a mobile service can provide a convenient way to have the vehicle assessed at a suitable location.' }
+      ]
+    },
+
+    {
+      type: 'p',
+      text: 'And if you have been searching for mobile car diagnostics near me, Mostly Solutions can provide mobile diagnostic support across London.',
+      spans: [
+        { text: 'And if you have been searching for ' },
+        { text: 'mobile car diagnostics near me', href: DIAGNOSTICS },
+        { text: ', Mostly Solutions can provide mobile diagnostic support across London.' }
+      ]
+    }
+  ],
+
+  faqs: [
+    {
+      q: 'Why is my car losing power while driving?',
+      a: 'Loss of power can have several causes, including fuel delivery problems, restricted airflow, sensor faults, turbocharger problems, exhaust restrictions and electrical or engine management issues. A professional diagnostic check can help identify the possible cause.'
+    },
+
+    {
+      q: 'Can a faulty sensor cause loss of engine power?',
+      a: 'Yes. A faulty sensor can send incorrect information to the vehicle’s engine management system, which may affect engine performance. Diagnostic testing can help identify relevant sensor related faults.'
+    },
+
+    {
+      q: 'Is it safe to drive a car that is losing power?',
+      a: 'It depends on the severity and symptoms. If the vehicle is overheating, producing smoke, making unusual noises or experiencing severe power loss, you should avoid continuing to drive it unnecessarily and seek professional assistance.'
+    },
+
+    {
+      q: 'Can a diagnostic test find the reason my car is losing power?',
+      a: 'A car diagnostic test can identify stored fault codes and provide information about electronic systems. Further testing may be needed to establish the exact underlying cause.'
+    },
+
+    {
+      q: 'What if my car loses power but no warning light appears?',
+      a: 'A warning light does not always appear when a vehicle develops a problem. If you repeatedly experience reduced performance, it is still worth arranging a professional inspection.'
+    },
+
+    {
+      q: 'Can I get mobile car diagnostics in London?',
+      a: 'Yes. Mobile car diagnostics in London allows a technician to attend a suitable location, which can be particularly useful when you are concerned about driving the vehicle to a garage.'
+    },
+
+    {
+      q: 'What should I search for if I need a mobile diagnostic service?',
+      a: 'Many drivers search for mobile car diagnostics near me when they want a technician to come to their location. You can also search for a mobile car diagnostic service in London to find suitable local options.'
+    },
+
+    {
+      q: 'Can electrical problems cause poor car performance?',
+      a: 'Some electrical and electronic faults can affect vehicle performance. Depending on the symptoms, battery, charging system, wiring and vehicle control systems may need to be investigated.'
+    },
+
+    {
+      q: 'Should I clear the warning light myself?',
+      a: 'Clearing a warning light without identifying the cause does not necessarily fix the problem. It is better to establish why the warning light appeared before deciding what action is required.'
+    }
+  ],
+
+  ctaHeading: 'Get Your Car Losing Power Checked',
+  ctaSub: CTA_SUB,
+  dateArea: '24 Sep 2026 · London',
+  excerpt:
+    'Car losing power while driving in London? Find out the common causes and why a mobile diagnostic check can help identify the underlying problem.'
+},
   {
   slug: 'why-does-my-car-still-look-dull-after-washing-london',
   category: 'Detailing',
